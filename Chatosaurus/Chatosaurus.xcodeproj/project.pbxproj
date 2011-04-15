@@ -14,6 +14,19 @@
 		F7D685161357DADD003EF72B /* ChatosaurusAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D685151357DADD003EF72B /* ChatosaurusAppDelegate.m */; };
 		F7D685191357DADD003EF72B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D685181357DADD003EF72B /* main.m */; };
 		F7D685201357DADD003EF72B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7D6851E1357DADD003EF72B /* InfoPlist.strings */; };
+		F7D685531357DD43003EF72B /* CSMessageCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D685521357DD43003EF72B /* CSMessageCollection.m */; };
+		F7D685561357DD5A003EF72B /* CSChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D685551357DD5A003EF72B /* CSChannelViewController.m */; };
+		F7D685591357DDEA003EF72B /* CSServerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D685581357DDEA003EF72B /* CSServerView.m */; };
+		F7D6855F1357DE25003EF72B /* CSChannelGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D6855E1357DE25003EF72B /* CSChannelGridView.m */; };
+		F7D685621357DE57003EF72B /* CSServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D685611357DE57003EF72B /* CSServerViewController.m */; };
+		F7D685651357DE7A003EF72B /* CSNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D685641357DE7A003EF72B /* CSNotificationView.m */; };
+		F7D685681357DE94003EF72B /* CSChatView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D685671357DE94003EF72B /* CSChatView.m */; };
+		F7D6856B1357DEA4003EF72B /* CSChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D6856A1357DEA4003EF72B /* CSChatViewController.m */; };
+		F7D6856E1357DEC2003EF72B /* CSGlobalPreferencesView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D6856D1357DEC2003EF72B /* CSGlobalPreferencesView.m */; };
+		F7D685711357DED5003EF72B /* CSServerConfigView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D685701357DED5003EF72B /* CSServerConfigView.m */; };
+		F7D685751357DF10003EF72B /* CSIRCProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D685741357DF10003EF72B /* CSIRCProtocol.m */; };
+		F7D6857E1357DF82003EF72B /* CSJabberProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D6857D1357DF82003EF72B /* CSJabberProtocol.m */; };
+		F7D685811357DF93003EF72B /* CSMSNProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D685801357DF92003EF72B /* CSMSNProtocol.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +40,32 @@
 		F7D6851A1357DADD003EF72B /* Chatosaurus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chatosaurus-Prefix.pch"; sourceTree = "<group>"; };
 		F7D6851C1357DADD003EF72B /* Chatosaurus-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Chatosaurus-Info.plist"; sourceTree = "<group>"; };
 		F7D6851F1357DADD003EF72B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Languages/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F7D685511357DD43003EF72B /* CSMessageCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMessageCollection.h; path = Classes/CSMessageCollection.h; sourceTree = "<group>"; };
+		F7D685521357DD43003EF72B /* CSMessageCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMessageCollection.m; path = Classes/CSMessageCollection.m; sourceTree = "<group>"; };
+		F7D685541357DD5A003EF72B /* CSChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSChannelViewController.h; path = Classes/CSChannelViewController.h; sourceTree = "<group>"; };
+		F7D685551357DD5A003EF72B /* CSChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSChannelViewController.m; path = Classes/CSChannelViewController.m; sourceTree = "<group>"; };
+		F7D685571357DDEA003EF72B /* CSServerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSServerView.h; path = Classes/CSServerView.h; sourceTree = "<group>"; };
+		F7D685581357DDEA003EF72B /* CSServerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSServerView.m; path = Classes/CSServerView.m; sourceTree = "<group>"; };
+		F7D6855D1357DE25003EF72B /* CSChannelGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSChannelGridView.h; path = Classes/CSChannelGridView.h; sourceTree = "<group>"; };
+		F7D6855E1357DE25003EF72B /* CSChannelGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSChannelGridView.m; path = Classes/CSChannelGridView.m; sourceTree = "<group>"; };
+		F7D685601357DE57003EF72B /* CSServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSServerViewController.h; path = Classes/CSServerViewController.h; sourceTree = "<group>"; };
+		F7D685611357DE57003EF72B /* CSServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSServerViewController.m; path = Classes/CSServerViewController.m; sourceTree = "<group>"; };
+		F7D685631357DE7A003EF72B /* CSNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSNotificationView.h; path = Classes/CSNotificationView.h; sourceTree = "<group>"; };
+		F7D685641357DE7A003EF72B /* CSNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSNotificationView.m; path = Classes/CSNotificationView.m; sourceTree = "<group>"; };
+		F7D685661357DE94003EF72B /* CSChatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSChatView.h; path = Classes/CSChatView.h; sourceTree = "<group>"; };
+		F7D685671357DE94003EF72B /* CSChatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSChatView.m; path = Classes/CSChatView.m; sourceTree = "<group>"; };
+		F7D685691357DEA4003EF72B /* CSChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSChatViewController.h; path = Classes/CSChatViewController.h; sourceTree = "<group>"; };
+		F7D6856A1357DEA4003EF72B /* CSChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSChatViewController.m; path = Classes/CSChatViewController.m; sourceTree = "<group>"; };
+		F7D6856C1357DEC2003EF72B /* CSGlobalPreferencesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSGlobalPreferencesView.h; path = Classes/CSGlobalPreferencesView.h; sourceTree = "<group>"; };
+		F7D6856D1357DEC2003EF72B /* CSGlobalPreferencesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSGlobalPreferencesView.m; path = Classes/CSGlobalPreferencesView.m; sourceTree = "<group>"; };
+		F7D6856F1357DED5003EF72B /* CSServerConfigView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSServerConfigView.h; path = Classes/CSServerConfigView.h; sourceTree = "<group>"; };
+		F7D685701357DED5003EF72B /* CSServerConfigView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSServerConfigView.m; path = Classes/CSServerConfigView.m; sourceTree = "<group>"; };
+		F7D685731357DF10003EF72B /* CSIRCProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSIRCProtocol.h; path = Classes/CSIRCProtocol.h; sourceTree = "<group>"; };
+		F7D685741357DF10003EF72B /* CSIRCProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSIRCProtocol.m; path = Classes/CSIRCProtocol.m; sourceTree = "<group>"; };
+		F7D6857C1357DF82003EF72B /* CSJabberProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSJabberProtocol.h; path = Classes/CSJabberProtocol.h; sourceTree = "<group>"; };
+		F7D6857D1357DF82003EF72B /* CSJabberProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSJabberProtocol.m; path = Classes/CSJabberProtocol.m; sourceTree = "<group>"; };
+		F7D6857F1357DF92003EF72B /* CSMSNProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMSNProtocol.h; path = Classes/CSMSNProtocol.h; sourceTree = "<group>"; };
+		F7D685801357DF92003EF72B /* CSMSNProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMSNProtocol.m; path = Classes/CSMSNProtocol.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +123,13 @@
 		F7D685121357DADD003EF72B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F7D685131357DADD003EF72B /* ChatosaurusAppDelegate.h */,
-				F7D685151357DADD003EF72B /* ChatosaurusAppDelegate.m */,
+				F7D6852E1357DB3A003EF72B /* Application */,
+				F7D685341357DBDA003EF72B /* Configuration */,
+				F7D685321357DB97003EF72B /* Message */,
+				F7D685311357DB8E003EF72B /* Channel */,
+				F7D685301357DB61003EF72B /* Server */,
+				F7D6852F1357DB4C003EF72B /* Data Model */,
+				F7D685721357DEE6003EF72B /* Protocols */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -113,6 +157,83 @@
 				F7D6851E1357DADD003EF72B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F7D6852E1357DB3A003EF72B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F7D685131357DADD003EF72B /* ChatosaurusAppDelegate.h */,
+				F7D685151357DADD003EF72B /* ChatosaurusAppDelegate.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		F7D6852F1357DB4C003EF72B /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				F7D685511357DD43003EF72B /* CSMessageCollection.h */,
+				F7D685521357DD43003EF72B /* CSMessageCollection.m */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
+		F7D685301357DB61003EF72B /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				F7D685601357DE57003EF72B /* CSServerViewController.h */,
+				F7D685611357DE57003EF72B /* CSServerViewController.m */,
+				F7D685571357DDEA003EF72B /* CSServerView.h */,
+				F7D685581357DDEA003EF72B /* CSServerView.m */,
+			);
+			name = Server;
+			sourceTree = "<group>";
+		};
+		F7D685311357DB8E003EF72B /* Channel */ = {
+			isa = PBXGroup;
+			children = (
+				F7D685541357DD5A003EF72B /* CSChannelViewController.h */,
+				F7D685551357DD5A003EF72B /* CSChannelViewController.m */,
+				F7D6855D1357DE25003EF72B /* CSChannelGridView.h */,
+				F7D6855E1357DE25003EF72B /* CSChannelGridView.m */,
+			);
+			name = Channel;
+			sourceTree = "<group>";
+		};
+		F7D685321357DB97003EF72B /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				F7D685631357DE7A003EF72B /* CSNotificationView.h */,
+				F7D685641357DE7A003EF72B /* CSNotificationView.m */,
+				F7D685691357DEA4003EF72B /* CSChatViewController.h */,
+				F7D6856A1357DEA4003EF72B /* CSChatViewController.m */,
+				F7D685661357DE94003EF72B /* CSChatView.h */,
+				F7D685671357DE94003EF72B /* CSChatView.m */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
+		F7D685341357DBDA003EF72B /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				F7D6856C1357DEC2003EF72B /* CSGlobalPreferencesView.h */,
+				F7D6856D1357DEC2003EF72B /* CSGlobalPreferencesView.m */,
+				F7D6856F1357DED5003EF72B /* CSServerConfigView.h */,
+				F7D685701357DED5003EF72B /* CSServerConfigView.m */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		F7D685721357DEE6003EF72B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F7D685731357DF10003EF72B /* CSIRCProtocol.h */,
+				F7D685741357DF10003EF72B /* CSIRCProtocol.m */,
+				F7D6857C1357DF82003EF72B /* CSJabberProtocol.h */,
+				F7D6857D1357DF82003EF72B /* CSJabberProtocol.m */,
+				F7D6857F1357DF92003EF72B /* CSMSNProtocol.h */,
+				F7D685801357DF92003EF72B /* CSMSNProtocol.m */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +300,19 @@
 			files = (
 				F7D685161357DADD003EF72B /* ChatosaurusAppDelegate.m in Sources */,
 				F7D685191357DADD003EF72B /* main.m in Sources */,
+				F7D685531357DD43003EF72B /* CSMessageCollection.m in Sources */,
+				F7D685561357DD5A003EF72B /* CSChannelViewController.m in Sources */,
+				F7D685591357DDEA003EF72B /* CSServerView.m in Sources */,
+				F7D6855F1357DE25003EF72B /* CSChannelGridView.m in Sources */,
+				F7D685621357DE57003EF72B /* CSServerViewController.m in Sources */,
+				F7D685651357DE7A003EF72B /* CSNotificationView.m in Sources */,
+				F7D685681357DE94003EF72B /* CSChatView.m in Sources */,
+				F7D6856B1357DEA4003EF72B /* CSChatViewController.m in Sources */,
+				F7D6856E1357DEC2003EF72B /* CSGlobalPreferencesView.m in Sources */,
+				F7D685711357DED5003EF72B /* CSServerConfigView.m in Sources */,
+				F7D685751357DF10003EF72B /* CSIRCProtocol.m in Sources */,
+				F7D6857E1357DF82003EF72B /* CSJabberProtocol.m in Sources */,
+				F7D685811357DF93003EF72B /* CSMSNProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

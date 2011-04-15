@@ -33,6 +33,7 @@
 
 #pragma mark -
 #pragma mark Accessors
+@synthesize delegate = _delegate;
 
 #pragma mark -
 #pragma mark Methods

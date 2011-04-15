@@ -1,0 +1,282 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F7D6850C1357DADC003EF72B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D6850B1357DADC003EF72B /* UIKit.framework */; };
+		F7D6850E1357DADC003EF72B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D6850D1357DADC003EF72B /* Foundation.framework */; };
+		F7D685101357DADC003EF72B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D6850F1357DADC003EF72B /* CoreGraphics.framework */; };
+		F7D685141357DADD003EF72B /* ChatosaurusAppDelegate.h in Resources */ = {isa = PBXBuildFile; fileRef = F7D685131357DADD003EF72B /* ChatosaurusAppDelegate.h */; };
+		F7D685161357DADD003EF72B /* ChatosaurusAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D685151357DADD003EF72B /* ChatosaurusAppDelegate.m */; };
+		F7D685191357DADD003EF72B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D685181357DADD003EF72B /* main.m */; };
+		F7D685201357DADD003EF72B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7D6851E1357DADD003EF72B /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F7D685071357DADC003EF72B /* Chatosaurus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatosaurus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7D6850B1357DADC003EF72B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F7D6850D1357DADC003EF72B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F7D6850F1357DADC003EF72B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F7D685131357DADD003EF72B /* ChatosaurusAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ChatosaurusAppDelegate.h; path = Classes/ChatosaurusAppDelegate.h; sourceTree = "<group>"; };
+		F7D685151357DADD003EF72B /* ChatosaurusAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ChatosaurusAppDelegate.m; path = Classes/ChatosaurusAppDelegate.m; sourceTree = "<group>"; };
+		F7D685181357DADD003EF72B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F7D6851A1357DADD003EF72B /* Chatosaurus-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chatosaurus-Prefix.pch"; sourceTree = "<group>"; };
+		F7D6851C1357DADD003EF72B /* Chatosaurus-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Chatosaurus-Info.plist"; sourceTree = "<group>"; };
+		F7D6851F1357DADD003EF72B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Languages/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7D685041357DADC003EF72B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7D6850C1357DADC003EF72B /* UIKit.framework in Frameworks */,
+				F7D6850E1357DADC003EF72B /* Foundation.framework in Frameworks */,
+				F7D685101357DADC003EF72B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F7D684FC1357DADC003EF72B = {
+			isa = PBXGroup;
+			children = (
+				F7D685111357DADC003EF72B /* Chatosaurus */,
+				F7D6850A1357DADC003EF72B /* Frameworks */,
+				F7D685081357DADC003EF72B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F7D685081357DADC003EF72B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F7D685071357DADC003EF72B /* Chatosaurus.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7D6850A1357DADC003EF72B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7D6850B1357DADC003EF72B /* UIKit.framework */,
+				F7D6850D1357DADC003EF72B /* Foundation.framework */,
+				F7D6850F1357DADC003EF72B /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7D685111357DADC003EF72B /* Chatosaurus */ = {
+			isa = PBXGroup;
+			children = (
+				F7D685121357DADD003EF72B /* Classes */,
+				F7D685171357DADD003EF72B /* Other Sources */,
+				F7D6851B1357DADD003EF72B /* Resources */,
+				F7D6851D1357DADD003EF72B /* Supporting Files */,
+			);
+			path = Chatosaurus;
+			sourceTree = "<group>";
+		};
+		F7D685121357DADD003EF72B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F7D685131357DADD003EF72B /* ChatosaurusAppDelegate.h */,
+				F7D685151357DADD003EF72B /* ChatosaurusAppDelegate.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		F7D685171357DADD003EF72B /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F7D685181357DADD003EF72B /* main.m */,
+				F7D6851A1357DADD003EF72B /* Chatosaurus-Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		F7D6851B1357DADD003EF72B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F7D6851C1357DADD003EF72B /* Chatosaurus-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F7D6851D1357DADD003EF72B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F7D6851E1357DADD003EF72B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F7D685061357DADC003EF72B /* Chatosaurus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7D685231357DADD003EF72B /* Build configuration list for PBXNativeTarget "Chatosaurus" */;
+			buildPhases = (
+				F7D685031357DADC003EF72B /* Sources */,
+				F7D685041357DADC003EF72B /* Frameworks */,
+				F7D685051357DADC003EF72B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Chatosaurus;
+			productName = Chatosaurus;
+			productReference = F7D685071357DADC003EF72B /* Chatosaurus.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F7D684FE1357DADC003EF72B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = home;
+			};
+			buildConfigurationList = F7D685011357DADC003EF72B /* Build configuration list for PBXProject "Chatosaurus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F7D684FC1357DADC003EF72B;
+			productRefGroup = F7D685081357DADC003EF72B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7D685061357DADC003EF72B /* Chatosaurus */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F7D685051357DADC003EF72B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7D685141357DADD003EF72B /* ChatosaurusAppDelegate.h in Resources */,
+				F7D685201357DADD003EF72B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7D685031357DADC003EF72B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7D685161357DADD003EF72B /* ChatosaurusAppDelegate.m in Sources */,
+				F7D685191357DADD003EF72B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F7D6851E1357DADD003EF72B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7D6851F1357DADD003EF72B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F7D685211357DADD003EF72B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F7D685221357DADD003EF72B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F7D685241357DADD003EF72B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Chatosaurus/Chatosaurus-Prefix.pch";
+				INFOPLIST_FILE = "Chatosaurus/Chatosaurus-Info.plist";
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F7D685251357DADD003EF72B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Chatosaurus/Chatosaurus-Prefix.pch";
+				INFOPLIST_FILE = "Chatosaurus/Chatosaurus-Info.plist";
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F7D685011357DADC003EF72B /* Build configuration list for PBXProject "Chatosaurus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7D685211357DADD003EF72B /* Debug */,
+				F7D685221357DADD003EF72B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7D685231357DADD003EF72B /* Build configuration list for PBXNativeTarget "Chatosaurus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7D685241357DADD003EF72B /* Debug */,
+				F7D685251357DADD003EF72B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F7D684FE1357DADC003EF72B /* Project object */;
+}

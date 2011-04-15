@@ -27,6 +27,9 @@
 		F7D685751357DF10003EF72B /* CSIRCProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D685741357DF10003EF72B /* CSIRCProtocol.m */; };
 		F7D6857E1357DF82003EF72B /* CSJabberProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D6857D1357DF82003EF72B /* CSJabberProtocol.m */; };
 		F7D685811357DF93003EF72B /* CSMSNProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D685801357DF92003EF72B /* CSMSNProtocol.m */; };
+		F7D6858C1357E18C003EF72B /* CSChannelViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D6858B1357E18C003EF72B /* CSChannelViewCell.m */; };
+		F7D6858F1357E1AE003EF72B /* CSChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D6858E1357E1AE003EF72B /* CSChannelView.m */; };
+		F7D685921357E270003EF72B /* CSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D685911357E270003EF72B /* CSMessage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,12 @@
 		F7D6857D1357DF82003EF72B /* CSJabberProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSJabberProtocol.m; path = Classes/CSJabberProtocol.m; sourceTree = "<group>"; };
 		F7D6857F1357DF92003EF72B /* CSMSNProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMSNProtocol.h; path = Classes/CSMSNProtocol.h; sourceTree = "<group>"; };
 		F7D685801357DF92003EF72B /* CSMSNProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMSNProtocol.m; path = Classes/CSMSNProtocol.m; sourceTree = "<group>"; };
+		F7D6858A1357E18B003EF72B /* CSChannelViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSChannelViewCell.h; path = Classes/CSChannelViewCell.h; sourceTree = "<group>"; };
+		F7D6858B1357E18C003EF72B /* CSChannelViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSChannelViewCell.m; path = Classes/CSChannelViewCell.m; sourceTree = "<group>"; };
+		F7D6858D1357E1AD003EF72B /* CSChannelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSChannelView.h; path = Classes/CSChannelView.h; sourceTree = "<group>"; };
+		F7D6858E1357E1AE003EF72B /* CSChannelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSChannelView.m; path = Classes/CSChannelView.m; sourceTree = "<group>"; };
+		F7D685901357E270003EF72B /* CSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMessage.h; path = Classes/CSMessage.h; sourceTree = "<group>"; };
+		F7D685911357E270003EF72B /* CSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMessage.m; path = Classes/CSMessage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +182,8 @@
 			children = (
 				F7D685511357DD43003EF72B /* CSMessageCollection.h */,
 				F7D685521357DD43003EF72B /* CSMessageCollection.m */,
+				F7D685901357E270003EF72B /* CSMessage.h */,
+				F7D685911357E270003EF72B /* CSMessage.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -195,6 +206,10 @@
 				F7D685551357DD5A003EF72B /* CSChannelViewController.m */,
 				F7D6855D1357DE25003EF72B /* CSChannelGridView.h */,
 				F7D6855E1357DE25003EF72B /* CSChannelGridView.m */,
+				F7D6858A1357E18B003EF72B /* CSChannelViewCell.h */,
+				F7D6858B1357E18C003EF72B /* CSChannelViewCell.m */,
+				F7D6858D1357E1AD003EF72B /* CSChannelView.h */,
+				F7D6858E1357E1AE003EF72B /* CSChannelView.m */,
 			);
 			name = Channel;
 			sourceTree = "<group>";
@@ -313,6 +328,9 @@
 				F7D685751357DF10003EF72B /* CSIRCProtocol.m in Sources */,
 				F7D6857E1357DF82003EF72B /* CSJabberProtocol.m in Sources */,
 				F7D685811357DF93003EF72B /* CSMSNProtocol.m in Sources */,
+				F7D6858C1357E18C003EF72B /* CSChannelViewCell.m in Sources */,
+				F7D6858F1357E1AE003EF72B /* CSChannelView.m in Sources */,
+				F7D685921357E270003EF72B /* CSMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

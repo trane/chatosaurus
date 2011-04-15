@@ -30,6 +30,7 @@
 		F7D6858C1357E18C003EF72B /* CSChannelViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D6858B1357E18C003EF72B /* CSChannelViewCell.m */; };
 		F7D6858F1357E1AE003EF72B /* CSChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D6858E1357E1AE003EF72B /* CSChannelView.m */; };
 		F7D685921357E270003EF72B /* CSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D685911357E270003EF72B /* CSMessage.m */; };
+		F7D6859D1357EC3C003EF72B /* Protocols.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D6859C1357EC3C003EF72B /* Protocols.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,8 @@
 		F7D6858E1357E1AE003EF72B /* CSChannelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSChannelView.m; path = Classes/CSChannelView.m; sourceTree = "<group>"; };
 		F7D685901357E270003EF72B /* CSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSMessage.h; path = Classes/CSMessage.h; sourceTree = "<group>"; };
 		F7D685911357E270003EF72B /* CSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMessage.m; path = Classes/CSMessage.m; sourceTree = "<group>"; };
+		F7D6859B1357EC3C003EF72B /* Protocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Protocols.h; path = Classes/Protocols.h; sourceTree = "<group>"; };
+		F7D6859C1357EC3C003EF72B /* Protocols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Protocols.m; path = Classes/Protocols.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +250,8 @@
 				F7D6857D1357DF82003EF72B /* CSJabberProtocol.m */,
 				F7D6857F1357DF92003EF72B /* CSMSNProtocol.h */,
 				F7D685801357DF92003EF72B /* CSMSNProtocol.m */,
+				F7D6859B1357EC3C003EF72B /* Protocols.h */,
+				F7D6859C1357EC3C003EF72B /* Protocols.m */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				F7D6858C1357E18C003EF72B /* CSChannelViewCell.m in Sources */,
 				F7D6858F1357E1AE003EF72B /* CSChannelView.m in Sources */,
 				F7D685921357E270003EF72B /* CSMessage.m in Sources */,
+				F7D6859D1357EC3C003EF72B /* Protocols.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +433,7 @@
 				F7D685251357DADD003EF72B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

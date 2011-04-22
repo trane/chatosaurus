@@ -23,6 +23,8 @@
 	if (self == nil)
 		return self;
 	
+    _serverViews = [[NSMutableArray alloc] init];
+
     return self;
 }
 
@@ -39,6 +41,10 @@
 
 #pragma mark -
 #pragma mark Methods
+- (void) updateServerView:(CSServerView*)serverView withKey:(NSString*)key
+{
+    
+}
 
 #pragma mark UIViewController Methods
 - (void) viewDidLoad

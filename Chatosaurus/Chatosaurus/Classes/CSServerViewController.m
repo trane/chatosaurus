@@ -17,9 +17,9 @@
 @implementation CSServerViewController
 
 #pragma mark Constructors
-- (id) init
+- (id) init:(UITableViewStyle)style
 {
-    self = [super init];
+    self = [super initWithStyle:style];
 	if (self == nil)
 		return self;
 	
@@ -83,21 +83,22 @@
 
 - (UITableViewCell*) tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    // Grab the key from this server corresponding the this row
-    NSString *serverKey = [[_serverViews objectAtIndex:[indexPath row]] key];
+    // Grab the server corresponding the this row
+    CSServerView *serverView = [_serverViews objectAtIndex:[indexPath row]];
     
     // Get the cell, of it exists
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:serverKey];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[serverView key]];
 
     // If there is no cell with the identifier, create it and append the serverView to the cell
     if (cell == nil) {
 
         // Initialize a cell
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:serverKey] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
+                                       reuseIdentifier:[serverView key]] autorelease];
         
-        
-        
+        [cell.contentView addSubview:serverView];
     }
+
     return cell;
 }
 

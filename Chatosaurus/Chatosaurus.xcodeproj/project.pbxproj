@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		139780131362313B006BA0A0 /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139780121362313B006BA0A0 /* CSRootViewController.m */; };
 		F7D6850C1357DADC003EF72B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D6850B1357DADC003EF72B /* UIKit.framework */; };
 		F7D6850E1357DADC003EF72B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D6850D1357DADC003EF72B /* Foundation.framework */; };
 		F7D685101357DADC003EF72B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D6850F1357DADC003EF72B /* CoreGraphics.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		139780111362313B006BA0A0 /* CSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRootViewController.h; sourceTree = "<group>"; };
+		139780121362313B006BA0A0 /* CSRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRootViewController.m; sourceTree = "<group>"; };
 		F7D685071357DADC003EF72B /* Chatosaurus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatosaurus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7D6850B1357DADC003EF72B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F7D6850D1357DADC003EF72B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -94,6 +97,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1397800F13623121006BA0A0 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				139780111362313B006BA0A0 /* CSRootViewController.h */,
+				139780121362313B006BA0A0 /* CSRootViewController.m */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
 		F7D684FC1357DADC003EF72B = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				F7D6852E1357DB3A003EF72B /* Application */,
+				1397800F13623121006BA0A0 /* Root */,
 				F7D685341357DBDA003EF72B /* Configuration */,
 				F7D685321357DB97003EF72B /* Message */,
 				F7D685311357DB8E003EF72B /* Channel */,
@@ -337,6 +350,7 @@
 				F7D6858F1357E1AE003EF72B /* CSChannelView.m in Sources */,
 				F7D685921357E270003EF72B /* CSMessage.m in Sources */,
 				F7D6859D1357EC3C003EF72B /* Protocols.m in Sources */,
+				139780131362313B006BA0A0 /* CSRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

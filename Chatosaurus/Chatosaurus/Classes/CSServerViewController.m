@@ -29,7 +29,7 @@
 - (void) dealloc 
 {
     [self setDelegate:nil];
-    
+    [_serverViews release];
     [super dealloc];
 }
 

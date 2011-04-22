@@ -24,7 +24,7 @@
 @property (assign) NSObject<CSServerViewControllerDelegate>* delegate;
 
 /*!
- * Looks through all server views for matching key and updates
+ * Looks through all server views for matching key and reinitializes the view
  *
  * @param key The key of the server
  */

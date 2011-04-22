@@ -3,7 +3,7 @@
 //  Chatosaurus
 //
 //  Created by trane on 4/14/11.
-//  Copyright 2011 home. All rights reserved.
+//  Copyright 2011 errstr. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

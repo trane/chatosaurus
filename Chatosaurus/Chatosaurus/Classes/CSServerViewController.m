@@ -39,6 +39,12 @@
 #pragma mark Accessors
 @synthesize delegate = _delegate;
 
+@synthesize messageCollection = _messageCollection;
+- (void) setMessageCollection:(CSMessageCollection *)messageCollection
+{
+    _messageCollection = messageCollection;
+}
+
 #pragma mark -
 #pragma mark Methods
 - (void) updateServerViewWithKey:(NSString*)key

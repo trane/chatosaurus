@@ -18,10 +18,13 @@
     NSObject<CSServerViewControllerDelegate>* _delegate;
     
     NSMutableArray *_serverViews;
+    CSMessageCollection *_messageCollection;
 
 }
 
 @property (assign) NSObject<CSServerViewControllerDelegate>* delegate;
+
+@property (nonatomic,retain) CSMessageCollection *messageCollection;
 
 /*!
  * Looks through all server views for matching key and reinitializes the view

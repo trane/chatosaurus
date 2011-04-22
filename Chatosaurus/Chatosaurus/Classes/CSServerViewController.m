@@ -41,8 +41,13 @@
 
 #pragma mark -
 #pragma mark Methods
-- (void) updateServerView:(CSServerView*)serverView withKey:(NSString*)key
+- (void) updateServerViewWithKey:(NSString*)key
 {
+    for (CSServerView* view in _serverViews) {
+        if ([view key] == key) {
+            [view setNeedsDisplay];
+        }
+    }
     
 }
 

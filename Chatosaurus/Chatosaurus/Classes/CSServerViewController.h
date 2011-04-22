@@ -28,7 +28,7 @@
  *
  * @param key The key of the server
  */
-- (void) updateServerView:(CSServerView*)serverView withKey:(NSString*)key;
+- (void) updateServerViewWithKey:(NSString*)key;
 
 @end
 

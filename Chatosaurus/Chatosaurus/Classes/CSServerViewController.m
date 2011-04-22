@@ -62,9 +62,29 @@
 {
     [[self view] setBackgroundColor:[UIColor colorWithHue:(float)drand48() saturation:1.0f brightness:1.0f alpha:1.0f]];
 }
-
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return TRUE;
+}
 - (void) viewDidUnload
 {
 }
+
+#pragma mark UITableViewDataSource Methods
+- (NSInteger) numberOfSectionsInTableView:(UITableView*)tableView
+{
+    return 1;
+}
+- (NSInteger) tableView:(UITableView*)table numberOfRowsInSection:(NSInteger)section
+{
+    return [_serverViews count];
+}
+
+- (UITableViewCell*) tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
+{
+    UITableViewCell* cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil] autorelease];
+    return cell;
+}
+
 
 @end

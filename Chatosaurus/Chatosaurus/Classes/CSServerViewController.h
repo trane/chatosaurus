@@ -13,7 +13,7 @@
 @protocol CSServerViewControllerDelegate
 @end
 
-@interface CSServerViewController : UIViewController 
+@interface CSServerViewController : UITableViewController 
 {
     NSObject<CSServerViewControllerDelegate>* _delegate;
     

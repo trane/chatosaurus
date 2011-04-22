@@ -17,11 +17,20 @@
 @implementation CSServerView
 
 #pragma mark Constructors
-- (id) initWithFrame:(CGRect)frame 
+- (id) initWithFrame:(CGRect)frame
+            protocol:(NSString*)protocol
+          serverName:(NSString*)serverName
+              userId:(NSString*)userId
 {
     self = [super initWithFrame:frame];
 	if (self == nil)
 		return nil;
+    
+    _serverName = serverName;
+    _userId = userId;
+    _protocol = protocol;
+    _key = [[[NSString alloc] initWithFormat:@"%s_%s_%s", 
+             protocol, serverName, userId] retain];
 	
     return self;
 }
@@ -34,7 +43,10 @@
 #pragma mark -
 #pragma mark Accessors
 @synthesize key = _key;
-
+@synthesize serverName = _serverName;
+@synthesize userId = _userId; // andrew.kuhnhausenATgmail.com
+@synthesize channelViewController = _channelViewController;
+@synthesize protocol = _protocol;
 #pragma mark -
 #pragma mark Methods
 

@@ -33,6 +33,7 @@
 
 #pragma mark -
 #pragma mark Accessors
+@synthesize key = _key;
 
 #pragma mark -
 #pragma mark Methods

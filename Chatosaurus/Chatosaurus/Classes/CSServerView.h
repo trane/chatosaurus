@@ -8,6 +8,15 @@
 
 @interface CSServerView : UIView 
 {
+    NSString* _key;
 }
+
+/*!
+ * Provides the unique id for this server
+ * Example: irc_server
+ *          msn_id
+ *          jabber_id
+ */
+@property (nonatomic,assign) NSString* key;
 
 @end

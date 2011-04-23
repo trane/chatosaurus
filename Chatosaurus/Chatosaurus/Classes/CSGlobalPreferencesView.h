@@ -6,7 +6,7 @@
 //  Copyright 2011 errstr. All rights reserved.
 //
 
-@interface CSGlobalPreferencesView : UIView 
+@interface CSGlobalPreferencesView : UITableView 
 {
 }
 

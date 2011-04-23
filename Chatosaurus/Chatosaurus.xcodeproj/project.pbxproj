@@ -104,8 +104,8 @@
 		1397800F13623121006BA0A0 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				139780111362313B006BA0A0 /* CSRootViewController.h */,
-				139780121362313B006BA0A0 /* CSRootViewController.m */,
+				1301ADE21362445F0006948D /* CSRootViewController.h */,
+				1301ADE31362445F0006948D /* CSRootViewController.m */,
 			);
 			name = Root;
 			sourceTree = "<group>";
@@ -358,7 +358,7 @@
 				F7D6858F1357E1AE003EF72B /* CSChannelView.m in Sources */,
 				F7D685921357E270003EF72B /* CSMessage.m in Sources */,
 				F7D6859D1357EC3C003EF72B /* Protocols.m in Sources */,
-				139780131362313B006BA0A0 /* CSRootViewController.m in Sources */,
+				1301ADE41362445F0006948D /* CSRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

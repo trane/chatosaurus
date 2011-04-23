@@ -1,5 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>Servers</key>
+	<array>
+		<dict>
+			<key>status</key>
+			<string>away</string>
+			<key>channels</key>
+			<array>
+				<dict>
+					<key>picture</key>
+					<string>nil</string>
+					<key>name</key>
+					<string>#supersecret</string>
+				</dict>
+				<dict>
+					<key>picture</key>
+					<string>nil</string>
+					<key>name</key>
+					<string>#secretroom</string>
+				</dict>
+			</array>
+			<key>serverName</key>
+			<string>XMission IRC</string>
+			<key>userId</key>
+			<string>trane</string>
+			<key>serverURI</key>
+			<string>irc.xmission.com</string>
+			<key>protocol</key>
+			<string>irc</string>
+		</dict>
+		<dict>
+			<key>status</key>
+			<string>available</string>
+			<key>serverURI</key>
+			<string>talk.google.com</string>
+			<key>protocol</key>
+			<string>jabber</string>
+			<key>serverName</key>
+			<string>Google Talk</string>
+			<key>userId</key>
+			<string>andrew.kuhnhausen@gmail.com</string>
+			<key>channels</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>landogbland@gmail.com</string>
+					<key>picture</key>
+					<string>nil</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>colton.myers@gmail.com</string>
+					<key>picture</key>
+					<string>/path/to/photo</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
 </plist>

@@ -24,7 +24,7 @@
 	if (self == nil)
 		return self;
     [[self view] setFrame:frame];
-    _serverViews = [self loadServerViews];
+    _serverViews = [[NSMutableArray alloc] initWithArray:[self loadServerViews]];
     
     return self;
 }
@@ -63,7 +63,7 @@
     NSString* serversPList = [[NSBundle mainBundle] pathForResource:@"Servers" ofType:@"plist"];
 	NSArray *servers = [[NSArray arrayWithArray:[[NSDictionary dictionaryWithContentsOfFile:serversPList] objectForKey:@"Servers"]] autorelease];
 
-    NSMutableArray *serverViews = [[[NSMutableArray alloc] init] retain]    ;
+    NSMutableArray *serverViews = [[NSMutableArray alloc] init];
     // Grab all of the values from the plist and create server views
     for (int i = 0; i < [servers count]; i++) {
         NSDictionary *dict = [[servers objectAtIndex:i] autorelease];
@@ -89,7 +89,7 @@
         CGRect rect = CGRectMake(0, 0, [[self view] bounds].size.width, [[self view] bounds].size.height / ServerViewHeightRatio);
         NSLog(@"%f %f %f %f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height );
          */
-        CSServerView *serverView = [[[CSServerView alloc] initWithFrame:rect protocol:protocol serverName:serverName userId:userId] autorelease];
+        CSServerView *serverView = [[CSServerView alloc] initWithFrame:rect protocol:protocol serverName:serverName userId:userId];
         [serverViews addObject:serverView];
         [[self view] addSubview:serverView];
     }

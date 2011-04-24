@@ -29,8 +29,8 @@
     _serverName = serverName;
     _userId = userId;
     _protocol = protocol;
-    _key = [[[NSString alloc] initWithFormat:@"%s_%s_%s", 
-             protocol, serverName, userId] retain];
+    _key = [[NSString alloc] initWithFormat:@"%s_%s_%s", 
+             protocol, serverName, userId];
 	
     return self;
 }

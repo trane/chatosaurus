@@ -33,5 +33,10 @@
  */
 - (void) updateServerViewWithKey:(NSString*)key;
 
+/*!
+ * Reads Servers.plist and creates views for each server
+ */
+- (NSMutableArray*) loadServerViews;
+
 @end
 

@@ -5,6 +5,7 @@
 //  Created by Andrew Kuhnhausen <andrew.kuhnhausen@gmail.com>, Colton Myers <colton.myers@gmail.com> on 4/14/11.
 //  Copyright 2011 errstr. All rights reserved.
 //
+#define ServerViewHeightRatio 2.5f
 
 #import "CSServerViewController.h"
 
@@ -17,14 +18,14 @@
 @implementation CSServerViewController
 
 #pragma mark Constructors
-- (id) init:(UITableViewStyle)style
+- (id) initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
 	if (self == nil)
 		return self;
-	
-    _serverViews = [[NSMutableArray alloc] init];
-
+    
+    _serverViews = [self loadServerViews];
+    
     return self;
 }
 
@@ -57,10 +58,46 @@
     
 }
 
+- (NSMutableArray*) loadServerViews
+{
+    NSString* serversPList = [[NSBundle mainBundle] pathForResource:@"Servers" ofType:@"plist"];
+	NSArray *servers = [[NSArray arrayWithArray:[[NSDictionary dictionaryWithContentsOfFile:serversPList] objectForKey:@"Servers"]] autorelease];
+
+    NSMutableArray *serverViews = [[[NSMutableArray alloc] init] retain]    ;
+    // Grab all of the values from the plist and create server views
+    for (int i = 0; i < [servers count]; i++) {
+        NSDictionary *dict = [[servers objectAtIndex:i] autorelease];
+        NSString *protocol = [dict objectForKey:@"protocol"];
+        NSString *serverName = [dict objectForKey:@"serverName"];
+        NSString *userId = [dict objectForKey:@"userId"];
+        /*
+         * This is if we don't use table view
+         * Generate the rect, the plist is sorted in the order the user wants the servers to be
+         */
+        /*
+        CGRect rect = CGRectMake([[self view] bounds].origin.x, [[self view] bounds].origin.y + ([[self view] bounds].size.height * i),
+                                 [[self view] bounds].size.width, [[self view] bounds].size.height);
+         */
+        /*
+         * For table view, cell based
+         * Generate the same sized rect
+         * Height is based on two sections:
+         *  section1: The same for all server views, contains base server info
+         *  section2: The number of cells in the channel grid
+         */
+        CGRect rect = CGRectMake(0, 0, [[self tableView] bounds].size.width, [[self tableView] bounds].size.height / ServerViewHeightRatio);
+        NSLog(@"%f %f %f %f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height );
+        CSServerView *serverView = [[[CSServerView alloc] initWithFrame:rect protocol:protocol serverName:serverName userId:userId] autorelease];
+        [serverViews addObject:serverView];
+    }
+    
+    return serverViews;
+}
+
 #pragma mark UIViewController Methods
 - (void) viewDidLoad
 {
-    [[self view] setBackgroundColor:[UIColor colorWithHue:(float)drand48() saturation:1.0f brightness:1.0f alpha:1.0f]];
+    [[self tableView] setBackgroundColor:[UIColor colorWithHue:(float)drand48() saturation:1.0f brightness:1.0f alpha:1.0f]];
 }
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
@@ -95,10 +132,11 @@
         // Initialize a cell
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
                                        reuseIdentifier:[serverView key]] autorelease];
-        
+        [cell setTag:[indexPath row]];
         [cell.contentView addSubview:serverView];
+    } else {
+        NSLog(@"ELSE");
     }
-
     return cell;
 }
 

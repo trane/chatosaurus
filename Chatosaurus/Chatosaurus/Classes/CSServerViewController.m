@@ -24,8 +24,11 @@
 	if (self == nil)
 		return self;
     [[self view] setFrame:frame];
-    _serverViews = [[NSMutableArray alloc] initWithArray:[self loadServerViews]];
     
+    _serverViews = [[NSMutableArray alloc] init];
+    
+    [self loadServerViews];
+
     return self;
 }
 
@@ -58,24 +61,22 @@
     
 }
 
-- (NSMutableArray*) loadServerViews
+- (void) loadServerViews
 {
-    NSString* serversPList = [[NSBundle mainBundle] pathForResource:@"Servers" ofType:@"plist"];
-	NSArray *servers = [[NSArray arrayWithArray:[[NSDictionary dictionaryWithContentsOfFile:serversPList] objectForKey:@"Servers"]] autorelease];
+    NSString *serversPList = [[NSBundle mainBundle] pathForResource:@"Servers" ofType:@"plist"];
+	NSArray *servers = [NSArray arrayWithArray:[[NSDictionary dictionaryWithContentsOfFile:serversPList] objectForKey:@"Servers"]];
 
-    NSMutableArray *serverViews = [[NSMutableArray alloc] init];
+    //NSMutableArray *serverViews = [[[NSMutableArray alloc] init] retain];
     // Grab all of the values from the plist and create server views
+    NSDictionary *dict = [[[NSDictionary alloc] init] autorelease];
     for (int i = 0; i < [servers count]; i++) {
-        NSDictionary *dict = [[servers objectAtIndex:i] autorelease];
-        NSString *protocol = [dict objectForKey:@"protocol"];
-        NSString *serverName = [dict objectForKey:@"serverName"];
-        NSString *userId = [dict objectForKey:@"userId"];
+        dict = [servers objectAtIndex:i];
         /*
          * This is if we don't use table view
          * Generate the rect, the plist is sorted in the order the user wants the servers to be
          */
         
-        CGRect rect = CGRectMake([[self view] bounds].origin.x, [[self view] bounds].origin.y + ([[self view] bounds].size.height * i),
+        CGRect rect = CGRectMake([[self view] bounds].origin.x, [[self view] bounds].origin.y + (200 * i),
                                  [[self view] bounds].size.width, [[self view] bounds].size.height  / ServerViewHeightRatio);
         
         /*
@@ -89,12 +90,14 @@
         CGRect rect = CGRectMake(0, 0, [[self view] bounds].size.width, [[self view] bounds].size.height / ServerViewHeightRatio);
         NSLog(@"%f %f %f %f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height );
          */
-        CSServerView *serverView = [[CSServerView alloc] initWithFrame:rect protocol:protocol serverName:serverName userId:userId];
-        [serverViews addObject:serverView];
+        CSServerView *serverView = [[[CSServerView alloc] initWithFrame:rect 
+                                                              protocol:[dict objectForKey:@"protocol"] 
+                                                            serverName:[dict objectForKey:@"serverName"]
+                                                                userId:[dict objectForKey:@"userId"]] autorelease];
+        [_serverViews addObject:serverView];
         [[self view] addSubview:serverView];
     }
-    
-    return serverViews;
+
 }
 
 #pragma mark UIViewController Methods

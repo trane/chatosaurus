@@ -20,6 +20,8 @@
     
     _serverViewController = [[CSServerViewController alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     [_window addSubview:[_serverViewController view]];
+    
+    NSLog(@"placeholder");
 }
 
 - (void) applicationWillTerminate:(UIApplication*)application

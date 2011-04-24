@@ -18,12 +18,12 @@
 @implementation CSServerViewController
 
 #pragma mark Constructors
-- (id) initWithStyle:(UITableViewStyle)style
+- (id) initWithFrame:(CGRect)frame
 {
-    self = [super initWithStyle:style];
+    self = [super init];
 	if (self == nil)
 		return self;
-    
+    [[self view] setFrame:frame];
     _serverViews = [self loadServerViews];
     
     return self;
@@ -74,10 +74,10 @@
          * This is if we don't use table view
          * Generate the rect, the plist is sorted in the order the user wants the servers to be
          */
-        /*
+        
         CGRect rect = CGRectMake([[self view] bounds].origin.x, [[self view] bounds].origin.y + ([[self view] bounds].size.height * i),
-                                 [[self view] bounds].size.width, [[self view] bounds].size.height);
-         */
+                                 [[self view] bounds].size.width, [[self view] bounds].size.height  / ServerViewHeightRatio);
+        
         /*
          * For table view, cell based
          * Generate the same sized rect
@@ -85,10 +85,13 @@
          *  section1: The same for all server views, contains base server info
          *  section2: The number of cells in the channel grid
          */
-        CGRect rect = CGRectMake(0, 0, [[self tableView] bounds].size.width, [[self tableView] bounds].size.height / ServerViewHeightRatio);
+        /*
+        CGRect rect = CGRectMake(0, 0, [[self view] bounds].size.width, [[self view] bounds].size.height / ServerViewHeightRatio);
         NSLog(@"%f %f %f %f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height );
+         */
         CSServerView *serverView = [[[CSServerView alloc] initWithFrame:rect protocol:protocol serverName:serverName userId:userId] autorelease];
         [serverViews addObject:serverView];
+        [[self view] addSubview:serverView];
     }
     
     return serverViews;
@@ -97,7 +100,7 @@
 #pragma mark UIViewController Methods
 - (void) viewDidLoad
 {
-    [[self tableView] setBackgroundColor:[UIColor colorWithHue:(float)drand48() saturation:1.0f brightness:1.0f alpha:1.0f]];
+    [[self view] setBackgroundColor:[UIColor colorWithHue:(float)drand48() saturation:1.0f brightness:1.0f alpha:1.0f]];
 }
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
@@ -106,7 +109,7 @@
 - (void) viewDidUnload
 {
 }
-
+/*
 #pragma mark UITableViewDataSource Methods
 - (NSInteger) numberOfSectionsInTableView:(UITableView*)tableView
 {
@@ -139,6 +142,6 @@
     }
     return cell;
 }
-
+*/
 
 @end

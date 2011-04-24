@@ -59,4 +59,9 @@
  */
 @property (nonatomic,retain) CSChannelViewController *channelViewController;
 
+/*!
+ * Sets the server description and the channel grid separate
+ */
+- (void) layoutSections;
+
 @end

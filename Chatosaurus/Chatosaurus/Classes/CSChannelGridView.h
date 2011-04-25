@@ -23,19 +23,23 @@
     NSUInteger _colCount;
     
     CGSize _cellSize;
+    CGSize _viewableSize;
     
     CGFloat _visibleCols;
     CGFloat _visibleRows;
     
     NSMutableArray *_cells;
-
 }
 
+// Data updates delegate
 @property (nonatomic,assign) NSObject<ChannelGridViewNotification> *notify;
+
 @property (nonatomic,assign) CGFloat visibleCols;
 @property (nonatomic,assign) CGFloat visibleRows;
 
-
+/*!
+ * Reloads all cell data
+ */
 - (void) reload;
 
 @end

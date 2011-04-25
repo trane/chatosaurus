@@ -75,30 +75,15 @@
     NSString *serversPList = [[NSBundle mainBundle] pathForResource:@"Servers" ofType:@"plist"];
 	NSArray *servers = [NSArray arrayWithArray:[[NSDictionary dictionaryWithContentsOfFile:serversPList] objectForKey:@"Servers"]];
 
-    //NSMutableArray *serverViews = [[[NSMutableArray alloc] init] retain];
     // Grab all of the values from the plist and create server views
     NSDictionary *dict = [[[NSDictionary alloc] init] autorelease];
     for (int i = 0; i < [servers count]; i++) {
         dict = [servers objectAtIndex:i];
-        /*
-         * This is if we don't use table view
-         * Generate the rect, the plist is sorted in the order the user wants the servers to be
-         */
         
+        // Generate the rect, the plist is sorted in the order the user wants the servers to be
         CGRect rect = CGRectMake([[self view] bounds].origin.x, [[self view] bounds].origin.y + (200 * i),
                                  [[self view] bounds].size.width, [[self view] bounds].size.height  / ServerViewHeightRatio);
         
-        /*
-         * For table view, cell based
-         * Generate the same sized rect
-         * Height is based on two sections:
-         *  section1: The same for all server views, contains base server info
-         *  section2: The number of cells in the channel grid
-         */
-        /*
-        CGRect rect = CGRectMake(0, 0, [[self view] bounds].size.width, [[self view] bounds].size.height / ServerViewHeightRatio);
-        NSLog(@"%f %f %f %f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height );
-         */
         CSServerView *serverView = [[[CSServerView alloc] initWithFrame:rect 
                                                               protocol:[dict objectForKey:@"protocol"] 
                                                             serverName:[dict objectForKey:@"serverName"]
@@ -121,40 +106,6 @@
 - (void) viewDidUnload
 {
 }
-/*
-#pragma mark UITableViewDataSource Methods
-- (NSInteger) numberOfSectionsInTableView:(UITableView*)tableView
-{
-    return 1;
-}
-
-- (NSInteger) tableView:(UITableView*)table numberOfRowsInSection:(NSInteger)section
-{
-    return [_serverViews count];
-}
-
-- (UITableViewCell*) tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
-{
-    // Grab the server corresponding the this row
-    CSServerView *serverView = [_serverViews objectAtIndex:[indexPath row]];
-    
-    // Get the cell, of it exists
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[serverView key]];
-
-    // If there is no cell with the identifier, create it and append the serverView to the cell
-    if (cell == nil) {
-
-        // Initialize a cell
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
-                                       reuseIdentifier:[serverView key]] autorelease];
-        [cell setTag:[indexPath row]];
-        [cell.contentView addSubview:serverView];
-    } else {
-        NSLog(@"ELSE");
-    }
-    return cell;
-}
-*/
 
 #pragma mark CSServerViewControllerDelegate Methods
 - (void) newMessage:(NSString*)message toServer:(NSString*)server channel:(NSString*)channel

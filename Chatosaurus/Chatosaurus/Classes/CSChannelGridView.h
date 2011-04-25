@@ -8,10 +8,10 @@
 
 @class CSChannelGridView;
 
-@protocol ChannelGridViewNotification <NSObject>
-- (NSInteger) channelColumnCount:(CSChannelGridView*)gridView;
-- (NSInteger) channelRowCount:(CSChannelGridView*)gridView;
-- (NSInteger) channelGridView:(CSChannelGridView*)gridView viewCellAtRow:(NSInteger)row column:(NSInteger)col;
+@protocol ChannelGridViewNotification
+- (NSUInteger) channelRowCount:(CSChannelGridView*)gridView;
+- (NSUInteger) channelColumnCount:(CSChannelGridView*)gridView;
+- (NSUInteger) channelGridView:(CSChannelGridView*)gridView viewCellAtRow:(NSInteger)row column:(NSInteger)col;
 @end
 
 @interface CSChannelGridView : UIView 
@@ -19,8 +19,8 @@
     NSObject<ChannelGridViewNotification> *_notify;
     UIScrollView *_scrollView;
     
-    NSInteger _rowCount;
-    NSInteger _colCount;
+    NSUInteger _rowCount;
+    NSUInteger _colCount;
     
     CGSize _cellSize;
     

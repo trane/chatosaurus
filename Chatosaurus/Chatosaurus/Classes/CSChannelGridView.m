@@ -10,7 +10,7 @@
 
 #pragma mark -
 #pragma mark Private Interface
-@interface CSChannelGridView ()
+@interface CSChannelGridView () <UIScrollViewDelegate>
 @end
 
 #pragma mark -
@@ -23,6 +23,14 @@
 	if (self == nil)
 		return nil;
 	
+    // All channels will be horizontally scrollable in this view
+    _scrollView = [[UIScrollView alloc] initWithFrame:frame];
+    [_scrollView setDelegate:self];
+    [_scrollView setBounces:TRUE];
+    [_scrollView setShowsHorizontalScrollIndicator:TRUE];
+    [_scrollView setAlwaysBounceHorizontal:TRUE];
+    [self addSubview:_scrollView];
+    
     return self;
 }
 

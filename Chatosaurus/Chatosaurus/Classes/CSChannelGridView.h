@@ -7,11 +7,12 @@
 //
 
 @class CSChannelGridView;
+@class CSChannelView;
 
 @protocol ChannelGridViewNotification
 - (NSUInteger) channelRowCount:(CSChannelGridView*)gridView;
 - (NSUInteger) channelColumnCount:(CSChannelGridView*)gridView;
-- (NSUInteger) channelGridView:(CSChannelGridView*)gridView viewCellAtRow:(NSInteger)row column:(NSInteger)col;
+- (CSChannelView*) channelGridView:(CSChannelGridView*)gridView viewCellAtRow:(NSInteger)row column:(NSInteger)col;
 @end
 
 @interface CSChannelGridView : UIView 

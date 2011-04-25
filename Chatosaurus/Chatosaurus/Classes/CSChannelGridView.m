@@ -8,6 +8,7 @@
 
 #import "CSChannelGridView.h"
 #import "CSChannelViewCell.h"
+#import "CSChannelView.h"
 
 #pragma mark -
 #pragma mark Private Interface
@@ -123,10 +124,58 @@
     if (cellRow1 > cellRowN)
         cellRow1 = cellRowN;
     
+    // Find cells that are out of visible bounds from the grid
     NSMutableArray *outofboundCells = [NSMutableArray array];
     for (CSChannelViewCell *cell in _cells) {
-        
+        if ([cell col] < cellCol1 || 
+            [cell col] > cellColN ||
+            [cell row] < cellRow1 ||
+            [cell row] > cellRowN) {
+            [outofboundCells addObject:cell];
+        }
     }
+    // Remove the out of bounds cells from the view
+    [outofboundCells makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [_cells removeObjectsInArray:outofboundCells];
+    
+    // Iterate through all visible cells, and if new, create them.
+    for (NSUInteger cellRow = cellRow1; cellRow < cellRowN; cellRow++) {
+        for (NSUInteger cellCol = cellCol1; cellCol < cellColN; cellCol++) {
+            
+            // Check if the cell already has been created
+            BOOL cellExists = FALSE;
+            
+            for (CSChannelViewCell *cell in _cells) {
+                if ([cell row] == cellRow && [cell col] == cellCol) {
+                    cellExists = TRUE;
+                    break;
+                }
+            }
+            
+            // If the cell doesn't exist, create its view
+            if (cellExists == FALSE) {
+                CSChannelView *channelView = [_notify channelGridView:self 
+                                                        viewCellAtRow:cellRow
+                                                               column:cellCol];
+                CSChannelViewCell *cell = [[[CSChannelViewCell alloc] init] autorelease];
+                [cell setRow:cellRow];
+                [cell setCol:cellCol];
+                [cell setChannelView:channelView];
+                [_cells addObject:cell];
+                [_scrollView insertSubview:cell atIndex:0];
+            }
+        }
+    }
+    
+    // Create the proper size for each cell
+    for (CSChannelViewCell *cell in _cells) {
+        CGRect frame = CGRectMake((CGFloat)[cell col] * _cellSize.width,
+                                  (CGFloat)[cell row] * _cellSize.height,
+                                  _cellSize.width,
+                                  _cellSize.height);
+        [cell setFrame:frame];
+    }
+    
 }
 
 @end

@@ -7,7 +7,11 @@
 //
 #import "CSChannelViewController.h"
 
-@interface CSServerView : UIView 
+@protocol CSServerViewControllerDelegate
+- (void) newMessage:(NSString*)message toServer:(NSString*)server channel:(NSString*)channel;
+@end
+
+@interface CSServerView : UIView <CSServerViewControllerDelegate>
 {
     NSString *_key; // jabber_andrew.kuhnhausenatgmail.com
     NSString *_serverName; // google talk

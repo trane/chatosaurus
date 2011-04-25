@@ -9,6 +9,7 @@
 @class CSChannelViewController;
 
 @protocol CSChannelViewControllerDelegate
+- (void) newMessage:(NSString*)message toChannel:(NSString*)channel;
 @end
 
 @interface CSChannelViewController : UIViewController 

@@ -8,6 +8,7 @@
 #define ServerViewHeightRatio 2.5f
 
 #import "CSServerViewController.h"
+#import "CSChannelViewController.h"
 
 #pragma mark -
 #pragma mark Private Interface
@@ -152,4 +153,9 @@
 }
 */
 
+#pragma mark CSServerViewControllerDelegate Methods
+- (void) newMessage:(NSString*)message toServer:(NSString*)server channel:(NSString*)channel
+{
+    
+}
 @end

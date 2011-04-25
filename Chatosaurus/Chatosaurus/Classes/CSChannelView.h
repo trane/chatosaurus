@@ -23,7 +23,18 @@
     
     id _tapTarget;
     SEL _tapAction;
+    id _userInfo;
 }
+
+/*!
+ * Default constructor, if in IRC, this is false
+ */
+- (id) initWithFrame:(CGRect)frame name:(NSString*)name avatar:(UIImage*)avatar;
+
+/*!
+ * The contact name, or channel name depending on protocol
+ */
+@property (nonatomic,copy) NSString *name;
 
 /*!
  * I can't believe I'm saying 'avatar' here, wtf?
@@ -31,9 +42,9 @@
 @property (nonatomic,retain) UIImage *avatar;
 
 /*!
- * The contact name, or channel name depending on protocol
+ * Text is displayed if in IRC mode
  */
-@property (nonatomic,copy) NSString *name;
+@property (nonatomic,retain) NSString *text;
 
 /*!
  * For determining if this view was touched

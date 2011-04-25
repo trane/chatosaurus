@@ -18,28 +18,105 @@
 
 #pragma mark Constructors
 - (id) initWithFrame:(CGRect)frame 
+                name:(NSString*)name
+              avatar:(UIImage*)avatar
 {
     self = [super initWithFrame:frame];
 	if (self == nil)
 		return nil;
 	
+    // Set the main view if there is an avatar
+    if (avatar != nil) {
+        _avatarView = [[UIImageView alloc] initWithImage:avatar];
+        [_avatarView setContentMode:UIViewContentModeScaleAspectFit];
+        [self addSubview:_avatarView];
+    } else {
+        _textView = [[UITextView alloc] init];
+        [_textView setContentMode:UIViewContentModeScaleAspectFit];
+        [self addSubview:_textView];
+    }
+    
+    // Label the view with the name
+    _name = [[UILabel alloc] init];
+    [_name setText:name];
+    [_name setTextAlignment:UITextAlignmentCenter];
+    [_name setTextColor:[UIColor grayColor]];
+    [self addSubview:_name];
+    _chatButton = [[UIButton alloc] init];
+    [_chatButton addTarget:self action:@selector(buttonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_chatButton];
+    
+    
     return self;
 }
 
 - (void) dealloc 
 {
+    [_name release];
+    [_chatButton release];
+    [_avatarView release];
+    [_textView release];
     [super dealloc];
 }
 
 #pragma mark -
 #pragma mark Accessors
+- (NSString*) name
+{
+    return [_name text];
+}
+- (void) setName:(NSString *)name
+{
+    [_name setText:name];
+}
+
+- (UIImage*) avatar
+{
+    return [_avatarView image];
+}
+- (void) setAvatar:(UIImage *)avatar
+{
+    [_avatarView setImage:avatar];
+}
+
+- (NSString*) text
+{
+    return [_textView text];
+}
+- (void) setText:(NSString *)text
+{
+    [_textView setText:text];
+}
+
+@synthesize tapTarget = _tapTarget;
+@synthesize tapAction = _tapAction;
 
 #pragma mark -
 #pragma mark Methods
+- (void) buttonPressed
+{
+    // TODO: Launch chat view
+    if (_tapTarget != nil && _tapAction != NULL)
+        [_tapTarget performSelector:_tapAction withObject:_userInfo];
+}
 
 #pragma mark UIView Methods
 - (void) layoutSubviews
 {
+    CGRect divRect = [self bounds];
+    CGRect mainViewRect = CGRectZero;
+    CGRect nameRect = CGRectZero;
+    CGFloat nameHeight = [self bounds].size.height * 0.9f;
+    
+    CGRectDivide(divRect, &nameRect, &mainViewRect, nameHeight, CGRectMaxYEdge);
+    
+    if (_avatarView != nil)
+        [_avatarView setFrame:CGRectIntegral(mainViewRect)];
+    else
+        [_textView setFrame:CGRectIntegral(mainViewRect)];
+    
+    [_name setFrame:CGRectIntegral(nameRect)];
+    [_chatButton setFrame:divRect];
 }
 
 @end

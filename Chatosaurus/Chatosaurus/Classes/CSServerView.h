@@ -54,6 +54,7 @@
  * eg, jabber, irc, aol, msn
  */
 @property (nonatomic,assign) NSString *protocol;
+
 /*!
  * This holds the views of channels
  */

@@ -96,11 +96,11 @@
     CGRect channelRect = CGRectMake([self bounds].origin.x, infoRect.size.height, 
                                     [self bounds].size.width, [self bounds].size.height - infoRect.size.height);
     UIView *channels = [[UIView alloc] initWithFrame:channelRect];
-    
+    [channels addSubview:[_channelViewController view]];
+
+    // Append both sections
     [self addSubview:info];
     [self addSubview:channels];
-    
-    [self setNeedsDisplay];
 }
 
 #pragma mark UIView Methods

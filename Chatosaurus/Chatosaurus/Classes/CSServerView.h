@@ -7,15 +7,15 @@
 //
 #import "CSChannelViewController.h"
 
-@protocol CSServerViewControllerDelegate
+@protocol CSServerViewDelegate
 - (void) newMessage:(NSString*)message toServer:(NSString*)server channel:(NSString*)channel;
 @end
 
 @interface CSServerView : UIView <CSChannelViewControllerDelegate>
 {
-    NSString *_key; // jabber_andrew.kuhnhausenatgmail.com
+    NSString *_key; // jabber_andrew.kuhnhausen@gmail.com
     NSString *_serverName; // google talk
-    NSString *_userId; // andrew.kuhnhausenATgmail.com
+    NSString *_userId; // andrew.kuhnhausen@gmail.com
     NSString *_protocol; // irc, jabber, msn, aol
     
     CSChannelViewController *_channelViewController;

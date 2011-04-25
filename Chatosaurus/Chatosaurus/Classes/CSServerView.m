@@ -109,7 +109,7 @@
 }
 
 #pragma mark CSChannelViewControllerDelegate Methods
-- (void) newMessage:(NSString *)message channel:(NSString *)channel
+- (void) newMessage:(NSString *)message toChannel:(NSString *)channel
 {
     
 }

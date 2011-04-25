@@ -13,6 +13,9 @@
 
 @interface CSServerView : UIView <CSChannelViewControllerDelegate>
 {
+    NSObject<CSChannelViewControllerDelegate> *_channelDelegate;
+    NSObject<CSServerViewDelegate> *_delegate;
+    
     NSString *_key; // jabber_andrew.kuhnhausen@gmail.com
     NSString *_serverName; // google talk
     NSString *_userId; // andrew.kuhnhausen@gmail.com
@@ -35,6 +38,16 @@
             protocol:(NSString*)protocol
           serverName:(NSString*)serverName
               userId:(NSString*)userId;
+/*!
+ * Talks to the ChannelViewController
+ */
+@property (assign) NSObject<CSChannelViewControllerDelegate> *channelDelegate;
+
+/*!
+ * Self's delegate
+ */
+@property (assign) NSObject<CSServerViewDelegate> *delegate;
+
 /*!
  * Provides the unique id for this server
  * Example: irc_server_nick

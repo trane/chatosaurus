@@ -42,6 +42,9 @@
 
 #pragma mark -
 #pragma mark Accessors
+@synthesize delegate = _delegate;
+@synthesize channelDelegate = _channelDelegate;
+
 @synthesize key = _key;
 @synthesize serverName = _serverName;
 @synthesize userId = _userId; // andrew.kuhnhausenATgmail.com

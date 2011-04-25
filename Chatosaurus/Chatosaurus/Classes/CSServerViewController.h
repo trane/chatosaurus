@@ -15,7 +15,8 @@
 
 @interface CSServerViewController : UIViewController <CSServerViewDelegate>
 {
-    NSObject<CSServerViewControllerDelegate>* _delegate;
+    NSObject<CSServerViewControllerDelegate> *_delegate;
+    NSObject<CSServerViewDelegate> *_viewDelegate;
     
     // All servers will be placed in this view
     UIScrollView *_scrollView;
@@ -25,8 +26,19 @@
     CSMessageCollection *_messageCollection;
 }
 
-@property (assign) NSObject<CSServerViewControllerDelegate>* delegate;
+/*!
+ * Self's delegate
+ */
+@property (assign) NSObject<CSServerViewControllerDelegate> *delegate;
 
+/*!
+ * Talks to the ServerView
+ */
+@property (assign) NSObject<CSServerViewDelegate> *viewDelegate;
+
+/*!
+ * All messages are stored here
+ */
 @property (nonatomic,retain) CSMessageCollection *messageCollection;
 
 /*!

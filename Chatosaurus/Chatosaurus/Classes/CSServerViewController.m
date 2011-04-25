@@ -41,6 +41,8 @@
 - (void) dealloc 
 {
     [self setDelegate:nil];
+    [self setViewDelegate:nil];
+    
     [_serverViews release];
     [super dealloc];
 }
@@ -48,6 +50,7 @@
 #pragma mark -
 #pragma mark Accessors
 @synthesize delegate = _delegate;
+@synthesize viewDelegate = _viewDelegate;
 
 @synthesize messageCollection = _messageCollection;
 - (void) setMessageCollection:(CSMessageCollection *)messageCollection

@@ -7,10 +7,12 @@
 //
 
 #import "CSChannelViewController.h"
+#import "CSChannelGridView.h"
+#import "CSChannelView.h"
 
 #pragma mark -
 #pragma mark Private Interface
-@interface CSChannelViewController ()
+@interface CSChannelViewController () <ChannelGridViewNotification>
 @end
 
 #pragma mark -
@@ -23,6 +25,10 @@
 	if (self == nil)
 		return self;
 	
+    // TODO: Get these by plist
+    _rowCount = 1;
+    _colCount = 4;
+        
     return self;
 }
 
@@ -36,11 +42,23 @@
 #pragma mark -
 #pragma mark Accessors
 @synthesize delegate = _delegate;
+@synthesize viewDelegate = _viewDelegate;
 
 #pragma mark -
 #pragma mark Methods
+- (void) loadChannelList:(NSArray*)channels
+{
+    _channelList = channels;
+    [[self view] setNeedsDisplay];
+}
 
 #pragma mark UIViewController Methods
+- (void) loadView
+{
+    CSChannelGridView *channelView = [[[CSChannelGridView alloc] init] autorelease];
+    [channelView setBackgroundColor:[UIColor greenColor]];
+    [self setView:channelView];
+}
 - (void) viewDidLoad
 {
     [[self view] setBackgroundColor:[UIColor colorWithHue:(float)drand48() saturation:1.0f brightness:1.0f alpha:1.0f]];
@@ -50,4 +68,19 @@
 {
 }
 
+
+#pragma mark ChannelGridViewNotification Methods
+- (NSUInteger) channelRowCount:(CSChannelGridView*)gridView
+{
+    return _rowCount;
+}
+- (NSUInteger) channelColumnCount:(CSChannelGridView*)gridView
+{
+    return _colCount;
+}
+
+- (CSChannelView*) channelGridView:(CSChannelGridView*)gridView viewCellAtRow:(NSInteger)row column:(NSInteger)col
+{
+    return nil;
+}
 @end

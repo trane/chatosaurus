@@ -102,6 +102,7 @@
     CGRect channelRect = CGRectMake([self bounds].origin.x, infoRect.size.height, 
                                     [self bounds].size.width, [self bounds].size.height - infoRect.size.height);
     UIView *channels = [[UIView alloc] initWithFrame:channelRect];
+    [channels setBackgroundColor:[UIColor blueColor]];
     [channels addSubview:[_channelViewController view]];
 
     // Append both sections
@@ -118,5 +119,10 @@
 - (void) newMessage:(NSString *)message toChannel:(NSString *)channel
 {
     
+}
+
+- (void) createChannelsWithArray:(NSArray*)channels
+{
+    [_channelViewController loadChannelList:channels];
 }
 @end

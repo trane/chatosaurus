@@ -89,6 +89,7 @@
                                                             serverName:[dict objectForKey:@"serverName"]
                                                                 userId:[dict objectForKey:@"userId"]] autorelease];
         [_serverViews addObject:serverView];
+        [serverView createChannelsWithArray:[dict objectForKey:@"channels"]];
         [_scrollView addSubview:serverView];
     }
 

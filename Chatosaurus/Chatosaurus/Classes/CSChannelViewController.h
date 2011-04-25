@@ -7,14 +7,23 @@
 //
 
 @class CSChannelViewController;
+#import "CSChannelGridView.h"
 
 @protocol CSChannelViewControllerDelegate
 - (void) newMessage:(NSString*)message toChannel:(NSString*)channel;
+- (void) createChannelsWithArray:(NSArray*)channels;
 @end
 
 @interface CSChannelViewController : UIViewController
 {
     NSObject<CSChannelViewControllerDelegate> *_delegate;
+    NSObject<ChannelGridViewNotification> *_viewDelegate;
+    
+    // Set by Preferences plist
+    NSUInteger _rowCount;
+    NSUInteger _colCount;
+    
+    NSArray *_channelList;
 }
 
 /*!
@@ -22,5 +31,11 @@
  */
 @property (assign) NSObject<CSChannelViewControllerDelegate> *delegate;
 
-@end
+@property (nonatomic,assign) NSObject<ChannelGridViewNotification> *viewDelegate;
 
+/*!
+ * Loads the channels provided
+ */
+- (void) loadChannelList:(NSArray*)channels;
+
+@end

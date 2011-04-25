@@ -17,9 +17,11 @@
 {
     NSObject<CSServerViewControllerDelegate>* _delegate;
     
+    // All servers will be placed in this view
     UIScrollView *_scrollView;
     
     NSMutableArray *_serverViews;
+    
     CSMessageCollection *_messageCollection;
 
 }

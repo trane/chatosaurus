@@ -63,14 +63,23 @@
 }
 
 @synthesize visibleCols = _visibleCols;
+- (void) setVisibleCols:(CGFloat)visibleCols
+{
+    _visibleCols = visibleCols;
+    [self setNeedsLayout];
+}
 
 @synthesize visibleRows = _visibleRows;
-
+- (void) setVisibleRows:(CGFloat)visibleRows
+{
+    _visibleRows = visibleRows;
+    [self setNeedsLayout];
+}
 #pragma mark -
 #pragma mark Methods
 - (void) reload
 {
-    // TODO
+    [self setNeedsLayout];
 }
 
 #pragma mark UIView Methods

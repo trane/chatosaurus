@@ -8,6 +8,25 @@
 
 @interface CSChannelViewCell : UIView 
 {
+    UIView *_channelView;
+    
+    NSUInteger _col;
+    NSUInteger _row;
 }
+
+/*!
+ * Holds the actual channel view for this cell
+ */
+@property (nonatomic,assign) UIView *channelView;
+
+/*!
+ * The row this cell belongs to
+ */
+@property (nonatomic,assign) NSUInteger col;
+
+/*!
+ * The column this cell belongs to
+ */
+@property (nonatomic,assign) NSUInteger row;
 
 @end

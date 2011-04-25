@@ -28,11 +28,26 @@
 
 - (void) dealloc 
 {
+    [_channelView release];
     [super dealloc];
 }
 
 #pragma mark -
 #pragma mark Accessors
+@synthesize col = _col;
+@synthesize row = _row;
+
+@synthesize channelView = _channelView;
+- (void) setChannelView:(UIView *)channelView
+{
+    [_channelView removeFromSuperview];
+    [_channelView autorelease];
+    
+    _channelView = [channelView retain];
+    [self addSubview:_channelView];
+
+    [self setNeedsLayout];
+}
 
 #pragma mark -
 #pragma mark Methods
@@ -40,6 +55,7 @@
 #pragma mark UIView Methods
 - (void) layoutSubviews
 {
+    [_channelView setFrame:[self bounds]];
 }
 
 @end

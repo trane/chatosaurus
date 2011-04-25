@@ -58,7 +58,7 @@
 #pragma mark Methods
 - (void) layoutSections
 {
-    NSString *fontName = @"Geeza Pro";
+    NSString *fontName = @"Arial";
     CGRect infoRect = CGRectMake([self bounds].origin.x, [self bounds].origin.y,
                                  [self bounds].size.width, [self bounds].size.height / 4.0f);
     UIView *info = [[UIView alloc] initWithFrame:infoRect];

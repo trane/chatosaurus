@@ -97,7 +97,7 @@
 #pragma mark UIViewController Methods
 - (void) viewDidLoad
 {
-    [[self view] setBackgroundColor:[UIColor colorWithHue:(float)drand48() saturation:1.0f brightness:1.0f alpha:1.0f]];
+    [[self view] setBackgroundColor:[UIColor whiteColor]];
 }
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {

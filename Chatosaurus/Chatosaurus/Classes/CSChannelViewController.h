@@ -12,12 +12,15 @@
 - (void) newMessage:(NSString*)message toChannel:(NSString*)channel;
 @end
 
-@interface CSChannelViewController : UIViewController 
+@interface CSChannelViewController : UIViewController
 {
-    NSObject<CSChannelViewControllerDelegate>* _delegate;
+    NSObject<CSChannelViewControllerDelegate> *_delegate;
 }
 
-@property (assign) NSObject<CSChannelViewControllerDelegate>* delegate;
+/*!
+ * Self's delegate
+ */
+@property (assign) NSObject<CSChannelViewControllerDelegate> *delegate;
 
 @end
 

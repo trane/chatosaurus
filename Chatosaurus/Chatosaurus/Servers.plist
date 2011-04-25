@@ -5,43 +5,60 @@
 	<key>Servers</key>
 	<array>
 		<dict>
-			<key>status</key>
-			<string>away</string>
 			<key>channels</key>
 			<array>
 				<dict>
-					<key>picture</key>
-					<string>nil</string>
 					<key>name</key>
 					<string>#supersecret</string>
-				</dict>
-				<dict>
 					<key>picture</key>
 					<string>nil</string>
+				</dict>
+				<dict>
 					<key>name</key>
 					<string>#secretroom</string>
+					<key>picture</key>
+					<string>nil</string>
 				</dict>
 			</array>
-			<key>serverName</key>
-			<string>XMission IRC</string>
-			<key>userId</key>
-			<string>trane</string>
-			<key>serverURI</key>
-			<string>irc.xmission.com</string>
 			<key>protocol</key>
 			<string>irc</string>
+			<key>serverName</key>
+			<string>Quakenet</string>
+			<key>serverURI</key>
+			<string>irc.quakenet.com</string>
+			<key>status</key>
+			<string>away</string>
+			<key>userId</key>
+			<string>mrmuggles</string>
 		</dict>
 		<dict>
-			<key>status</key>
-			<string>available</string>
-			<key>serverURI</key>
-			<string>talk.google.com</string>
+			<key>channels</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>#supersecret</string>
+					<key>picture</key>
+					<string>nil</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>#secretroom</string>
+					<key>picture</key>
+					<string>nil</string>
+				</dict>
+			</array>
 			<key>protocol</key>
-			<string>jabber</string>
+			<string>irc</string>
 			<key>serverName</key>
-			<string>Google Talk</string>
+			<string>XMission IRC</string>
+			<key>serverURI</key>
+			<string>irc.xmission.com</string>
+			<key>status</key>
+			<string>away</string>
 			<key>userId</key>
-			<string>andrew.kuhnhausen@gmail.com</string>
+			<string>trane</string>
+		</dict>
+		<dict>
 			<key>channels</key>
 			<array>
 				<dict>
@@ -57,6 +74,16 @@
 					<string>/path/to/photo</string>
 				</dict>
 			</array>
+			<key>protocol</key>
+			<string>jabber</string>
+			<key>serverName</key>
+			<string>Google Talk</string>
+			<key>serverURI</key>
+			<string>talk.google.com</string>
+			<key>status</key>
+			<string>available</string>
+			<key>userId</key>
+			<string>andrew.kuhnhausen@gmail.com</string>
 		</dict>
 	</array>
 </dict>

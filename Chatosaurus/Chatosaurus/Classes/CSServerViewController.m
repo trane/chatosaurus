@@ -25,10 +25,15 @@
 		return self;
     [[self view] setFrame:frame];
     
+    // Servers are vertically scrolling
+    _scrollView = [[UIScrollView alloc] initWithFrame:frame];
+    [_scrollView setBounces:TRUE];
+	[_scrollView setAlwaysBounceVertical:TRUE];
+    
     _serverViews = [[NSMutableArray alloc] init];
     
     [self loadServerViews];
-
+    [[self view] addSubview:_scrollView];
     return self;
 }
 
@@ -95,7 +100,7 @@
                                                             serverName:[dict objectForKey:@"serverName"]
                                                                 userId:[dict objectForKey:@"userId"]] autorelease];
         [_serverViews addObject:serverView];
-        [[self view] addSubview:serverView];
+        [_scrollView addSubview:serverView];
     }
 
 }

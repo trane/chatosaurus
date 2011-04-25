@@ -17,6 +17,8 @@
 {
     NSObject<CSServerViewControllerDelegate>* _delegate;
     
+    UIScrollView *_scrollView;
+    
     NSMutableArray *_serverViews;
     CSMessageCollection *_messageCollection;
 

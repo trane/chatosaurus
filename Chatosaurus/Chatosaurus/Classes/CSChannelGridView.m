@@ -28,14 +28,24 @@
 
 - (void) dealloc 
 {
+    [_notify release];
+    [_scrollView release];
+    
     [super dealloc];
 }
 
 #pragma mark -
 #pragma mark Accessors
+@synthesize notify = _notify;
+@synthesize visibleCols = _visibleCols;
+@synthesize visibleRows = _visibleRows;
 
 #pragma mark -
 #pragma mark Methods
+- (void) reload
+{
+    // TODO
+}
 
 #pragma mark UIView Methods
 - (void) layoutSubviews

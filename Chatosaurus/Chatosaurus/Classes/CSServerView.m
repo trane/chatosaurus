@@ -37,6 +37,9 @@
 
 - (void) dealloc 
 {
+    [self setDelegate:nil];
+    [self setChannelDelegate:nil];
+    
     [super dealloc];
 }
 

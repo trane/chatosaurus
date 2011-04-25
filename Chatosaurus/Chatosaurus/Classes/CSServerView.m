@@ -72,10 +72,19 @@
     [message setTextColor:[UIColor grayColor]];
     [message setText:@"0"];
     
+    // info button, far left hand
+    CGRect infoButtonRect = CGRectMake(
+                                       [self bounds].size.width - [message bounds].size.width, 
+                                       0,
+                                       [message bounds].size.width,
+                                       [message bounds].size.height);
+    UIButton *infoButton = [[UIButton alloc] initWithFrame:infoButtonRect];
+    [infoButton setBackgroundColor:[UIColor blackColor]];
+    
     // long rectangle, from end of message to end of view
     CGRect serverNameRect = CGRectMake([self bounds].origin.x + [message bounds].size.width, 
                                        [self bounds].origin.y,
-                                       [self bounds].size.width - [message bounds].size.width,
+                                       [self bounds].size.width - [message bounds].size.width * 2,
                                        [info bounds].size.height * 0.75f + 0.5f);
     UILabel *serverName = [[UILabel alloc] initWithFrame:serverNameRect];
     [serverName setFont:[UIFont fontWithName:fontName size:16.0]];
@@ -95,6 +104,7 @@
     
     // add the subviews
     [info addSubview:message];
+    [info addSubview:infoButton];
     [info addSubview:serverName];
     [info addSubview:userName];
     

@@ -23,7 +23,6 @@
     NSMutableArray *_serverViews;
     
     CSMessageCollection *_messageCollection;
-
 }
 
 @property (assign) NSObject<CSServerViewControllerDelegate>* delegate;

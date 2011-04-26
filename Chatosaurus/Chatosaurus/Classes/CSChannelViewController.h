@@ -38,4 +38,5 @@
  */
 - (void) loadChannelList:(NSArray*)channels;
 
+- (void) channelTapped:(id)sender;
 @end

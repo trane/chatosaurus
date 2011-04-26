@@ -28,7 +28,7 @@
     // TODO: Get these by plist
     _rowCount = 1;
     _colCount = 4;
-        
+    _channelList = [NSArray array];
     return self;
 }
 
@@ -48,20 +48,25 @@
 #pragma mark Methods
 - (void) loadChannelList:(NSArray*)channels
 {
+    NSLog(@"loadChannelList %i", [channels count]);
     _channelList = channels;
-    [[self view] setNeedsDisplay];
+    [[self view] setNeedsLayout];
 }
 
 #pragma mark UIViewController Methods
 - (void) loadView
 {
     CSChannelGridView *channelView = [[[CSChannelGridView alloc] init] autorelease];
-    [channelView setBackgroundColor:[UIColor greenColor]];
+    [channelView setNotify:self];
+    [channelView setVisibleCols:_colCount];
+    [channelView setVisibleRows:_rowCount];
+    
+    //[channelView setBackgroundColor:[UIColor greenColor]];
     [self setView:channelView];
 }
 - (void) viewDidLoad
 {
-    [[self view] setBackgroundColor:[UIColor colorWithHue:(float)drand48() saturation:1.0f brightness:1.0f alpha:1.0f]];
+    NSLog(@"CSChannelView viewDidLoad");
 }
 
 - (void) viewDidUnload
@@ -76,11 +81,31 @@
 }
 - (NSUInteger) channelColumnCount:(CSChannelGridView*)gridView
 {
-    return _colCount;
+    NSInteger count = [_channelList count];
+    NSInteger f = count / _rowCount +
+    (count % _rowCount == 0 ? 0 : 1);
+    NSLog(@"Column count: %i", f);
+    return f;
 }
 
 - (CSChannelView*) channelGridView:(CSChannelGridView*)gridView viewCellAtRow:(NSInteger)row column:(NSInteger)col
 {
-    return nil;
+    NSInteger channelNum = _rowCount * col + row;
+    NSDictionary *dict = [_channelList objectAtIndex:channelNum];
+    CSChannelView *channelView = [[[CSChannelView alloc] init] autorelease];
+    [channelView setName:[dict objectForKey:@"name"]];
+    [channelView setTapAction:@selector(channelTapped)];
+    [channelView setTapTarget:self];
+    NSString *avatarPathString = [dict objectForKey:@"avatar"];
+    
+//    if (avatarPathString == nil)
+//    [channelView setAvatar:[dict objectForKey:@"photo"]];
+    
+    return channelView;
+}
+
+- (void) channelTapped:(id)sender
+{
+    
 }
 @end

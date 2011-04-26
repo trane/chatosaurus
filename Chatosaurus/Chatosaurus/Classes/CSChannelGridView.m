@@ -38,6 +38,10 @@
     // Set initial values
     _cells = [[NSMutableArray alloc] init];
     _cellSize = CGSizeZero;
+    _workingSize = CGSizeZero;
+
+    _visibleCols = 1.0f;
+    _visibleRows = 1.0f;
     _rowCount = 0;
     _colCount = 0;
     
@@ -79,34 +83,42 @@
 #pragma mark Methods
 - (void) reload
 {
+    _workingSize = CGSizeZero;
     [self setNeedsLayout];
 }
 
 #pragma mark UIView Methods
 - (void) layoutSubviews
 {
-    // Set the size of the cells, based on user preferences (default 4 x 1
-    _cellSize = CGSizeMake([self bounds].size.width / (CGFloat)_visibleCols,
-                           [self bounds].size.height / (CGFloat)_visibleRows);
-    
-    // Grab the counts
-    _colCount = [_notify channelColumnCount:self];
-    _rowCount = [_notify channelRowCount:self];
-    
-    // Set the total view size for the cells
-    CGSize contentSize = CGSizeMake((CGFloat)_colCount * _cellSize.width,
-                                    (CGFloat)_rowCount * _cellSize.height);
-    
-    [_scrollView setContentSize:contentSize];
-    
-    [self scrollViewDidScroll:_scrollView];
+    // Layout sub-views is called when scroll events come, so detect when the view is actually being resized
+	if (CGSizeEqualToSize([self bounds].size, _workingSize) == FALSE)
+	{
+        _workingSize = [self bounds].size;
+            
+        [_scrollView setFrame:CGRectMake(0.0f, 0.0f, _workingSize.width, _workingSize.height)];
+        // Set the size of the cells, based on user preferences (default 4 x 1
+        _cellSize.width = [self bounds].size.width / (CGFloat)_visibleCols;
+        _cellSize.height = [self bounds].size.height / (CGFloat)_visibleRows;
+
+        // Grab the counts
+        _colCount = [_notify channelColumnCount:self];
+        _rowCount = [_notify channelRowCount:self];
+        
+        // Set the total view size for the cells
+        CGSize contentSize = CGSizeMake((CGFloat)_colCount * _cellSize.width,
+                                        (CGFloat)_rowCount * _cellSize.height);
+        
+        [_scrollView setContentSize:contentSize];
+        
+        [self scrollViewDidScroll:_scrollView];
+    }
 }
 
 #pragma mark UIScrollViewDelegate Methods
 - (void) scrollViewDidScroll:(UIScrollView*)scrollView
 {
-    CGRect visibleView = CGRectMake([_scrollView bounds].origin.x, 
-                                    [_scrollView bounds].origin.y,
+    CGRect visibleView = CGRectMake([_scrollView contentOffset].x, 
+                                    [_scrollView contentOffset].y,
                                     [_scrollView bounds].size.width,
                                     [_scrollView bounds].size.height);
     
@@ -157,7 +169,7 @@
             for (CSChannelViewCell *cell in _cells) {
                 if ([cell row] == cellRow && [cell col] == cellCol) {
                     cellExists = TRUE;
-                    break;
+                    //break;
                 }
             }
             
@@ -166,11 +178,13 @@
                 CSChannelView *channelView = [_notify channelGridView:self 
                                                         viewCellAtRow:cellRow
                                                                column:cellCol];
+                NSLog(@"Channel View: %@", [channelView description]);
                 CSChannelViewCell *cell = [[[CSChannelViewCell alloc] init] autorelease];
                 [cell setRow:cellRow];
                 [cell setCol:cellCol];
                 [cell setChannelView:channelView];
                 [_cells addObject:cell];
+                [cell setBackgroundColor:[UIColor whiteColor]];
                 [_scrollView insertSubview:cell atIndex:0];
             }
         }
@@ -184,7 +198,8 @@
                                   _cellSize.height);
         [cell setFrame:frame];
     }
-    
+    NSLog(@"Grid subview count:%i", [[_scrollView subviews] count]);
+
 }
 
 @end

@@ -49,6 +49,19 @@
     
     return self;
 }
+- (id) init
+{
+    self = [super init];
+	if (self == nil)
+		return nil;
+    
+    _name = [[UILabel alloc] init];
+    _chatButton = [[UIButton alloc] init];
+    _avatarView = [[UIImageView alloc] init];
+    _textView = [[UITextView alloc] init];
+
+    return self;
+}
 
 - (void) dealloc 
 {
@@ -88,6 +101,10 @@
     [_textView setText:text];
 }
 
+- (NSString*) description
+{
+    return [[NSString alloc] initWithFormat:@"%@, %@", [_name text], [_textView text]];
+}
 @synthesize tapTarget = _tapTarget;
 @synthesize tapAction = _tapAction;
 
@@ -116,7 +133,11 @@
         [_textView setFrame:CGRectIntegral(mainViewRect)];
     
     [_name setFrame:CGRectIntegral(nameRect)];
+    [_name setFont:[UIFont fontWithName:@"Futura" size:10.0f]];
+
     [_chatButton setFrame:divRect];
+    [self addSubview:_name];
+    [self addSubview:_chatButton];
 }
 
 @end

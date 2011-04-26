@@ -38,6 +38,10 @@
              protocol, serverName, userId];
     _unreadMessageCount = @"100";
     
+    _channelViewController = [[CSChannelViewController alloc] init];
+    [_channelViewController setDelegate:self];
+    [[_channelViewController view] setFrame:[self bounds]];
+
 	//[self layoutSections];
     return self;
 }

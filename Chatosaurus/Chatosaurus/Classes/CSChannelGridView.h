@@ -25,6 +25,7 @@
     
     CGSize _cellSize;
     CGSize _viewableSize;
+    CGSize _workingSize;
     
     CGFloat _visibleCols;
     CGFloat _visibleRows;

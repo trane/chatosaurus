@@ -20,6 +20,7 @@
     NSString *_serverName; // google talk
     NSString *_userId; // andrew.kuhnhausen@gmail.com
     NSString *_protocol; // irc, jabber, msn, aol
+    NSString *_unreadMessageCount;
     
     CSChannelViewController *_channelViewController;
 }
@@ -76,10 +77,5 @@
  * This holds the views of channels
  */
 @property (nonatomic,retain) CSChannelViewController *channelViewController;
-
-/*!
- * Sets the server description and the channel grid separate
- */
-- (void) layoutSections;
 
 @end

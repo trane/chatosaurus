@@ -10,14 +10,14 @@
 				<dict>
 					<key>name</key>
 					<string>#supersecret</string>
-					<key>picture</key>
-					<string>nil</string>
+					<key>avatar</key>
+					<string></string>
 				</dict>
 				<dict>
 					<key>name</key>
 					<string>#secretroom</string>
-					<key>picture</key>
-					<string>nil</string>
+					<key>avatar</key>
+					<string></string>
 				</dict>
 			</array>
 			<key>protocol</key>
@@ -36,15 +36,27 @@
 			<array>
 				<dict>
 					<key>name</key>
+					<string>#fsck</string>
+					<key>avatar</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>#loop</string>
+					<key>avatar</key>
+					<string></string>
+				</dict>
+				<dict>
+					<key>name</key>
 					<string>#supersecret</string>
-					<key>picture</key>
-					<string>nil</string>
+					<key>avatar</key>
+					<string></string>
 				</dict>
 				<dict>
 					<key>name</key>
 					<string>#secretroom</string>
-					<key>picture</key>
-					<string>nil</string>
+					<key>avatar</key>
+					<string></string>
 				</dict>
 			</array>
 			<key>protocol</key>
@@ -64,14 +76,14 @@
 				<dict>
 					<key>name</key>
 					<string>landogbland@gmail.com</string>
-					<key>picture</key>
-					<string>nil</string>
+					<key>avatar</key>
+					<string></string>
 				</dict>
 				<dict>
 					<key>name</key>
 					<string>colton.myers@gmail.com</string>
-					<key>picture</key>
-					<string>/path/to/photo</string>
+					<key>avatar</key>
+					<string>/path/to/avatar</string>
 				</dict>
 			</array>
 			<key>protocol</key>

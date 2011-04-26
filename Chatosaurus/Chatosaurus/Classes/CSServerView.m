@@ -199,6 +199,8 @@
      */
     UIView *channelGridView = [[UIView alloc] initWithFrame:channelGridRect];
     [channelGridView setBackgroundColor:[UIColor redColor]];
+    [channelGridView addSubview:[_channelViewController view]];
+    [[_channelViewController view] setNeedsLayout];
     
     [self addSubview:serverInfo];
     [self addSubview:channelGridView];

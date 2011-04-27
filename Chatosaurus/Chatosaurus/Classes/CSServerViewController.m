@@ -78,12 +78,14 @@
     // Grab all of the values from the plist and create server views
     for (int i = 0; i < [servers count]; i++) {
         NSDictionary *dict = [servers objectAtIndex:i];
-        
+        CGSize serverSize = CGSizeZero;
+        serverSize.height = [[self view] bounds].size.height / [servers count];
+        serverSize.width = [[self view] bounds].size.width;
         // Generate the rect, the plist is sorted in the order the user wants the servers to be
         CGRect rect = CGRectMake([[self view] bounds].origin.x, 
-                                 [[self view] bounds].origin.y + (150 * i),
+                                 [[self view] bounds].origin.y + serverSize.height * i,
                                  [[self view] bounds].size.width, 
-                                 [[self view] bounds].size.height * 0.322f);
+                                 serverSize.height);
         
         CSServerView *serverView = [[[CSServerView alloc] initWithFrame:rect 
                                                               protocol:[dict objectForKey:@"protocol"] 

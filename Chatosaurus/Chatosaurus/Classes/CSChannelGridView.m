@@ -9,6 +9,7 @@
 #import "CSChannelGridView.h"
 #import "CSChannelViewCell.h"
 #import "CSChannelView.h"
+#define CSChannelViewCellMargin 5.0f
 
 #pragma mark -
 #pragma mark Private Interface
@@ -44,7 +45,7 @@
     _visibleRows = 1.0f;
     _rowCount = 0;
     _colCount = 0;
-    
+
     return self;
 }
 
@@ -100,6 +101,7 @@
         // Set the size of the cells, based on user preferences (default 4 x 1
         _cellSize.width = [self bounds].size.width / (CGFloat)_visibleCols;
         _cellSize.height = [self bounds].size.height / (CGFloat)_visibleRows;
+        NSLog(@"cellSize: %f %f", _cellSize.width, _cellSize.height);
 
         // Grab the counts
         _colCount = [_notify channelColumnCount:self];
@@ -120,6 +122,7 @@
 #pragma mark UIScrollViewDelegate Methods
 - (void) scrollViewDidScroll:(UIScrollView*)scrollView
 {
+    NSLog(@"Scrolling");
     // Calculate what is currently in view
     CGRect visibleView = CGRectMake([_scrollView contentOffset].x, 
                                     [_scrollView contentOffset].y,
@@ -174,7 +177,6 @@
             for (CSChannelViewCell *cell in _cells) {
                 if ([cell row] == cellRow && [cell col] == cellCol) {
                     cellExists = TRUE;
-                    break;
                 }
             }
             
@@ -188,7 +190,6 @@
                 [cell setCol:cellCol];
                 [cell setChannelView:channelView];
                 [_cells addObject:cell];
-                [cell setBackgroundColor:[UIColor whiteColor]];
                 [_scrollView insertSubview:cell atIndex:0];
             }
         }
@@ -200,7 +201,8 @@
                                   (CGFloat)[cell row] * _cellSize.height,
                                   _cellSize.width,
                                   _cellSize.height);
-        [cell setFrame:frame];
+        
+        [cell setFrame:CGRectInset(frame, CSChannelViewCellMargin, CSChannelViewCellMargin)];
     }
 
 }

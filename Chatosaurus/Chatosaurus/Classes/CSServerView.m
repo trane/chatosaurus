@@ -195,19 +195,21 @@
     UILabel *userIdView = [[UILabel alloc] initWithFrame:CGRectInset(userIdRect, 0, 0)];
     [userIdView setFont:[UIFont fontWithName:fontName size:9.0f]];
     [userIdView setText:_userId];
-//    [userIdView setBackgroundColor:[UIColor blueColor]];
+    [userIdView setBackgroundColor:[UIColor blueColor]];
     [serverInfo addSubview:userIdView];
     
     /*
      * Start dividing the channel grid view
      */
-    UIView *channelGridView = [[[UIView alloc] initWithFrame:channelGridRect] autorelease];
-    [channelGridView setBackgroundColor:[UIColor grayColor]];
-    [channelGridView addSubview:[_channelViewController view]];
+    CSChannelGridView *channelGridView = [[[CSChannelGridView alloc] initWithFrame:channelGridRect] autorelease];
+    [channelGridView setBackgroundColor:[UIColor yellowColor]];
+    [[_channelViewController view] setFrame:channelGridRect];
+    [[_channelViewController view] addSubview:channelGridView];
     [[_channelViewController view] setNeedsLayout];
+
     
     [self addSubview:serverInfo];
-    [self addSubview:channelGridView];
+    [self addSubview:[_channelViewController view]];
 }
 
 

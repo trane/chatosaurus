@@ -43,7 +43,10 @@
 #pragma mark Accessors
 @synthesize delegate = _delegate;
 @synthesize viewDelegate = _viewDelegate;
-
+- (CSChannelGridView*) channelView
+{
+	return (CSChannelGridView*)[self view];
+}
 #pragma mark -
 #pragma mark Methods
 - (void) loadChannelList:(NSArray*)channels
@@ -57,10 +60,10 @@
 - (void) loadView
 {
     CSChannelGridView *channelView = [[[CSChannelGridView alloc] init] autorelease];
+
     [channelView setNotify:self];
     [channelView setVisibleCols:_colCount];
     [channelView setVisibleRows:_rowCount];
-    
     [self setView:channelView];
 }
 - (void) viewDidLoad
@@ -72,7 +75,6 @@
 {
 }
 
-
 #pragma mark ChannelGridViewNotification Methods
 - (NSUInteger) channelRowCount:(CSChannelGridView*)gridView
 {
@@ -81,17 +83,13 @@
 - (NSUInteger) channelColumnCount:(CSChannelGridView*)gridView
 {
     NSInteger count = [_channelList count];
-    NSInteger f = count / _rowCount +
-    (count % _rowCount == 0 ? 0 : 1);
-    NSLog(@"Column count: %i", f);
-    return f;
+    return count / _rowCount + (count % _rowCount == 0 ? 0 : 1);
 }
 
 - (CSChannelView*) channelGridView:(CSChannelGridView*)gridView viewCellAtRow:(NSInteger)row column:(NSInteger)col
 {
     //NSArray *temp = [NSArray arrayWithArray:_channelList];
     NSInteger channelNum = _rowCount * col + row;
-    NSLog(@"channelNum: %i, count: %i", channelNum, [_channelList count]);
     if (channelNum >= [_channelList count])
         return nil;
     NSDictionary *dict = [_channelList objectAtIndex:channelNum];

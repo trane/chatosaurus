@@ -8,16 +8,16 @@
 			<key>channels</key>
 			<array>
 				<dict>
+					<key>avatar</key>
+					<string></string>
 					<key>name</key>
 					<string>#supersecret</string>
-					<key>avatar</key>
-					<string></string>
 				</dict>
 				<dict>
-					<key>name</key>
-					<string>#secretroom</string>
 					<key>avatar</key>
 					<string></string>
+					<key>name</key>
+					<string>#secretroom</string>
 				</dict>
 			</array>
 			<key>protocol</key>
@@ -35,28 +35,46 @@
 			<key>channels</key>
 			<array>
 				<dict>
+					<key>avatar</key>
+					<string></string>
+					<key>name</key>
+					<string>#yomama</string>
+				</dict>
+				<dict>
+					<key>avatar</key>
+					<string></string>
+					<key>name</key>
+					<string>#luckylizard</string>
+				</dict>
+				<dict>
+					<key>avatar</key>
+					<string></string>
+					<key>name</key>
+					<string>#discoduck</string>
+				</dict>
+				<dict>
+					<key>avatar</key>
+					<string></string>
 					<key>name</key>
 					<string>#fsck</string>
-					<key>avatar</key>
-					<string></string>
 				</dict>
 				<dict>
+					<key>avatar</key>
+					<string></string>
 					<key>name</key>
 					<string>#loop</string>
-					<key>avatar</key>
-					<string></string>
 				</dict>
 				<dict>
+					<key>avatar</key>
+					<string></string>
 					<key>name</key>
 					<string>#supersecret</string>
-					<key>avatar</key>
-					<string></string>
 				</dict>
 				<dict>
-					<key>name</key>
-					<string>#secretroom</string>
 					<key>avatar</key>
 					<string></string>
+					<key>name</key>
+					<string>#secretroom</string>
 				</dict>
 			</array>
 			<key>protocol</key>
@@ -74,16 +92,16 @@
 			<key>channels</key>
 			<array>
 				<dict>
-					<key>name</key>
-					<string>landogbland@gmail.com</string>
 					<key>avatar</key>
 					<string></string>
+					<key>name</key>
+					<string>landogbland@gmail.com</string>
 				</dict>
 				<dict>
-					<key>name</key>
-					<string>colton.myers@gmail.com</string>
 					<key>avatar</key>
 					<string>/path/to/avatar</string>
+					<key>name</key>
+					<string>colton.myers@gmail.com</string>
 				</dict>
 			</array>
 			<key>protocol</key>

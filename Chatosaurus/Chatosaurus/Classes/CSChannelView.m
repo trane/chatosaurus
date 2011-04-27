@@ -7,7 +7,6 @@
 //
 
 #import "CSChannelView.h"
-
 #pragma mark -
 #pragma mark Private Interface
 @interface CSChannelView ()
@@ -121,23 +120,42 @@
 - (void) layoutSubviews
 {
     CGRect divRect = [self bounds];
+    [self setBackgroundColor:[UIColor blackColor]];
     CGRect mainViewRect = CGRectZero;
     CGRect nameRect = CGRectZero;
-    CGFloat nameHeight = [self bounds].size.height * 0.9f;
+    CGFloat nameHeight = [self bounds].size.height - 12.0f;
     
     CGRectDivide(divRect, &nameRect, &mainViewRect, nameHeight, CGRectMaxYEdge);
     
-    if (_avatarView != nil)
-        [_avatarView setFrame:CGRectIntegral(mainViewRect)];
-    else
-        [_textView setFrame:CGRectIntegral(mainViewRect)];
+    [_textView setFrame:CGRectIntegral(mainViewRect)];
+    [_textView setBackgroundColor:[UIColor whiteColor]];
     
     [_name setFrame:CGRectIntegral(nameRect)];
+    [_name setBackgroundColor:[UIColor whiteColor]];
     [_name setFont:[UIFont fontWithName:@"Futura" size:10.0f]];
 
-    [_chatButton setFrame:divRect];
+    [_chatButton setFrame:CGRectIntegral(divRect)];
+    [_chatButton setBackgroundColor:[UIColor clearColor]];
+    [self addSubview:_textView];
     [self addSubview:_name];
-    [self addSubview:_chatButton];
+    [self addSubview:_chatButton];    
 }
 
+//- (void) drawRect:(CGRect)rect
+//{
+//    CGRect view = [self bounds];
+//    
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    CGContextSetLineWidth(context, 3.0);
+//    CGContextSetStrokeColorWithColor(context, [[UIColor blueColor] CGColor]);
+//    
+//    CGContextMoveToPoint(context, view.origin.x, view.origin.y);
+//    CGContextAddLineToPoint(context, view.origin.x, view.size.height);
+//    CGContextAddLineToPoint(context, view.size.width, view.size.height);
+//    CGContextAddLineToPoint(context, view.size.width, view.origin.y);
+//    CGContextAddLineToPoint(context, view.origin.x, view.origin.y);
+//    
+//    CGContextFillPath(context);
+//
+//}
 @end

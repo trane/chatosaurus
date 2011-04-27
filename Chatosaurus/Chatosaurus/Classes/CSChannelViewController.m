@@ -28,14 +28,14 @@
     // TODO: Get these by plist
     _rowCount = 1;
     _colCount = 4;
-    _channelList = [NSArray array];
+
     return self;
 }
 
 - (void) dealloc 
 {
     [self setDelegate:nil];
-    
+    [_channelList release];
     [super dealloc];
 }
 
@@ -61,7 +61,6 @@
     [channelView setVisibleCols:_colCount];
     [channelView setVisibleRows:_rowCount];
     
-    //[channelView setBackgroundColor:[UIColor greenColor]];
     [self setView:channelView];
 }
 - (void) viewDidLoad
@@ -90,7 +89,11 @@
 
 - (CSChannelView*) channelGridView:(CSChannelGridView*)gridView viewCellAtRow:(NSInteger)row column:(NSInteger)col
 {
+    //NSArray *temp = [NSArray arrayWithArray:_channelList];
     NSInteger channelNum = _rowCount * col + row;
+    NSLog(@"channelNum: %i, count: %i", channelNum, [_channelList count]);
+    if (channelNum >= [_channelList count])
+        return nil;
     NSDictionary *dict = [_channelList objectAtIndex:channelNum];
     CSChannelView *channelView = [[[CSChannelView alloc] init] autorelease];
     [channelView setName:[dict objectForKey:@"name"]];

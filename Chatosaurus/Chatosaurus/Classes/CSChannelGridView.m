@@ -104,9 +104,10 @@
         _colCount = [_notify channelColumnCount:self];
         _rowCount = [_notify channelRowCount:self];
         
+        CGSize contentSize = CGSizeZero;
         // Set the total view size for the cells
-        CGSize contentSize = CGSizeMake((CGFloat)_colCount * _cellSize.width,
-                                        (CGFloat)_rowCount * _cellSize.height);
+        contentSize.width = (CGFloat)_colCount * _cellSize.width;
+        contentSize.height = (CGFloat)_rowCount * _cellSize.height;
         
         [_scrollView setContentSize:contentSize];
         
@@ -192,11 +193,16 @@
     
     // Create the proper size for each cell
     for (CSChannelViewCell *cell in _cells) {
-        CGRect frame = CGRectMake((CGFloat)[cell col] * _cellSize.width,
-                                  (CGFloat)[cell row] * _cellSize.height,
-                                  _cellSize.width,
-                                  _cellSize.height);
-        [cell setFrame:frame];
+//        CGRect frame = CGRectMake((CGFloat)[cell col] * _cellSize.width,
+//                                  (CGFloat)[cell row] * _cellSize.height,
+//                                  _cellSize.width,
+//                                  _cellSize.height);
+//        [cell setFrame:frame];
+        CGRect cellFrame = CGRectZero;
+		cellFrame.size = _cellSize;
+		cellFrame.origin.x = (CGFloat)[cell col] * _cellSize.width;
+		cellFrame.origin.y = (CGFloat)[cell row] * _cellSize.height;
+		[cell setFrame:cellFrame];
     }
     NSLog(@"Grid subview count:%i", [[_scrollView subviews] count]);
 

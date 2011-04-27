@@ -76,21 +76,24 @@
 	NSArray *servers = [NSArray arrayWithArray:[[NSDictionary dictionaryWithContentsOfFile:serversPList] objectForKey:@"Servers"]];
 
     // Grab all of the values from the plist and create server views
-    NSDictionary *dict = [[[NSDictionary alloc] init] autorelease];
     for (int i = 0; i < [servers count]; i++) {
-        dict = [servers objectAtIndex:i];
+        NSDictionary *dict = [servers objectAtIndex:i];
         
         // Generate the rect, the plist is sorted in the order the user wants the servers to be
-        CGRect rect = CGRectMake([[self view] bounds].origin.x, [[self view] bounds].origin.y + (150 * i),
-                                 [[self view] bounds].size.width, [[self view] bounds].size.height * 0.322f);
-        /// ServerViewHeightRatio);
+        CGRect rect = CGRectMake([[self view] bounds].origin.x, 
+                                 [[self view] bounds].origin.y + (150 * i),
+                                 [[self view] bounds].size.width, 
+                                 [[self view] bounds].size.height * 0.322f);
         
         CSServerView *serverView = [[[CSServerView alloc] initWithFrame:rect 
                                                               protocol:[dict objectForKey:@"protocol"] 
                                                             serverName:[dict objectForKey:@"serverName"]
                                                                 userId:[dict objectForKey:@"userId"]] autorelease];
         [_serverViews addObject:serverView];
-        [serverView createChannelsWithArray:[dict objectForKey:@"channels"]];
+
+        // Create the channels array, make sure it is retained.
+        NSArray *channels = [[NSArray arrayWithArray:[dict objectForKey:@"channels"]] retain];
+        [serverView createChannelsWithArray:channels];
         [_scrollView addSubview:serverView];
     }
 

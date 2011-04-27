@@ -201,8 +201,8 @@
     /*
      * Start dividing the channel grid view
      */
-    UIView *channelGridView = [[UIView alloc] initWithFrame:channelGridRect];
-    [channelGridView setBackgroundColor:[UIColor redColor]];
+    UIView *channelGridView = [[[UIView alloc] initWithFrame:channelGridRect] autorelease];
+    [channelGridView setBackgroundColor:[UIColor grayColor]];
     [channelGridView addSubview:[_channelViewController view]];
     [[_channelViewController view] setNeedsLayout];
     
@@ -220,6 +220,7 @@
 
 - (void) createChannelsWithArray:(NSArray*)channels
 {
+    NSLog(@"Creating channels");
     [_channelViewController loadChannelList:channels];
 }
 @end

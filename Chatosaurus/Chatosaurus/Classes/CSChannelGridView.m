@@ -90,9 +90,10 @@
 #pragma mark UIView Methods
 - (void) layoutSubviews
 {
-    // Layout sub-views is called when scroll events come, so detect when the view is actually being resized
+    // Only call this when changing the viewing area
 	if (CGSizeEqualToSize([self bounds].size, _workingSize) == FALSE)
 	{
+        // this was set to CGRectZero
         _workingSize = [self bounds].size;
             
         [_scrollView setFrame:CGRectMake(0.0f, 0.0f, _workingSize.width, _workingSize.height)];
@@ -106,8 +107,9 @@
         
         CGSize contentSize = CGSizeZero;
         // Set the total view size for the cells
-        contentSize.width = (CGFloat)_colCount * _cellSize.width;
-        contentSize.height = (CGFloat)_rowCount * _cellSize.height;
+        contentSize = CGSizeMake((CGFloat)_colCount * _cellSize.width, 
+                                 (CGFloat)_rowCount * _cellSize.height);
+
         
         [_scrollView setContentSize:contentSize];
         
@@ -118,6 +120,7 @@
 #pragma mark UIScrollViewDelegate Methods
 - (void) scrollViewDidScroll:(UIScrollView*)scrollView
 {
+    // Calculate what is currently in view
     CGRect visibleView = CGRectMake([_scrollView contentOffset].x, 
                                     [_scrollView contentOffset].y,
                                     [_scrollView bounds].size.width,
@@ -156,6 +159,7 @@
             [outofboundCells addObject:cell];
         }
     }
+    
     // Remove the out of bounds cells from the view
     [outofboundCells makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [_cells removeObjectsInArray:outofboundCells];
@@ -170,7 +174,7 @@
             for (CSChannelViewCell *cell in _cells) {
                 if ([cell row] == cellRow && [cell col] == cellCol) {
                     cellExists = TRUE;
-                    //break;
+                    break;
                 }
             }
             
@@ -179,7 +183,6 @@
                 CSChannelView *channelView = [_notify channelGridView:self 
                                                         viewCellAtRow:cellRow
                                                                column:cellCol];
-                NSLog(@"Channel View: %@", [channelView description]);
                 CSChannelViewCell *cell = [[[CSChannelViewCell alloc] init] autorelease];
                 [cell setRow:cellRow];
                 [cell setCol:cellCol];
@@ -193,18 +196,12 @@
     
     // Create the proper size for each cell
     for (CSChannelViewCell *cell in _cells) {
-//        CGRect frame = CGRectMake((CGFloat)[cell col] * _cellSize.width,
-//                                  (CGFloat)[cell row] * _cellSize.height,
-//                                  _cellSize.width,
-//                                  _cellSize.height);
-//        [cell setFrame:frame];
-        CGRect cellFrame = CGRectZero;
-		cellFrame.size = _cellSize;
-		cellFrame.origin.x = (CGFloat)[cell col] * _cellSize.width;
-		cellFrame.origin.y = (CGFloat)[cell row] * _cellSize.height;
-		[cell setFrame:cellFrame];
+        CGRect frame = CGRectMake((CGFloat)[cell col] * _cellSize.width,
+                                  (CGFloat)[cell row] * _cellSize.height,
+                                  _cellSize.width,
+                                  _cellSize.height);
+        [cell setFrame:frame];
     }
-    NSLog(@"Grid subview count:%i", [[_scrollView subviews] count]);
 
 }
 

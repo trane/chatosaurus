@@ -8,9 +8,9 @@
 
 #import "CSServerView.h"
 
-#define CSServerViewMargin 2.0f
+#define CSServerViewMargin 5.0f
 #define CSServerViewRowCount 2
-#define CSServerViewInfoViewPercent 0.5f
+#define CSServerViewInfoViewPercent 0.4f
 #define CSServerViewServerNamePercent 0.75f
 
 #pragma mark -
@@ -185,16 +185,18 @@
     
     // Server name view
     CGRectDivide(serverInfoRect, &serverNameRect, &serverInfoRect, serverInfoRect.size.height * CSServerViewServerNamePercent, CGRectMinYEdge);
-    
-    UILabel *serverNameView = [[UILabel alloc] initWithFrame:CGRectIntegral(CGRectInset(serverNameRect, 10.0f, 0))];
-    [serverNameView setFont:[UIFont fontWithName:fontName size:20.0f]];
+    serverNameRect = CGRectIntegral(serverNameRect);
+    UILabel *serverNameView = [[UILabel alloc] initWithFrame:serverNameRect];//CGRectIntegral(CGRectInset(serverNameRect, 10.0f, 0))];
+    [serverNameView setFont:[UIFont fontWithName:fontName size:16.0f]];
+    [serverNameView setTextColor:[UIColor grayColor]];
     [serverNameView setText:_serverName];
 //    [serverNameView setBackgroundColor:[UIColor yellowColor]];
     [serverInfo addSubview:serverNameView];
     
     // User id(name)
     CGRectDivide(serverInfoRect, &userIdRect, &serverInfoRect, serverInfoRect.size.height, CGRectMaxYEdge);
-    UILabel *userIdView = [[UILabel alloc] initWithFrame:CGRectIntegral(CGRectInset(userIdRect, 10.0f, 0))];
+    userIdRect = CGRectIntegral(userIdRect);
+    UILabel *userIdView = [[UILabel alloc] initWithFrame:userIdRect];//CGRectIntegral(CGRectInset(userIdRect, 10.0f, 0))];
     [userIdView setFont:[UIFont fontWithName:fontName size:10.0f]];
     [userIdView setTextColor:[UIColor grayColor]];
     [userIdView setText:_userId];
@@ -203,15 +205,13 @@
     /*
      * Start dividing the channel grid view
      */
-    channelGridRect = CGRectInset(channelGridRect, 1.0f, 1.0f);
-    //channelGridRect = CGRectIntegral(channelGridRect);
+    channelGridRect = CGRectInset(channelGridRect, 0.0f, 1.0f);
+    channelGridRect = CGRectIntegral(channelGridRect);
     CSChannelGridView *channelGridView = [[[CSChannelGridView alloc] initWithFrame:channelGridRect] autorelease];
     [[_channelViewController view] setBackgroundColor:[UIColor grayColor]];
     [[_channelViewController view] setFrame:channelGridRect];
     [[_channelViewController view] addSubview:channelGridView];
     [[_channelViewController view] setNeedsLayout];
-
-    
     [self addSubview:serverInfo];
     [self addSubview:[_channelViewController view]];
 }

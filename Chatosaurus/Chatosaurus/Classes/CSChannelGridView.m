@@ -32,7 +32,7 @@
 
     // Make sure it only scrolls horizontally, and has a bounce effect
     [_scrollView setBounces:TRUE];
-    [_scrollView setShowsHorizontalScrollIndicator:TRUE];
+    [_scrollView setShowsHorizontalScrollIndicator:FALSE];
     [_scrollView setAlwaysBounceHorizontal:TRUE];
     [self addSubview:_scrollView];
     
@@ -101,7 +101,6 @@
         // Set the size of the cells, based on user preferences (default 4 x 1
         _cellSize.width = [self bounds].size.width / (CGFloat)_visibleCols;
         _cellSize.height = [self bounds].size.height / (CGFloat)_visibleRows;
-        NSLog(@"cellSize: %f %f", _cellSize.width, _cellSize.height);
 
         // Grab the counts
         _colCount = [_notify channelColumnCount:self];
@@ -122,7 +121,6 @@
 #pragma mark UIScrollViewDelegate Methods
 - (void) scrollViewDidScroll:(UIScrollView*)scrollView
 {
-    NSLog(@"Scrolling");
     // Calculate what is currently in view
     CGRect visibleView = CGRectMake([_scrollView contentOffset].x, 
                                     [_scrollView contentOffset].y,
@@ -201,7 +199,7 @@
                                   (CGFloat)[cell row] * _cellSize.height,
                                   _cellSize.width,
                                   _cellSize.height);
-        frame = CGRectInset(frame, CSChannelViewCellMargin, CSChannelViewCellMargin);
+        //frame = CGRectInset(frame, CSChannelViewCellMargin, CSChannelViewCellMargin);
         frame = CGRectIntegral(frame);
         [cell setFrame:frame];
     }

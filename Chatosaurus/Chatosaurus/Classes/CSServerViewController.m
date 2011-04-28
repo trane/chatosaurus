@@ -74,18 +74,19 @@
 {
     NSString *serversPList = [[NSBundle mainBundle] pathForResource:@"Servers" ofType:@"plist"];
 	NSArray *servers = [NSArray arrayWithArray:[[NSDictionary dictionaryWithContentsOfFile:serversPList] objectForKey:@"Servers"]];
-
+    int rows = 1;
+    int cols = 4;
     // Grab all of the values from the plist and create server views
     for (int i = 0; i < [servers count]; i++) {
         NSDictionary *dict = [servers objectAtIndex:i];
         CGSize serverSize = CGSizeZero;
-        serverSize.height = [[self view] bounds].size.height / [servers count];
+        serverSize.height = 50.0f + 100.0f*rows;
         serverSize.width = [[self view] bounds].size.width;
         // Generate the rect, the plist is sorted in the order the user wants the servers to be
         CGRect rect = CGRectMake([[self view] bounds].origin.x, 
-                                 [[self view] bounds].origin.y + serverSize.height * i + 20.0f,
+                                 [[self view] bounds].origin.y + serverSize.height * i,
                                  [[self view] bounds].size.width, 
-                                 serverSize.height);
+                                 serverSize.height - 10.0f);
         rect = CGRectIntegral(rect);
         CSServerView *serverView = [[[CSServerView alloc] initWithFrame:rect 
                                                               protocol:[dict objectForKey:@"protocol"] 

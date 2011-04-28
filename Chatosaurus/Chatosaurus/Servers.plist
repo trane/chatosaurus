@@ -11,6 +11,63 @@
 					<key>avatar</key>
 					<string></string>
 					<key>name</key>
+					<string>#yomama</string>
+				</dict>
+				<dict>
+					<key>avatar</key>
+					<string></string>
+					<key>name</key>
+					<string>#luckylizard</string>
+				</dict>
+				<dict>
+					<key>avatar</key>
+					<string></string>
+					<key>name</key>
+					<string>#discoduck</string>
+				</dict>
+				<dict>
+					<key>avatar</key>
+					<string></string>
+					<key>name</key>
+					<string>#fsck</string>
+				</dict>
+				<dict>
+					<key>avatar</key>
+					<string></string>
+					<key>name</key>
+					<string>#loop</string>
+				</dict>
+				<dict>
+					<key>avatar</key>
+					<string></string>
+					<key>name</key>
+					<string>#supersecret</string>
+				</dict>
+				<dict>
+					<key>avatar</key>
+					<string></string>
+					<key>name</key>
+					<string>#secretroom</string>
+				</dict>
+			</array>
+			<key>protocol</key>
+			<string>irc</string>
+			<key>serverName</key>
+			<string>XMission IRC</string>
+			<key>serverURI</key>
+			<string>irc.xmission.com</string>
+			<key>status</key>
+			<string>away</string>
+			<key>userId</key>
+			<string>trane</string>
+		</dict>
+		<dict>
+			<key>channels</key>
+			<array>
+				<dict>
+					<key>avatar</key>
+					<string></string>
+					<key>name</key>
 					<string>#supersecret</string>
 				</dict>
 				<dict>

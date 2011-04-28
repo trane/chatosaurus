@@ -120,42 +120,44 @@
 - (void) layoutSubviews
 {
     CGRect divRect = [self bounds];
-    [self setBackgroundColor:[UIColor blackColor]];
+    //divRect = CGRectIntegral(divRect);
+    //divRect = CGRectInset(divRect, 1.0f, 1.0f);
     CGRect mainViewRect = CGRectZero;
     CGRect nameRect = CGRectZero;
-    CGFloat nameHeight = [self bounds].size.height - 12.0f;
+    CGFloat nameHeight = 12.0f;
     
     CGRectDivide(divRect, &nameRect, &mainViewRect, nameHeight, CGRectMaxYEdge);
     
-    [_textView setFrame:CGRectIntegral(mainViewRect)];
-    [_textView setBackgroundColor:[UIColor whiteColor]];
+//    [_textView setFrame:CGRectIntegral(mainViewRect)];
+//    [_textView setBackgroundColor:[UIColor whiteColor]];
     
     [_name setFrame:CGRectIntegral(nameRect)];
+    [_name setTextColor:[UIColor blackColor]];
     [_name setBackgroundColor:[UIColor whiteColor]];
     [_name setFont:[UIFont fontWithName:@"Futura" size:10.0f]];
 
-    [_chatButton setFrame:CGRectIntegral(divRect)];
-    [_chatButton setBackgroundColor:[UIColor clearColor]];
-    [self addSubview:_textView];
+    [_chatButton setFrame:CGRectIntegral(mainViewRect)];
+    [_chatButton setBackgroundColor:[UIColor whiteColor]];
+//    [self addSubview:_textView];
     [self addSubview:_name];
     [self addSubview:_chatButton];    
 }
 
-//- (void) drawRect:(CGRect)rect
-//{
-//    CGRect view = [self bounds];
-//    
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextSetLineWidth(context, 3.0);
-//    CGContextSetStrokeColorWithColor(context, [[UIColor blueColor] CGColor]);
-//    
-//    CGContextMoveToPoint(context, view.origin.x, view.origin.y);
-//    CGContextAddLineToPoint(context, view.origin.x, view.size.height);
-//    CGContextAddLineToPoint(context, view.size.width, view.size.height);
-//    CGContextAddLineToPoint(context, view.size.width, view.origin.y);
-//    CGContextAddLineToPoint(context, view.origin.x, view.origin.y);
-//    
-//    CGContextFillPath(context);
-//
-//}
+- (void) drawRect:(CGRect)rect
+{
+    CGRect view = CGRectInset([self bounds], 1, 1);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetLineWidth(context, 1.0);
+    CGContextSetStrokeColorWithColor(context, [[UIColor blackColor] CGColor]);
+    
+    CGContextMoveToPoint(context, view.origin.x, view.origin.y);
+    CGContextAddLineToPoint(context, view.origin.x, view.size.height);
+    CGContextAddLineToPoint(context, view.size.width, view.size.height);
+    CGContextAddLineToPoint(context, view.size.width, view.origin.y);
+    CGContextAddLineToPoint(context, view.origin.x, view.origin.y);
+    
+    CGContextFillPath(context);
+
+}
 @end

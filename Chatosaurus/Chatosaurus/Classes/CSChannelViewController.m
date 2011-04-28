@@ -60,7 +60,6 @@
 - (void) loadView
 {
     CSChannelGridView *channelView = [[[CSChannelGridView alloc] init] autorelease];
-
     [channelView setNotify:self];
     [channelView setVisibleCols:_colCount];
     [channelView setVisibleRows:_rowCount];

@@ -10,7 +10,7 @@
 
 #define CSServerViewMargin 2.0f
 #define CSServerViewRowCount 2
-#define CSServerViewInfoViewPercent 0.4f
+#define CSServerViewInfoViewPercent 0.5f
 #define CSServerViewServerNamePercent 0.75f
 
 #pragma mark -
@@ -72,7 +72,7 @@
 
 - (void) layoutSubviews
 {
-    NSString *fontName = @"Futura";
+    NSString *fontName = @"Monaco";
 //    CGRect infoRect = CGRectMake([self bounds].origin.x, [self bounds].origin.y,
 //                                 [self bounds].size.width, [self bounds].size.height / 4.0f);
 //    UIView *info = [[UIView alloc] initWithFrame:infoRect];
@@ -158,7 +158,7 @@
     /*
      * Start dividing the server info view
      */
-    UIView *serverInfo = [[UIView alloc] initWithFrame:CGRectInset(serverInfoRect, 0, 0)];
+    UIView *serverInfo = [[UIView alloc] initWithFrame:CGRectIntegral(CGRectInset(serverInfoRect, 0, 0))];
 //    [serverInfo setBackgroundColor:[UIColor greenColor]];
     
     CGRect unreadMsgRect = CGRectZero; // far left
@@ -168,23 +168,25 @@
     
     // Unread message count view
     CGRectDivide(serverInfoRect, &unreadMsgRect, &serverInfoRect, serverInfoRect.size.height, CGRectMinXEdge);
-    unreadMsgRect = CGRectInset(unreadMsgRect, 0, 0);
+    unreadMsgRect = CGRectIntegral(CGRectInset(unreadMsgRect, 0, 0));
     UILabel *unreadMsgView = [[UILabel alloc] initWithFrame:unreadMsgRect];
     [unreadMsgView setTextAlignment:UITextAlignmentCenter];
-    [unreadMsgView setFont:[UIFont fontWithName:fontName size:unreadMsgRect.size.width * 0.5f]];
+    [unreadMsgView setTextColor:[UIColor grayColor]];
+    [unreadMsgView setFont:[UIFont fontWithName:fontName size:30.0f]];
     [unreadMsgView setText:_unreadMessageCount];
 //    [unreadMsgView setBackgroundColor:[UIColor grayColor]];
     [serverInfo addSubview:unreadMsgView];
     
     // Server info button view
     CGRectDivide(serverInfoRect, &serverInfoButtonRect, &serverInfoRect, serverInfoRect.size.height, CGRectMaxXEdge);
-    UIButton *serverInfoButton = [[UIView alloc] initWithFrame:CGRectInset(serverInfoButtonRect, 0, 0)];
+    UIButton *serverInfoButton = [[UIView alloc] initWithFrame:CGRectIntegral(CGRectInset(serverInfoButtonRect, 0, 0))];
 //    [serverInfoButton setBackgroundColor:[UIColor purpleColor]];
     [serverInfo addSubview:serverInfoButton];
     
     // Server name view
     CGRectDivide(serverInfoRect, &serverNameRect, &serverInfoRect, serverInfoRect.size.height * CSServerViewServerNamePercent, CGRectMinYEdge);
-    UILabel *serverNameView = [[UILabel alloc] initWithFrame:CGRectInset(serverNameRect, 0, 0)];
+    
+    UILabel *serverNameView = [[UILabel alloc] initWithFrame:CGRectIntegral(CGRectInset(serverNameRect, 10.0f, 0))];
     [serverNameView setFont:[UIFont fontWithName:fontName size:20.0f]];
     [serverNameView setText:_serverName];
 //    [serverNameView setBackgroundColor:[UIColor yellowColor]];
@@ -192,17 +194,19 @@
     
     // User id(name)
     CGRectDivide(serverInfoRect, &userIdRect, &serverInfoRect, serverInfoRect.size.height, CGRectMaxYEdge);
-    UILabel *userIdView = [[UILabel alloc] initWithFrame:CGRectInset(userIdRect, 0, 0)];
-    [userIdView setFont:[UIFont fontWithName:fontName size:9.0f]];
+    UILabel *userIdView = [[UILabel alloc] initWithFrame:CGRectIntegral(CGRectInset(userIdRect, 10.0f, 0))];
+    [userIdView setFont:[UIFont fontWithName:fontName size:10.0f]];
+    [userIdView setTextColor:[UIColor grayColor]];
     [userIdView setText:_userId];
-    [userIdView setBackgroundColor:[UIColor blueColor]];
     [serverInfo addSubview:userIdView];
     
     /*
      * Start dividing the channel grid view
      */
+    channelGridRect = CGRectInset(channelGridRect, 1.0f, 1.0f);
+    //channelGridRect = CGRectIntegral(channelGridRect);
     CSChannelGridView *channelGridView = [[[CSChannelGridView alloc] initWithFrame:channelGridRect] autorelease];
-    [channelGridView setBackgroundColor:[UIColor yellowColor]];
+    [[_channelViewController view] setBackgroundColor:[UIColor grayColor]];
     [[_channelViewController view] setFrame:channelGridRect];
     [[_channelViewController view] addSubview:channelGridView];
     [[_channelViewController view] setNeedsLayout];
@@ -211,8 +215,6 @@
     [self addSubview:serverInfo];
     [self addSubview:[_channelViewController view]];
 }
-
-
 
 #pragma mark CSChannelViewControllerDelegate Methods
 - (void) newMessage:(NSString *)message toChannel:(NSString *)channel

@@ -83,10 +83,10 @@
         serverSize.width = [[self view] bounds].size.width;
         // Generate the rect, the plist is sorted in the order the user wants the servers to be
         CGRect rect = CGRectMake([[self view] bounds].origin.x, 
-                                 [[self view] bounds].origin.y + serverSize.height * i,
+                                 [[self view] bounds].origin.y + serverSize.height * i + 20.0f,
                                  [[self view] bounds].size.width, 
                                  serverSize.height);
-        
+        rect = CGRectIntegral(rect);
         CSServerView *serverView = [[[CSServerView alloc] initWithFrame:rect 
                                                               protocol:[dict objectForKey:@"protocol"] 
                                                             serverName:[dict objectForKey:@"serverName"]

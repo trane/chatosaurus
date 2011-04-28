@@ -26,5 +26,10 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Menlo.ttc</string>
+		<string>Monaco.dfont</string>
+	</array>
 </dict>
 </plist>

@@ -9,7 +9,7 @@
 #import "CSChannelGridView.h"
 #import "CSChannelViewCell.h"
 #import "CSChannelView.h"
-#define CSChannelViewCellMargin 5.0f
+#define CSChannelViewCellMargin 1.0f
 
 #pragma mark -
 #pragma mark Private Interface
@@ -201,8 +201,9 @@
                                   (CGFloat)[cell row] * _cellSize.height,
                                   _cellSize.width,
                                   _cellSize.height);
-        
-        [cell setFrame:CGRectInset(frame, CSChannelViewCellMargin, CSChannelViewCellMargin)];
+        frame = CGRectInset(frame, CSChannelViewCellMargin, CSChannelViewCellMargin);
+        frame = CGRectIntegral(frame);
+        [cell setFrame:frame];
     }
 
 }

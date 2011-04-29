@@ -75,7 +75,7 @@
     NSString *serversPList = [[NSBundle mainBundle] pathForResource:@"Servers" ofType:@"plist"];
 	NSArray *servers = [NSArray arrayWithArray:[[NSDictionary dictionaryWithContentsOfFile:serversPList] objectForKey:@"Servers"]];
     int rows = 1;
-    int cols = 4;
+//    int cols = 4;
     // Grab all of the values from the plist and create server views
     for (int i = 0; i < [servers count]; i++) {
         NSDictionary *dict = [servers objectAtIndex:i];

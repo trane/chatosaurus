@@ -64,7 +64,7 @@
 @synthesize userId = _userId; // andrew.kuhnhausenATgmail.com
 @synthesize channelViewController = _channelViewController;
 @synthesize protocol = _protocol;
-
+@synthesize channelCount = _channelCount;
 #pragma mark -
 #pragma mark Methods
 
@@ -225,6 +225,7 @@
 - (void) createChannelsWithArray:(NSArray*)channels
 {
     NSLog(@"Creating channels");
+    _channelCount = [channels count];
     [_channelViewController loadChannelList:channels];
 }
 @end

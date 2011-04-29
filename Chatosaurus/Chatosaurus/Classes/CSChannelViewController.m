@@ -96,7 +96,7 @@
     [channelView setName:[dict objectForKey:@"name"]];
     [channelView setTapAction:@selector(channelTapped)];
     [channelView setTapTarget:self];
-    NSString *avatarPathString = [dict objectForKey:@"avatar"];
+//    NSString *avatarPathString = [dict objectForKey:@"avatar"];
     
 //    if (avatarPathString == nil)
 //    [channelView setAvatar:[dict objectForKey:@"photo"]];

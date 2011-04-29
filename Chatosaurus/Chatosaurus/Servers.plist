@@ -53,7 +53,7 @@
 			<key>protocol</key>
 			<string>irc</string>
 			<key>serverName</key>
-			<string>XMission IRC</string>
+			<string>someother irc</string>
 			<key>serverURI</key>
 			<string>irc.xmission.com</string>
 			<key>status</key>

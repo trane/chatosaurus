@@ -21,7 +21,7 @@
     NSString *_userId; // andrew.kuhnhausen@gmail.com
     NSString *_protocol; // irc, jabber, msn, aol
     NSString *_unreadMessageCount;
-    
+    NSInteger _channelCount;
     CSChannelViewController *_channelViewController;
 }
 
@@ -73,6 +73,7 @@
  */
 @property (nonatomic,assign) NSString *protocol;
 
+@property (nonatomic,assign) NSInteger channelCount;
 /*!
  * This holds the views of channels
  */

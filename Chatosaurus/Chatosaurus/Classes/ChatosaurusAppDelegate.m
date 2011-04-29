@@ -8,6 +8,7 @@
 
 #import "ChatosaurusAppDelegate.h"
 #import "CSServerViewController.h"
+#import "CSServerTableViewController.h"
 
 @implementation ChatosaurusAppDelegate
 
@@ -18,9 +19,12 @@
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [_window makeKeyAndVisible];
     
-    _serverViewController = [[CSServerViewController alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    [_window addSubview:[_serverViewController view]];
-    
+//    _serverViewController = [[CSServerViewController alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+//    [[_serverViewController view] setBackgroundColor:[UIColor grayColor]];
+//    [_window addSubview:[_serverViewController view]];
+    _serverTableViewController = [[CSServerTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+
+    [_window addSubview:[_serverTableViewController view]];
     NSLog(@"placeholder");
 }
 

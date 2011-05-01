@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F795BC59136DEC4A0048B44B /* CSServerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F795BC56136DEC4A0048B44B /* CSServerTableViewCell.m */; };
 		F795BC5A136DEC4A0048B44B /* CSServerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F795BC58136DEC4A0048B44B /* CSServerTableViewController.m */; };
+		F795BC67136DEDEF0048B44B /* Menlo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = F795BC65136DEDEF0048B44B /* Menlo.ttc */; };
+		F795BC68136DEDEF0048B44B /* Monaco.dfont in Resources */ = {isa = PBXBuildFile; fileRef = F795BC66136DEDEF0048B44B /* Monaco.dfont */; };
 		F7CF810513624C78003A8E09 /* Servers.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7CF810413624C78003A8E09 /* Servers.plist */; };
 		F7CF810813624C90003A8E09 /* GlobalPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7CF810713624C90003A8E09 /* GlobalPreferences.plist */; };
 		F7D6850C1357DADC003EF72B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D6850B1357DADC003EF72B /* UIKit.framework */; };
@@ -42,6 +44,8 @@
 		F795BC56136DEC4A0048B44B /* CSServerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSServerTableViewCell.m; path = Classes/CSServerTableViewCell.m; sourceTree = "<group>"; };
 		F795BC57136DEC4A0048B44B /* CSServerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSServerTableViewController.h; path = Classes/CSServerTableViewController.h; sourceTree = "<group>"; };
 		F795BC58136DEC4A0048B44B /* CSServerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSServerTableViewController.m; path = Classes/CSServerTableViewController.m; sourceTree = "<group>"; };
+		F795BC65136DEDEF0048B44B /* Menlo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Menlo.ttc; sourceTree = "<group>"; };
+		F795BC66136DEDEF0048B44B /* Monaco.dfont */ = {isa = PBXFileReference; lastKnownFileType = file; path = Monaco.dfont; sourceTree = "<group>"; };
 		F7CF810413624C78003A8E09 /* Servers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Servers.plist; sourceTree = "<group>"; };
 		F7CF810713624C90003A8E09 /* GlobalPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GlobalPreferences.plist; sourceTree = "<group>"; };
 		F7D685071357DADC003EF72B /* Chatosaurus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatosaurus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +180,8 @@
 		F7D6851B1357DADD003EF72B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F795BC65136DEDEF0048B44B /* Menlo.ttc */,
+				F795BC66136DEDEF0048B44B /* Monaco.dfont */,
 				F7D6851C1357DADD003EF72B /* Chatosaurus-Info.plist */,
 				F7CF810413624C78003A8E09 /* Servers.plist */,
 				F7CF810713624C90003A8E09 /* GlobalPreferences.plist */,
@@ -334,6 +340,8 @@
 				F7D685201357DADD003EF72B /* InfoPlist.strings in Resources */,
 				F7CF810513624C78003A8E09 /* Servers.plist in Resources */,
 				F7CF810813624C90003A8E09 /* GlobalPreferences.plist in Resources */,
+				F795BC67136DEDEF0048B44B /* Menlo.ttc in Resources */,
+				F795BC68136DEDEF0048B44B /* Monaco.dfont in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

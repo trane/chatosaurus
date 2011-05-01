@@ -8,6 +8,7 @@
 
 #import "ChatosaurusAppDelegate.h"
 #import "CSServerViewController.h"
+#import "CSChatViewController.h"
 
 @implementation ChatosaurusAppDelegate
 
@@ -16,15 +17,18 @@
 {   
     // Create window and make key
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [_window makeKeyAndVisible];
     
     _serverViewController = [[CSServerViewController alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
 
+    CSChatViewController* chatViewController = [[CSChatViewController alloc] init];
+    
     _navigation = [[UINavigationController alloc]
-                   initWithRootViewController:_serverViewController];
+                   initWithRootViewController:chatViewController];
 	[[_navigation view] setFrame:[[UIScreen mainScreen] applicationFrame]];
-    [_navigation setNavigationBarHidden:TRUE animated:TRUE];
+    [_navigation setNavigationBarHidden:FALSE animated:TRUE];
 	[_window addSubview:[_navigation view]];
+    
+    [_window makeKeyAndVisible];
     
     NSLog(@"placeholder");
 }

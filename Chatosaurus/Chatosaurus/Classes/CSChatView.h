@@ -8,6 +8,9 @@
 
 @interface CSChatView : UIView 
 {
+    UITextField* _textEntry;
+    UITextView* _textView;
+    UIButton* _sendButton;
 }
 
 @end

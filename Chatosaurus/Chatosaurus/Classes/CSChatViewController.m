@@ -22,13 +22,15 @@
     self = [super init];
 	if (self == nil)
 		return self;
-	
+    
     return self;
 }
 
 - (void) dealloc 
 {
     [self setDelegate:nil];
+    
+    [_chatView release];
     
     [super dealloc];
 }
@@ -43,7 +45,10 @@
 #pragma mark UIViewController Methods
 - (void) viewDidLoad
 {
-    [[self view] setBackgroundColor:[UIColor colorWithHue:(float)drand48() saturation:1.0f brightness:1.0f alpha:1.0f]];
+    [[self view] setBackgroundColor:[UIColor lightGrayColor]];
+    
+    _chatView = [[CSChatView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
+    [[self view] addSubview:_chatView];
 }
 
 - (void) viewDidUnload

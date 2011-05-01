@@ -22,6 +22,42 @@
     self = [super initWithFrame:frame];
 	if (self == nil)
 		return nil;
+    
+    [self setBackgroundColor:[UIColor greenColor]];
+    
+    _textEntry = [[UITextField alloc] 
+                  initWithFrame:CGRectMake(frame.origin.x + frame.size.width * (0.05f), 
+                                           frame.origin.y + frame.size.height * (0.9f),
+                                           frame.size.width * (0.7f), 
+                                           frame.size.height * (0.08f))];
+    [_textEntry setClearButtonMode:UITextFieldViewModeWhileEditing];
+    [_textEntry setBorderStyle:UITextBorderStyleRoundedRect];
+    [_textEntry setBackgroundColor:[UIColor clearColor]];
+    [_textEntry addTarget:self action:@selector(textEntryDidBeginEditing) forControlEvents:UIControlEventEditingDidBegin];
+    [_textEntry addTarget:self action:@selector(textEntryDidEndEditing) forControlEvents:UIControlEventEditingDidEnd];
+    [_textEntry setKeyboardType:UIKeyboardTypeAlphabet];
+    [_textEntry setReturnKeyType:UIReturnKeyDone];
+    
+    _textView = [[UITextView alloc]
+                 initWithFrame:CGRectMake(frame.origin.x + frame.size.width * (0.025f), 
+                                          frame.origin.y + frame.size.height * (0.025f), 
+                                          frame.size.width * (0.95f), 
+                                          frame.size.height * (0.85f))];
+    [_textView setEditable:FALSE];
+    
+    _sendButton = [[UIButton alloc]
+                   initWithFrame:CGRectMake(frame.origin.x + frame.size.width * (0.8f), 
+                                            frame.origin.y + frame.size.height * (0.9f),
+                                            frame.size.width * (0.15f), 
+                                            frame.size.height * (0.08f))]; 
+    [_sendButton setTitle:@"Send" forState:UIControlStateNormal];
+    [_sendButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_sendButton setOpaque:TRUE];
+    [_sendButton setBackgroundColor:[UIColor lightGrayColor]];
+    
+    [self addSubview:_sendButton];
+    [self addSubview:_textView];
+    [self addSubview:_textEntry];
 	
     return self;
 }
@@ -36,6 +72,24 @@
 
 #pragma mark -
 #pragma mark Methods
+
+- (void) textEntryDidBeginEditing
+{
+    CGRect frame = [self frame];
+    [self setFrame:CGRectMake(frame.origin.x, frame.origin.y - 216, frame.size.width, frame.size.height)];
+    
+    frame = [_textView frame];
+    [_textView setFrame:CGRectMake(frame.origin.x, frame.origin.y + 216, frame.size.width, frame.size.height - 216)];
+}
+
+- (void) textEntryDidEndEditing
+{
+    CGRect frame = [self frame];
+    [self setFrame:CGRectMake(frame.origin.x, frame.origin.y + 216, frame.size.width, frame.size.height)];
+    
+    frame = [_textView frame];
+    [_textView setFrame:CGRectMake(frame.origin.x, frame.origin.y - 216, frame.size.width, frame.size.height + 216)];
+}
 
 #pragma mark UIView Methods
 - (void) layoutSubviews

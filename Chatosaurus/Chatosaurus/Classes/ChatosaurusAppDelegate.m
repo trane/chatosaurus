@@ -9,28 +9,40 @@
 #import "ChatosaurusAppDelegate.h"
 #import "CSServerViewController.h"
 #import "CSServerTableViewController.h"
+#import "CSChatViewController.h"
 
 @implementation ChatosaurusAppDelegate
 
 #pragma mark UIApplicationDelegate Methods
-- (void) applicationDidFinishLaunching:(UIApplication*)application 
-{   
+- (void) applicationDidFinishLaunching:(UIApplication*)application
+{
     // Create window and make key
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [_window makeKeyAndVisible];
-    
 //    _serverViewController = [[CSServerViewController alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
 //    [[_serverViewController view] setBackgroundColor:[UIColor grayColor]];
 //    [_window addSubview:[_serverViewController view]];
     _serverTableViewController = [[CSServerTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 
     [_window addSubview:[_serverTableViewController view]];
+    _serverViewController = [[CSServerViewController alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+
+    CSChatViewController* chatViewController = [[CSChatViewController alloc] init];
+
+    _navigation = [[UINavigationController alloc]
+                   initWithRootViewController:chatViewController];
+    [[_navigation view] setFrame:[[UIScreen mainScreen] applicationFrame]];
+    [_navigation setNavigationBarHidden:FALSE animated:TRUE];
+    [_window addSubview:[_navigation view]];
+
+    [_window makeKeyAndVisible];
+
     NSLog(@"placeholder");
 }
 
 - (void) applicationWillTerminate:(UIApplication*)application
 {
     [_serverViewController release];
+    [_navigation release];
     [_window release];
 }
 

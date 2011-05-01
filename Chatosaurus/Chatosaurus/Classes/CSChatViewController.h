@@ -6,6 +6,8 @@
 //  Copyright 2011 errstr. All rights reserved.
 //
 
+#import "CSChatView.h"
+
 @class CSChatViewController;
 
 @protocol CSChatViewControllerDelegate
@@ -14,6 +16,7 @@
 @interface CSChatViewController : UIViewController 
 {
     NSObject<CSChatViewControllerDelegate>* _delegate;
+    CSChatView* _chatView;
 }
 
 @property (assign) NSObject<CSChatViewControllerDelegate>* delegate;

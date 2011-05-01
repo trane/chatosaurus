@@ -94,8 +94,9 @@
     NSDictionary *dict = [_channelList objectAtIndex:channelNum];
     CSChannelView *channelView = [[[CSChannelView alloc] init] autorelease];
     [channelView setName:[dict objectForKey:@"name"]];
-    [channelView setTapAction:@selector(channelTapped)];
     [channelView setTapTarget:self];
+    [channelView setTapAction:@selector(channelTapped:)];
+    
 //    NSString *avatarPathString = [dict objectForKey:@"avatar"];
     
 //    if (avatarPathString == nil)

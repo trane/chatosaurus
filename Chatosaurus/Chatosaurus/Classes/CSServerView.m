@@ -65,6 +65,10 @@
 @synthesize channelViewController = _channelViewController;
 @synthesize protocol = _protocol;
 @synthesize channelCount = _channelCount;
+- (NSString*) description
+{
+    return [[NSString alloc] initWithFormat:@"%s %s", _serverName, _userId];
+}
 #pragma mark -
 #pragma mark Methods
 

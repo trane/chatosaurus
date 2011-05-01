@@ -16,14 +16,8 @@
 #pragma mark UIApplicationDelegate Methods
 - (void) applicationDidFinishLaunching:(UIApplication*)application
 {
-    // Create window and make key
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    _serverViewController = [[CSServerViewController alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-//    [[_serverViewController view] setBackgroundColor:[UIColor grayColor]];
-//    [_window addSubview:[_serverViewController view]];
-    _serverTableViewController = [[CSServerTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
 
-    [_window addSubview:[_serverTableViewController view]];
     _serverViewController = [[CSServerViewController alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
 
     CSChatViewController* chatViewController = [[CSChatViewController alloc] init];

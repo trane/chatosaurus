@@ -19,7 +19,12 @@
     [_window makeKeyAndVisible];
     
     _serverViewController = [[CSServerViewController alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    [_window addSubview:[_serverViewController view]];
+
+    _navigation = [[UINavigationController alloc]
+                   initWithRootViewController:_serverViewController];
+	[[_navigation view] setFrame:[[UIScreen mainScreen] applicationFrame]];
+    [_navigation setNavigationBarHidden:TRUE animated:TRUE];
+	[_window addSubview:[_navigation view]];
     
     NSLog(@"placeholder");
 }
@@ -27,6 +32,7 @@
 - (void) applicationWillTerminate:(UIApplication*)application
 {
     [_serverViewController release];
+    [_navigation release];
     [_window release];
 }
 

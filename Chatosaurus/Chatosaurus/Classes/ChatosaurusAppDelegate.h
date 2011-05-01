@@ -13,6 +13,7 @@
 @interface ChatosaurusAppDelegate : NSObject <UIApplicationDelegate, CSMessageCollectionDelegate> 
 {
     UIWindow* _window;
+    UINavigationController* _navigation;
     
     // ServerViewController holds all ServerViews
     CSServerViewController *_serverViewController;

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		139780131362313B006BA0A0 /* CSRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 139780121362313B006BA0A0 /* CSRootViewController.m */; };
+		F795BC59136DEC4A0048B44B /* CSServerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F795BC56136DEC4A0048B44B /* CSServerTableViewCell.m */; };
+		F795BC5A136DEC4A0048B44B /* CSServerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F795BC58136DEC4A0048B44B /* CSServerTableViewController.m */; };
 		F7CF810513624C78003A8E09 /* Servers.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7CF810413624C78003A8E09 /* Servers.plist */; };
 		F7CF810813624C90003A8E09 /* GlobalPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7CF810713624C90003A8E09 /* GlobalPreferences.plist */; };
 		F7D6850C1357DADC003EF72B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D6850B1357DADC003EF72B /* UIKit.framework */; };
@@ -37,8 +38,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		139780111362313B006BA0A0 /* CSRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRootViewController.h; sourceTree = "<group>"; };
-		139780121362313B006BA0A0 /* CSRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRootViewController.m; sourceTree = "<group>"; };
+		F795BC55136DEC4A0048B44B /* CSServerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSServerTableViewCell.h; path = Classes/CSServerTableViewCell.h; sourceTree = "<group>"; };
+		F795BC56136DEC4A0048B44B /* CSServerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSServerTableViewCell.m; path = Classes/CSServerTableViewCell.m; sourceTree = "<group>"; };
+		F795BC57136DEC4A0048B44B /* CSServerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSServerTableViewController.h; path = Classes/CSServerTableViewController.h; sourceTree = "<group>"; };
+		F795BC58136DEC4A0048B44B /* CSServerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSServerTableViewController.m; path = Classes/CSServerTableViewController.m; sourceTree = "<group>"; };
 		F7CF810413624C78003A8E09 /* Servers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Servers.plist; sourceTree = "<group>"; };
 		F7CF810713624C90003A8E09 /* GlobalPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GlobalPreferences.plist; sourceTree = "<group>"; };
 		F7D685071357DADC003EF72B /* Chatosaurus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatosaurus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,8 +107,6 @@
 		1397800F13623121006BA0A0 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				1301ADE21362445F0006948D /* CSRootViewController.h */,
-				1301ADE31362445F0006948D /* CSRootViewController.m */,
 			);
 			name = Root;
 			sourceTree = "<group>";
@@ -213,6 +214,10 @@
 		F7D685301357DB61003EF72B /* Server */ = {
 			isa = PBXGroup;
 			children = (
+				F795BC55136DEC4A0048B44B /* CSServerTableViewCell.h */,
+				F795BC56136DEC4A0048B44B /* CSServerTableViewCell.m */,
+				F795BC57136DEC4A0048B44B /* CSServerTableViewController.h */,
+				F795BC58136DEC4A0048B44B /* CSServerTableViewController.m */,
 				F7D685601357DE57003EF72B /* CSServerViewController.h */,
 				F7D685611357DE57003EF72B /* CSServerViewController.m */,
 				F7D685571357DDEA003EF72B /* CSServerView.h */,
@@ -358,7 +363,8 @@
 				F7D6858F1357E1AE003EF72B /* CSChannelView.m in Sources */,
 				F7D685921357E270003EF72B /* CSMessage.m in Sources */,
 				F7D6859D1357EC3C003EF72B /* Protocols.m in Sources */,
-				1301ADE41362445F0006948D /* CSRootViewController.m in Sources */,
+				F795BC59136DEC4A0048B44B /* CSServerTableViewCell.m in Sources */,
+				F795BC5A136DEC4A0048B44B /* CSServerTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

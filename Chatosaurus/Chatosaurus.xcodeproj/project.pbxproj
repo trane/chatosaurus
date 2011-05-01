@@ -423,6 +423,7 @@
 				GCC_PREFIX_HEADER = "Chatosaurus/Chatosaurus-Prefix.pch";
 				INFOPLIST_FILE = "Chatosaurus/Chatosaurus-Info.plist";
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -437,6 +438,7 @@
 				GCC_PREFIX_HEADER = "Chatosaurus/Chatosaurus-Prefix.pch";
 				INFOPLIST_FILE = "Chatosaurus/Chatosaurus-Info.plist";
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

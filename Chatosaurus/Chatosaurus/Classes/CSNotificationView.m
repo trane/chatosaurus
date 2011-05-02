@@ -30,6 +30,9 @@
                                                   frame.origin.y, 
                                                   frame.size.width, 
                                                   frame.size.height - 15)];
+    [_notificationView setDataSource:self];
+    [_notificationView setBackgroundColor:[UIColor blackColor]];
+    [_notificationView setAlpha:0.8f];
     _dragHandle = [[UIView alloc] initWithFrame:CGRectMake(frame.origin.x, 
                                      frame.origin.y + frame.size.height - 15, 
                                      frame.size.width, 
@@ -132,6 +135,15 @@
 
 #pragma mark -
 #pragma mark Event Handlers/Delegate Methods
+- (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 0;
+}
 
 #pragma mark UIView Methods
 - (void) layoutSubviews

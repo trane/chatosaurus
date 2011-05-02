@@ -8,7 +8,7 @@
 
 #import "CSChatView.h"
 
-@interface CSNotificationView : UIView <CSChatViewDelegate>
+@interface CSNotificationView : UIView <CSChatViewDelegate, UITableViewDataSource>
 {
     UIView *_dragHandle;
     UITableView *_notificationView;

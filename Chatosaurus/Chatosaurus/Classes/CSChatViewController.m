@@ -46,6 +46,10 @@
 #pragma mark CSChatViewControllerDelegate Methods
 - (void) createChannel:(NSString*)channel fromServer:(NSString*)server
 {
+    if (_notificationView == nil)
+        _notificationView = [[CSNotificationView alloc] initWithFrame:CGRectMake(0, 0, 320, 150)];
+    else
+        [_notificationView removeFromSuperview];
 
     NSString *identifier = [[NSString alloc] initWithFormat:@"%@,%@",channel,server];
     
@@ -59,16 +63,14 @@
     }
     if (view == nil) {
         view = [[[CSChatView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)] autorelease];
+        [view setDelegate:_notificationView];
         [view setIdentifier:identifier];
         [_chatViews addObject:view];
     }
     
     NSLog(@"Creating channelview: %@", identifier);
     
-    if (_notificationView == nil)
-        _notificationView = [[CSNotificationView alloc] initWithFrame:CGRectMake(0, 0, 320, 150)];
-    else
-        [_notificationView removeFromSuperview];
+   
 
     // Do something like this:
 //    [_chatView removeFromSuperview];

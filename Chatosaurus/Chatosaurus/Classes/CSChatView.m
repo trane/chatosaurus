@@ -78,6 +78,8 @@
 {
     _identifier = identifier;
 }
+
+@synthesize delegate = _delegate;
 #pragma mark -
 #pragma mark Methods
 
@@ -91,6 +93,8 @@
     
     frame = [_textView frame];
     [_textView setFrame:CGRectMake(frame.origin.x, frame.origin.y + 216, frame.size.width, frame.size.height - 216)];
+    
+    [_delegate keyboardShow];
 }
 
 - (void) textEntryDidEndEditing
@@ -100,6 +104,8 @@
     
     frame = [_textView frame];
     [_textView setFrame:CGRectMake(frame.origin.x, frame.origin.y - 216, frame.size.width, frame.size.height + 216)];
+    
+    [_delegate keyboardHide];
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField*)textField

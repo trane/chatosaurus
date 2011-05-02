@@ -6,10 +6,17 @@
 //  Copyright 2011 errstr. All rights reserved.
 //
 
-@interface CSNotificationView : UIView 
+#import "CSChatView.h"
+
+@interface CSNotificationView : UIView <CSChatViewDelegate>
 {
-    UIButton *_dragHandle;
+    UIView *_dragHandle;
     UITableView *_notificationView;
+    
+    BOOL _dragging;
+    int _prevHeight;
+    
+    NSArray *_messages;
 }
 
 @end

@@ -6,17 +6,24 @@
 //  Copyright 2011 errstr. All rights reserved.
 //
 
+@protocol CSChatViewDelegate
+- (void) keyboardShow;
+- (void) keyboardHide;
+@end
+
 @interface CSChatView : UIView 
 {
-    UITextField* _textEntry;
-    UITextView* _textView;
-    UIButton* _sendButton;
+    UITextField *_textEntry;
+    UITextView *_textView;
+    UIButton *_sendButton;
     NSString *_identifier;
+    NSObject<CSChatViewDelegate> *_delegate;
 }
 
 /*!
  * The unique identifier for this chat
  */
 @property (nonatomic,retain) NSString *identifier;
+@property (nonatomic,assign) NSObject<CSChatViewDelegate> *delegate;
 
 @end

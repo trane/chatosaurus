@@ -96,6 +96,7 @@
                                                               protocol:[dict objectForKey:@"protocol"] 
                                                             serverName:[dict objectForKey:@"serverName"]
                                                                 userId:[dict objectForKey:@"userId"]] autorelease];
+        [serverView setDelegate:self];
         [_serverViews addObject:serverView];
 
         // Create the channels array, make sure it is retained.

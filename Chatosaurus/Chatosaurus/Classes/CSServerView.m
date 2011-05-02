@@ -187,6 +187,7 @@
     CGRectDivide(serverInfoRect, &serverInfoButtonRect, &serverInfoRect, serverInfoRect.size.height, CGRectMaxXEdge);
     UIButton *serverInfoButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
     [serverInfoButton setFrame:serverInfoButtonRect];
+    [serverInfoButton addTarget:self action:@selector(serverInfoButtonPressed) forControlEvents:UIControlEventTouchUpInside];
 //    UIButton *serverInfoButton = [[UIView alloc] initWithFrame:CGRectIntegral(CGRectInset(serverInfoButtonRect, 0, 0))];
 //    [serverInfoButton setBackgroundColor:[UIColor purpleColor]];
     [serverInfo addSubview:serverInfoButton];
@@ -224,6 +225,10 @@
     [self addSubview:[_channelViewController view]];
 }
 
+- (void) serverInfoButtonPressed
+{
+    //TODO: Create a new view, yo.
+}
 #pragma mark CSChannelViewControllerDelegate Methods
 - (void) newMessage:(NSString *)message toChannel:(NSString *)channel
 {

@@ -74,10 +74,19 @@
  */
 @property (nonatomic,assign) NSString *protocol;
 
+/*!
+ * Number of channels belonging to this server
+ */
 @property (nonatomic,assign) NSInteger channelCount;
+
 /*!
  * This holds the views of channels
  */
 @property (nonatomic,retain) CSChannelViewController *channelViewController;
+
+/*!
+ * Called when info button is pressed
+ */
+- (void) serverInfoButtonPressed;
 
 @end

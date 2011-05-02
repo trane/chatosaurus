@@ -58,8 +58,8 @@
         NSArray *channels = [[NSArray arrayWithArray:[dict objectForKey:@"channels"]] retain];
         NSMutableDictionary *channelNames = [[[NSMutableDictionary alloc] init] autorelease];
         for (int j = 0; j < [channels count]; j++) {
-            NSMutableArray *channelMessages = [[[NSMutableArray alloc] init] autorelease];
-            
+            // Create an empty array to store messages for this channel
+            NSMutableArray *channelMessages = [[[NSMutableArray alloc] init] autorelease];            
             [channelNames setValue:channelMessages forKey:[[channels objectAtIndex:j] valueForKey:@"name"]];
         }
         

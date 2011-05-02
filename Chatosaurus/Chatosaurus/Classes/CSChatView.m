@@ -23,7 +23,7 @@
 	if (self == nil)
 		return nil;
     
-    [self setBackgroundColor:[UIColor greenColor]];
+    [self setBackgroundColor:[UIColor whiteColor]];
     
     _textEntry = [[UITextField alloc] 
                   initWithFrame:CGRectMake(frame.origin.x + frame.size.width * (0.05f), 

@@ -23,7 +23,7 @@
     
     id _tapTarget;
     SEL _tapAction;
-    id _userInfo;
+    id _channelInfo;
 }
 
 /*!
@@ -56,4 +56,10 @@
  */
 @property (nonatomic,assign) SEL tapAction;
 
+/*!
+ * Sent when tapped
+ */
+@property (nonatomic,readonly) id channelInfo;
+
+- (void) channelTouched;
 @end

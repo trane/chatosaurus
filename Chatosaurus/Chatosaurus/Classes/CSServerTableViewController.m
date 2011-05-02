@@ -138,4 +138,10 @@
 //    return cell;
 }
 
+#pragma mark UITableView Methods
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CSServerView *serverView = [_serverViews objectAtIndex:[indexPath section]];
+    NSLog(@"Touched server: %@", serverView);
+}
 @end

@@ -55,7 +55,8 @@
 #pragma mark UIView Methods
 - (void) layoutSubviews
 {
-    [_channelView setFrame:[self bounds]];
+    CGRect rect = CGRectInset([self bounds], 1.0f, 1.0f);
+    [_channelView setFrame:rect];
 }
 
 @end

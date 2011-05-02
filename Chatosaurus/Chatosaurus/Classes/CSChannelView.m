@@ -23,7 +23,9 @@
     self = [super initWithFrame:frame];
 	if (self == nil)
 		return nil;
-	
+	    
+    _channelInfo = @"channel info";
+    
     // Set the main view if there is an avatar
     if (avatar != nil) {
         _avatarView = [[UIImageView alloc] initWithImage:avatar];
@@ -41,8 +43,10 @@
     [_name setTextAlignment:UITextAlignmentCenter];
     [_name setTextColor:[UIColor grayColor]];
     [self addSubview:_name];
+    
     _chatButton = [[UIButton alloc] init];
-    [_chatButton addTarget:self action:@selector(buttonPressed) forControlEvents:UIControlEventTouchUpInside];
+    [_chatButton setBackgroundColor:[UIColor blackColor]];
+    [_chatButton addTarget:self action:@selector(channelTouched) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_chatButton];
     
     
@@ -104,16 +108,18 @@
 {
     return [[NSString alloc] initWithFormat:@"%@, %@", [_name text], [_textView text]];
 }
+
 @synthesize tapTarget = _tapTarget;
 @synthesize tapAction = _tapAction;
-
+@synthesize channelInfo = _channelInfo;
 #pragma mark -
 #pragma mark Methods
-- (void) buttonPressed
+- (void) channelTouched
 {
+    NSLog(@"Touched");
     // TODO: Launch chat view
     if (_tapTarget != nil && _tapAction != NULL)
-        [_tapTarget performSelector:_tapAction withObject:_userInfo];
+        [_tapTarget performSelector:_tapAction withObject:_channelInfo];
 }
 
 #pragma mark UIView Methods
@@ -122,7 +128,7 @@
     CGRect divRect = [self bounds];
     //divRect = CGRectIntegral(divRect);
     //divRect = CGRectInset(divRect, 1.0f, 10.0f);
-    divRect = CGRectMake(0.5f, 0.5f, divRect.size.width - 2.0f, divRect.size.height);
+    //divRect = CGRectMake(1.0f, 0.5f, divRect.size.width - 2.0f, divRect.size.height);
                          //divRect.size.width - 2.0f, divRect.size.height - 10.0f);
     CGRect mainViewRect = CGRectZero;
     CGRect nameRect = CGRectZero;
@@ -141,6 +147,8 @@
 
     [_chatButton setFrame:CGRectIntegral(mainViewRect)];
     [_chatButton setBackgroundColor:[UIColor clearColor]];
+    [_chatButton addTarget:self action:@selector(channelTouched) forControlEvents:UIControlEventTouchUpInside];
+
     [self addSubview:_textView];
     [self addSubview:_name];
     [self addSubview:_chatButton];    

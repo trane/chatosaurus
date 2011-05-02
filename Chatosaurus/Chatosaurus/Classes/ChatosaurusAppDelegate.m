@@ -18,14 +18,16 @@
 {
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    _serverViewController = [[CSServerViewController alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-
+//    _serverViewController = [[CSServerViewController alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    _serverTableViewController = [[CSServerTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     CSChatViewController* chatViewController = [[CSChatViewController alloc] init];
 
+//    _navigation = [[UINavigationController alloc]
+//                   initWithRootViewController:chatViewController];
     _navigation = [[UINavigationController alloc]
-                   initWithRootViewController:chatViewController];
+                   initWithRootViewController:_serverTableViewController];
     [[_navigation view] setFrame:[[UIScreen mainScreen] applicationFrame]];
-    [_navigation setNavigationBarHidden:FALSE animated:TRUE];
+    [_navigation setNavigationBarHidden:TRUE animated:TRUE];
     [_window addSubview:[_navigation view]];
 
     [_window makeKeyAndVisible];

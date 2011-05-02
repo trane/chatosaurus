@@ -11,12 +11,15 @@
 @class CSChatViewController;
 
 @protocol CSChatViewControllerDelegate
+- (void) createChannel:(NSString*)channel fromServer:(NSString*)server;
 @end
 
 @interface CSChatViewController : UIViewController 
 {
     NSObject<CSChatViewControllerDelegate>* _delegate;
     CSChatView* _chatView;
+    
+    NSMutableArray *_chatViews;
 }
 
 @property (assign) NSObject<CSChatViewControllerDelegate>* delegate;

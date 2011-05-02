@@ -8,6 +8,8 @@
 
 @interface CSNotificationView : UIView 
 {
+    UIButton *_dragHandle;
+    UITableView *_notificationView;
 }
 
 @end

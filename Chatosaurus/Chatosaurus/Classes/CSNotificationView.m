@@ -22,12 +22,26 @@
     self = [super initWithFrame:frame];
 	if (self == nil)
 		return nil;
+    
+    _notificationView = [[UITableView alloc] 
+                         initWithFrame:CGRectMake(frame.origin.x, 
+                                                  frame.origin.y, 
+                                                  frame.size.width, 
+                                                  frame.size.height - 15)];
+    _dragHandle = [[UIButton buttonWithType:UIButtonTypeInfoDark] retain];
+    [_dragHandle setFrame:CGRectMake(frame.origin.x, 
+                                     frame.origin.y + frame.size.height - 15, 
+                                     frame.size.width, 
+                                     15)];
+    [_dragHandle addTarget:self action:@selector(handleTouch:event:) forControlEvents:UIControlEventAllTouchEvents];
 	
     return self;
 }
 
 - (void) dealloc 
 {
+    [_notificationView release];
+    [_dragHandle release];
     [super dealloc];
 }
 
@@ -36,6 +50,13 @@
 
 #pragma mark -
 #pragma mark Methods
+
+#pragma mark -
+#pragma mark Event Handlers/Delegate Methods
+- (void) handleTouch:(id)sender event:(UIEvent*)event
+{
+    
+}
 
 #pragma mark UIView Methods
 - (void) layoutSubviews

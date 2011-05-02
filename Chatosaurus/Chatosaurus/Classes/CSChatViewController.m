@@ -24,7 +24,6 @@
 		return self;
     
     _chatViews = [[NSMutableArray alloc] init];
-    //[self setDelegate:self];
     return self;
 }
 
@@ -65,11 +64,17 @@
     }
     
     NSLog(@"Creating channelview: %@", identifier);
+    
+    if (_notificationView == nil)
+        _notificationView = [[CSNotificationView alloc] initWithFrame:CGRectMake(0, 0, 320, 150)];
+    else
+        [_notificationView removeFromSuperview];
 
     // Do something like this:
 //    [_chatView removeFromSuperview];
 //    [_chatView release];
     [[self view] addSubview:view];
+    [[self view] addSubview:_notificationView];
     [[self view] setNeedsDisplay];
     [self setTitle:channel];
 }

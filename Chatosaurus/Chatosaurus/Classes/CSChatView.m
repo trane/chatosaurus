@@ -72,7 +72,11 @@
 
 #pragma mark -
 #pragma mark Accessors
-
+@synthesize identifier = _identifier;
+- (void) setIdentifier:(NSString *)identifier
+{
+    _identifier = identifier;
+}
 #pragma mark -
 #pragma mark Methods
 

@@ -6,6 +6,7 @@
 //  Copyright 2011 home. All rights reserved.
 //
 #import "CSServersCollection.h"
+#import "CSChatViewController.h"
 
 @class CSServerTableViewController;
 
@@ -15,11 +16,19 @@
 @interface CSServerTableViewController : UITableViewController 
 {
     NSObject<CSServerTableViewControllerDelegate>* _delegate;
+    NSObject<CSChatViewControllerDelegate> *_chatViewDelegate;
+    
     NSMutableArray *_serverViews;
     CSServersCollection *_serversCollection;
 }
 
 @property (assign) NSObject<CSServerTableViewControllerDelegate>* delegate;
+
+/*!
+ * Access to the chat view to create chats
+ */
+@property (nonatomic,assign) NSObject<CSChatViewControllerDelegate> *chatViewDelegate;
+
 @property (nonatomic,retain) CSServersCollection *serversCollection;
 - (void) loadServerViews;
 

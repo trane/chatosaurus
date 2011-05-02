@@ -8,10 +8,11 @@
 
 #import "CSServerTableViewController.h"
 #import "CSServerTableViewCell.h"
+#import "CSChatViewController.h"
 
 #pragma mark -
 #pragma mark Private Interface
-@interface CSServerTableViewController () <UITableViewDataSource, CSServerViewDelegate>
+@interface CSServerTableViewController () <UITableViewDataSource, CSServerViewDelegate, CSChatViewControllerDelegate>
 @end
 
 #pragma mark -
@@ -59,7 +60,11 @@
     [self loadServerViews];
     [[self tableView] reloadData];
 }
-
+@synthesize chatViewDelegate = _chatViewDelegate;
+- (void) setChatViewDelegate:(NSObject<CSChatViewControllerDelegate> *)chatViewDelegate
+{
+    _chatViewDelegate = chatViewDelegate;
+}
 #pragma mark -
 #pragma mark Methods
 
@@ -127,13 +132,28 @@
     return cell;
 }
 
-#pragma mark CSServerViewControllerDelegate Methods
+#pragma mark CSServerTableViewControllerDelegate Methods
 - (void) newMessage:(NSString*)message toServer:(NSString*)server channel:(NSString*)channel
 {
     
 }
 - (void) touchedChannel:(NSString*)channel fromServer:(NSString*)server
 {
-
+    [_chatViewDelegate createChannel:channel fromServer:server];
 }
+
+//
+//#pragma mark UINavigationControllerDelegate Methods
+//
+//// Called when the navigation controller shows a new top view controller via a push, pop or setting of the view controller stack.
+//- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+//{
+//    CSC
+//    [navigationController 
+//}
+//- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+//{
+//    
+//}
+
 @end

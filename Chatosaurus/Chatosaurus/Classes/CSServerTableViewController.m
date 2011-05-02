@@ -12,7 +12,7 @@
 
 #pragma mark -
 #pragma mark Private Interface
-@interface CSServerTableViewController () <UITableViewDataSource, CSServerViewDelegate, CSChatViewControllerDelegate>
+@interface CSServerTableViewController () <UITableViewDataSource, CSServerViewDelegate>
 @end
 
 #pragma mark -
@@ -139,21 +139,21 @@
 }
 - (void) touchedChannel:(NSString*)channel fromServer:(NSString*)server
 {
+    [[self navigationController] viewWillDisappear:YES];
     [_chatViewDelegate createChannel:channel fromServer:server];
 }
 
-//
-//#pragma mark UINavigationControllerDelegate Methods
-//
-//// Called when the navigation controller shows a new top view controller via a push, pop or setting of the view controller stack.
-//- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-//{
-//    CSC
-//    [navigationController 
-//}
-//- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-//{
-//    
-//}
+
+#pragma mark UINavigationControllerDelegate Methods
+
+// Called when the navigation controller shows a new top view controller via a push, pop or setting of the view controller stack.
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    NSLog(@"Will show viewcontroller");
+}
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    
+}
 
 @end

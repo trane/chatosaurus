@@ -26,9 +26,12 @@
     [_serverTableViewController setServersCollection:_serversCollection];
     
     _chatViewController = [[CSChatViewController alloc] init];
-
+    
+    // Link the chat view and table view controllers
+    [_serverTableViewController setChatViewDelegate:_chatViewController];
+    
 //    _navigation = [[UINavigationController alloc]
-//                   initWithRootViewController:chatViewController];
+//                   initWithRootViewController:_chatViewController];
     _navigation = [[UINavigationController alloc]
                    initWithRootViewController:_serverTableViewController];
     [[_navigation view] setFrame:[[UIScreen mainScreen] applicationFrame]];

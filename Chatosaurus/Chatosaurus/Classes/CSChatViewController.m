@@ -10,7 +10,7 @@
 
 #pragma mark -
 #pragma mark Private Interface
-@interface CSChatViewController ()
+@interface CSChatViewController () <CSChatViewControllerDelegate>
 @end
 
 #pragma mark -
@@ -24,7 +24,7 @@
 		return self;
     
     _chatViews = [[NSMutableArray alloc] init];
-    
+    //[self setDelegate:self];
     return self;
 }
 
@@ -47,9 +47,10 @@
 #pragma mark CSChatViewControllerDelegate Methods
 - (void) createChannel:(NSString*)channel fromServer:(NSString*)server
 {
+
     NSString *identifier = [[NSString alloc] initWithFormat:@"%@,%@",channel,server];
     
-    // If view exists, use it, if not create it and add it to the chatViews
+    // If view exists, use it -- if not create it and add it to _chatViews
     CSChatView *view = nil;
     if ([_chatViews count] > 0) {
         for (CSChatView *v in _chatViews) {
@@ -58,35 +59,36 @@
         }
     }
     if (view == nil) {
-        view = [[[CSChatView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)] retain];
+        view = [[[CSChatView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)] autorelease];
         [view setIdentifier:identifier];
         [_chatViews addObject:view];
     }
     
     NSLog(@"Creating channelview: %@", identifier);
+
+    // Do something like this:
 //    [_chatView removeFromSuperview];
 //    [_chatView release];
-//    [[self view] addSubview:view];
-//    
-//    [[self navigationController] setTitle:channel];
-//    [[self navigationController] pushViewController:self animated:TRUE];
-//    [[self navigationController] setNavigationBarHidden:FALSE animated:TRUE];
+    [[self view] addSubview:view];
+    [[self view] setNeedsDisplay];
+    [[self navigationController] setTitle:channel];
+    [[self navigationController] pushViewController:self animated:YES];
+    [[self navigationController] viewWillAppear:YES];
+
+    [[self navigationController] setNavigationBarHidden:FALSE animated:YES];
+    
                  
 }
 
 #pragma mark UIViewController Methods
-- (void) loadView
-{
-    
-}
 - (void) viewDidLoad
 {
-//    [[self view] setBackgroundColor:[UIColor lightGrayColor]];
-//    
+    [[self view] setBackgroundColor:[UIColor lightGrayColor]];
+    
 //    _chatView = [[CSChatView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
 //    [[self view] addSubview:_chatView];
 //    
-//    [[self navigationController] setNavigationBarHidden:FALSE animated:TRUE];
+    [[self navigationController] setNavigationBarHidden:FALSE animated:TRUE];
 }
 
 - (void) viewDidUnload

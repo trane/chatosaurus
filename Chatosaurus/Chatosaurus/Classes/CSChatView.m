@@ -46,15 +46,22 @@
                                           frame.size.height * (0.85f))];
     [_textView setEditable:FALSE];
     
-    _sendButton = [[UIButton alloc]
-                   initWithFrame:CGRectMake(frame.origin.x + frame.size.width * (0.8f), 
-                                            frame.origin.y + frame.size.height * (0.9f),
-                                            frame.size.width * (0.15f), 
-                                            frame.size.height * (0.08f))]; 
+    _sendButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [_sendButton setFrame:CGRectMake(frame.origin.x + frame.size.width * (0.8f), 
+                                     frame.origin.y + frame.size.height * (0.9f),
+                                     frame.size.width * (0.15f), 
+                                     frame.size.height * (0.08f))];
+//    
+//    _sendButton = [[UIButton alloc]
+//                   initWithFrame:CGRectMake(frame.origin.x + frame.size.width * (0.8f), 
+//                                            frame.origin.y + frame.size.height * (0.9f),
+//                                            frame.size.width * (0.15f), 
+//                                            frame.size.height * (0.08f))]; 
     [_sendButton setTitle:@"Send" forState:UIControlStateNormal];
-    [_sendButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_sendButton setOpaque:TRUE];
-    [_sendButton setBackgroundColor:[UIColor lightGrayColor]];
+//    [_sendButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    
+//    [_sendButton setOpaque:TRUE];
+//    [_sendButton setBackgroundColor:[UIColor lightGrayColor]];
     [_sendButton setShowsTouchWhenHighlighted:TRUE];
     [_sendButton addTarget:self action:@selector(sendButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     

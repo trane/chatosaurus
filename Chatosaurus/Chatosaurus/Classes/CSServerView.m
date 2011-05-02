@@ -241,7 +241,6 @@
 
 - (void) createChannelsWithArray:(NSArray*)channels
 {
-    NSLog(@"Creating channels");
     _channelCount = [channels count];
     [_channelViewController loadChannelList:channels];
 }

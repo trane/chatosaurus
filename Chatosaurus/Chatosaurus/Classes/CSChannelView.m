@@ -106,7 +106,7 @@
 
 - (NSString*) description
 {
-    return [[NSString alloc] initWithFormat:@"%@, %@", [_name text], [_textView text]];
+    return [[NSString alloc] initWithFormat:@"%@", [_name text]];
 }
 
 @synthesize tapTarget = _tapTarget;
@@ -116,10 +116,10 @@
 #pragma mark Methods
 - (void) channelTouched
 {
-    NSLog(@"Touched");
+    NSLog(@"Touched %@", self);
     // TODO: Launch chat view
     if (_tapTarget != nil && _tapAction != NULL)
-        [_tapTarget performSelector:_tapAction withObject:_channelInfo];
+        [_tapTarget performSelector:_tapAction withObject:_name];
 }
 
 #pragma mark UIView Methods

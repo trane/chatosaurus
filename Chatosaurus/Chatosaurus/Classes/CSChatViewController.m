@@ -24,7 +24,6 @@
 		return self;
     
     _chatViews = [[NSMutableArray alloc] init];
-    //[self setDelegate:self];
     return self;
 }
 
@@ -48,6 +47,10 @@
 #pragma mark CSChatViewControllerDelegate Methods
 - (void) createChannel:(NSString*)channel fromServer:(NSString*)server
 {
+    if (_notificationView == nil)
+        _notificationView = [[CSNotificationView alloc] initWithFrame:CGRectMake(0, 0, 320, 150)];
+    else
+        [_notificationView removeFromSuperview];
 
     //NSString *identifier = [[NSString alloc] initWithFormat:@"%@,%@",channel,server];
     // If view exists, use it -- if not create it and add it to _chatViews
@@ -66,11 +69,18 @@
     }
     
     NSLog(@"Creating channelview: %@ %@", channel, server);
+        [view setDelegate:_notificationView];
+        [_chatViews addObject:view];
+    }
+    
+    
+   
 
     // Do something like this:
 //    [_chatView removeFromSuperview];
 //    [_chatView release];
     [[self view] addSubview:view];
+    [[self view] addSubview:_notificationView];
     [[self view] setNeedsDisplay];
     [self setTitle:channel];
 }

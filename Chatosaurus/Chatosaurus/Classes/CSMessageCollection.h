@@ -11,7 +11,7 @@
 @class CSMessageCollection;
 
 /*!
- * Protocol delegate methods (ChatosaurusAppDelegate should implement
+ * Protocol delegate methods (ChatosaurusAppDelegate should implement)
  */
 @protocol CSMessageCollectionDelegate
 - (void) newMessage:(NSString*)message fromChannel:(NSString*)channel server:(NSString*)server;

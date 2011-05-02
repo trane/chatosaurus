@@ -17,7 +17,7 @@
 @implementation CSMessage
 
 #pragma mark Constructors
-- (id) init
+- (id) initWithServer:(NSString *)server message:(NSString *)message timestamp:(NSString *)timestamp
 {
     self = [super init];
     if (self == nil)
@@ -29,10 +29,17 @@
 - (void) dealloc
 {
     [super dealloc];
+    [_serverKey release];
+    [_messageText release];
+    [_timestamp release];
 }
 
 #pragma mark -
 #pragma mark Accessors
+
+@synthesize serverKey=_serverKey;
+@synthesize message=_messageText;
+@synthesize timestamp=_timestamp;
 
 #pragma mark -
 #pragma mark Methods

@@ -8,6 +8,7 @@
 
 #import "CSChatView.h"
 #import "CSMessageCollection.h"
+#import "CSNotificationView.h"
 
 @class CSChatViewController;
 
@@ -20,6 +21,7 @@
     NSObject<CSChatViewControllerDelegate>* _delegate;
     NSObject<CSMessageCollectionDelegate> *_messageCollectionDelegate;
     CSChatView* _chatView;
+    CSNotificationView* _notificationView;
     
     NSMutableArray *_chatViews;
 }

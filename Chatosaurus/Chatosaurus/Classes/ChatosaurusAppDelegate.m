@@ -29,11 +29,13 @@
     
     // Link the chat view and table view controllers
     [_serverTableViewController setChatViewDelegate:_chatViewController];
+    [_serverTableViewController setDelegate:self];
     
 //    _navigation = [[UINavigationController alloc]
 //                   initWithRootViewController:_chatViewController];
     _navigation = [[UINavigationController alloc]
                    initWithRootViewController:_serverTableViewController];
+    [[_navigation navigationBar] setBarStyle:UIBarStyleBlackOpaque];
     [[_navigation view] setFrame:[[UIScreen mainScreen] applicationFrame]];
     [_navigation setNavigationBarHidden:TRUE animated:TRUE];
     [_window addSubview:[_navigation view]];
@@ -64,6 +66,13 @@
 
 - (void) applicationDidBecomeActive:(UIApplication*)application
 {
+}
+
+#pragma mark -
+#pragma mark CSServerTableViewControllerDelegate Methods
+- (void) pushChannelView
+{
+    [_navigation pushViewController:_chatViewController animated:TRUE];
 }
 
 @end

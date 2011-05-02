@@ -7,10 +7,11 @@
 //
 #import "CSMessageCollection.h"
 #import "CSServersCollection.h"
+#import "CSServerTableViewController.h"
 // All classes that will directly interact with the master app delegate
-@class CSServerViewController, CSGlobalPreferencesView, CSNotificationView, CSChatViewController, CSServerTableViewController;
+@class CSServerViewController, CSGlobalPreferencesView, CSNotificationView, CSChatViewController;
 
-@interface ChatosaurusAppDelegate : NSObject <UIApplicationDelegate, CSMessageCollectionDelegate> 
+@interface ChatosaurusAppDelegate : NSObject <UIApplicationDelegate, CSMessageCollectionDelegate, CSServerTableViewControllerDelegate> 
 {
     UIWindow* _window;
     UINavigationController* _navigation;

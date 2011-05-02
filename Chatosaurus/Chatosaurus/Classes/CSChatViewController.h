@@ -14,7 +14,7 @@
 - (void) createChannel:(NSString*)channel fromServer:(NSString*)server;
 @end
 
-@interface CSChatViewController : UIViewController 
+@interface CSChatViewController : UIViewController <CSChatViewControllerDelegate>
 {
     NSObject<CSChatViewControllerDelegate>* _delegate;
     CSChatView* _chatView;

@@ -20,6 +20,8 @@
 @interface CSMessageCollection : NSObject 
 {
     NSObject<CSMessageCollectionDelegate> *_delegate;
+
+    NSMutableDictionary *_origins;
 }
 
 /*!
@@ -27,4 +29,13 @@
  */
 @property (nonatomic,assign) NSObject<CSMessageCollectionDelegate> *delegate;
 
+@property (nonatomic,assign) NSMutableDictionary *origins;
+
+/*!
+ * This will populate the origins dictionary with a:
+ * Servers dictionary that contains a dictionary of channels of that server
+ * Each channel dictionary contains an empty array that will be populated
+ * with incoming messages to that array
+ */
+- (void) addServers:(NSArray*)servers;
 @end

@@ -11,6 +11,7 @@
 		F795BC5A136DEC4A0048B44B /* CSServerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F795BC58136DEC4A0048B44B /* CSServerTableViewController.m */; };
 		F795BC67136DEDEF0048B44B /* Menlo.ttc in Resources */ = {isa = PBXBuildFile; fileRef = F795BC65136DEDEF0048B44B /* Menlo.ttc */; };
 		F795BC68136DEDEF0048B44B /* Monaco.dfont in Resources */ = {isa = PBXBuildFile; fileRef = F795BC66136DEDEF0048B44B /* Monaco.dfont */; };
+		F795BC8E136E54F60048B44B /* CSServersCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = F795BC8D136E54F60048B44B /* CSServersCollection.m */; };
 		F7CF810513624C78003A8E09 /* Servers.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7CF810413624C78003A8E09 /* Servers.plist */; };
 		F7CF810813624C90003A8E09 /* GlobalPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7CF810713624C90003A8E09 /* GlobalPreferences.plist */; };
 		F7D6850C1357DADC003EF72B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D6850B1357DADC003EF72B /* UIKit.framework */; };
@@ -46,6 +47,8 @@
 		F795BC58136DEC4A0048B44B /* CSServerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSServerTableViewController.m; path = Classes/CSServerTableViewController.m; sourceTree = "<group>"; };
 		F795BC65136DEDEF0048B44B /* Menlo.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Menlo.ttc; sourceTree = "<group>"; };
 		F795BC66136DEDEF0048B44B /* Monaco.dfont */ = {isa = PBXFileReference; lastKnownFileType = file; path = Monaco.dfont; sourceTree = "<group>"; };
+		F795BC8C136E54F60048B44B /* CSServersCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSServersCollection.h; path = Classes/CSServersCollection.h; sourceTree = "<group>"; };
+		F795BC8D136E54F60048B44B /* CSServersCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSServersCollection.m; path = Classes/CSServersCollection.m; sourceTree = "<group>"; };
 		F7CF810413624C78003A8E09 /* Servers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Servers.plist; sourceTree = "<group>"; };
 		F7CF810713624C90003A8E09 /* GlobalPreferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GlobalPreferences.plist; sourceTree = "<group>"; };
 		F7D685071357DADC003EF72B /* Chatosaurus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chatosaurus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,6 +208,8 @@
 				F7D685521357DD43003EF72B /* CSMessageCollection.m */,
 				F7D685901357E270003EF72B /* CSMessage.h */,
 				F7D685911357E270003EF72B /* CSMessage.m */,
+				F795BC8C136E54F60048B44B /* CSServersCollection.h */,
+				F795BC8D136E54F60048B44B /* CSServersCollection.m */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -365,6 +370,7 @@
 				F7D6859D1357EC3C003EF72B /* Protocols.m in Sources */,
 				F795BC59136DEC4A0048B44B /* CSServerTableViewCell.m in Sources */,
 				F795BC5A136DEC4A0048B44B /* CSServerTableViewController.m in Sources */,
+				F795BC8E136E54F60048B44B /* CSServersCollection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

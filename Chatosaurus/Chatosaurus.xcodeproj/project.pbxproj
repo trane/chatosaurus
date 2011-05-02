@@ -108,13 +108,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1397800F13623121006BA0A0 /* Root */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Root;
-			sourceTree = "<group>";
-		};
 		F7D684FC1357DADC003EF72B = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				F7D6852E1357DB3A003EF72B /* Application */,
-				1397800F13623121006BA0A0 /* Root */,
 				F7D685341357DBDA003EF72B /* Configuration */,
 				F7D685321357DB97003EF72B /* Message */,
 				F7D685311357DB8E003EF72B /* Channel */,

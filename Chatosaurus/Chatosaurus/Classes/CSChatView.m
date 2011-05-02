@@ -37,6 +37,7 @@
     [_textEntry addTarget:self action:@selector(textEntryDidEndEditing) forControlEvents:UIControlEventEditingDidEnd];
     [_textEntry setKeyboardType:UIKeyboardTypeAlphabet];
     [_textEntry setReturnKeyType:UIReturnKeyDone];
+    [_textEntry setDelegate:(id)self];
     
     _textView = [[UITextView alloc]
                  initWithFrame:CGRectMake(frame.origin.x + frame.size.width * (0.025f), 
@@ -54,6 +55,7 @@
     [_sendButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_sendButton setOpaque:TRUE];
     [_sendButton setBackgroundColor:[UIColor lightGrayColor]];
+    [_sendButton setShowsTouchWhenHighlighted:TRUE];
     
     [self addSubview:_sendButton];
     [self addSubview:_textView];
@@ -73,6 +75,9 @@
 #pragma mark -
 #pragma mark Methods
 
+#pragma mark -
+#pragma mark Delegate Methods/Event Handlers
+
 - (void) textEntryDidBeginEditing
 {
     CGRect frame = [self frame];
@@ -89,6 +94,12 @@
     
     frame = [_textView frame];
     [_textView setFrame:CGRectMake(frame.origin.x, frame.origin.y - 216, frame.size.width, frame.size.height + 216)];
+}
+
+- (BOOL) textFieldShouldReturn:(UITextField*)textField
+{
+    [textField resignFirstResponder];
+    return NO;
 }
 
 #pragma mark UIView Methods

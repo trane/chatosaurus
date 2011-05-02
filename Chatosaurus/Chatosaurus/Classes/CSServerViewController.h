@@ -7,6 +7,7 @@
 //
 #import "CSServerView.h"
 #import "CSMessageCollection.h"
+#import "CSServersCollection.h"
 
 @class CSServerViewController;
 
@@ -24,6 +25,7 @@
     NSMutableArray *_serverViews;
     
     CSMessageCollection *_messageCollection;
+    CSServersCollection *_serversCollection;
 }
 
 /*!
@@ -40,6 +42,11 @@
  * All messages are stored here
  */
 @property (nonatomic,retain) CSMessageCollection *messageCollection;
+
+/*!
+ * All server data is accessed from here
+ */
+@property (nonatomic,retain) CSServersCollection *serversCollection;
 
 /*!
  * Looks through all server views for matching key and reinitializes the view

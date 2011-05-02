@@ -6,7 +6,7 @@
 //  Copyright 2011 errstr. All rights reserved.
 //
 #import "CSMessageCollection.h"
-
+#import "CSServersCollection.h"
 // All classes that will directly interact with the master app delegate
 @class CSServerViewController, CSGlobalPreferencesView, CSNotificationView, CSChatViewController, CSServerTableViewController;
 
@@ -14,6 +14,9 @@
 {
     UIWindow* _window;
     UINavigationController* _navigation;
+    
+    // Servers.plist data
+    CSServersCollection *_serversCollection;
     
     // ServerViewController holds all ServerViews
     CSServerViewController *_serverViewController;

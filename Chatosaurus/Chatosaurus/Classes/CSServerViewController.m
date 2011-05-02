@@ -33,7 +33,6 @@
     
     _serverViews = [[NSMutableArray alloc] init];
     
-    [self loadServerViews];
     [[self view] addSubview:_scrollView];
     return self;
 }
@@ -58,6 +57,13 @@
     _messageCollection = messageCollection;
 }
 
+@synthesize serversCollection = _serversCollection;
+- (void) setServersCollection:(CSServersCollection *)serversCollection
+{
+    _serversCollection = serversCollection;
+    [self loadServerViews];
+}
+
 #pragma mark -
 #pragma mark Methods
 - (void) updateServerViewWithKey:(NSString*)key
@@ -72,11 +78,9 @@
 
 - (void) loadServerViews
 {
-    NSString *serversPList = [[NSBundle mainBundle] pathForResource:@"Servers" ofType:@"plist"];
-	NSArray *servers = [NSArray arrayWithArray:[[NSDictionary dictionaryWithContentsOfFile:serversPList] objectForKey:@"Servers"]];
+    NSArray *servers = [_serversCollection servers];
     int rows = 1;
-//    int cols = 4;
-    // Grab all of the values from the plist and create server views
+
     for (int i = 0; i < [servers count]; i++) {
         NSDictionary *dict = [servers objectAtIndex:i];
         CGSize serverSize = CGSizeZero;

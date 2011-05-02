@@ -37,7 +37,7 @@
     [[self tableView] setRowHeight:150.0f];
     
     _serverViews = [[NSMutableArray alloc] init];
-    [self loadServerViews];
+    //[self loadServerViews];
     return self;
     
 }
@@ -45,12 +45,20 @@
 {
     [self setDelegate:nil];
     [_serverViews release];
+    [_serversCollection release];
     [super dealloc];
 }
 
 #pragma mark -
 #pragma mark Accessors
 @synthesize delegate = _delegate;
+@synthesize serversCollection = _serversCollection;
+- (void) setServersCollection:(CSServersCollection *)serversCollection
+{
+    _serversCollection = serversCollection;
+    [self loadServerViews];
+    [[self tableView] reloadData];
+}
 
 #pragma mark -
 #pragma mark Methods
@@ -66,9 +74,7 @@
 }
 - (void) loadServerViews
 {
-    NSString *serversPList = [[NSBundle mainBundle] pathForResource:@"Servers" ofType:@"plist"];
-	NSArray *servers = [NSArray arrayWithArray:[[NSDictionary dictionaryWithContentsOfFile:serversPList] objectForKey:@"Servers"]];
-
+    NSArray *servers = [_serversCollection servers];
     // Grab all of the values from the plist and create server views
     for (int i = 0; i < [servers count]; i++) {
         NSDictionary *dict = [[servers objectAtIndex:i] retain];
@@ -119,29 +125,12 @@
         [[cell contentView] addSubview:[_serverViews objectAtIndex:[indexPath section]]];
         NSLog(@"cell row: %i",[indexPath row]);
     }
-//        Region *region = [displayList objectAtIndex:indexPath.section];
-//        NSArray *regionTimeZones = region.timeZoneWrappers;
-//        [timeZoneCell setTimeZoneWrapper:[regionTimeZones objectAtIndex:indexPath.row]];
     return cell;
-//	CSShape* shape = [[_shapesManager shapes] objectAtIndex:[indexPath row]];
-//    UIColor* shapeColor = [UIColor colorWithHue:[shape hue] saturation:[shape saturation] brightness:[shape brightness] alpha:[shape alpha]];
-//	NSString* cellText = [NSString stringWithFormat:@"%i-Sided Shape", [shape sideCount]];
-//    NSString* subText = [NSString stringWithFormat:@"Location: (%f,%f) Size: %f Hue: %f Saturation: %f Brightness: %f Alpha: %f",
-//                         [shape center].x, [shape center].y, [shape width], [shape hue], [shape saturation], [shape brightness], [shape alpha]];
-//	
-//    UITableViewCell* cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil] autorelease];
-//    
-//    [[cell textLabel] setText:cellText];
-//    [[cell textLabel] setTextColor:shapeColor];
-//    [[cell detailTextLabel] setText:subText];
-//    [[cell detailTextLabel] setTextColor:[UIColor blackColor]];
-//    return cell;
 }
 
 #pragma mark UITableView Methods
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CSServerView *serverView = [_serverViews objectAtIndex:[indexPath section]];
-    NSLog(@"Touched server: %@", serverView);
 }
 @end

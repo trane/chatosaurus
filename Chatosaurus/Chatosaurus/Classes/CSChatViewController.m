@@ -71,24 +71,13 @@
 //    [_chatView release];
     [[self view] addSubview:view];
     [[self view] setNeedsDisplay];
-    [[self navigationController] setTitle:channel];
-    [[self navigationController] pushViewController:self animated:YES];
-    [[self navigationController] viewWillAppear:YES];
-
-    [[self navigationController] setNavigationBarHidden:FALSE animated:YES];
-    
-                 
+    [self setTitle:channel];
 }
 
 #pragma mark UIViewController Methods
 - (void) viewDidLoad
 {
     [[self view] setBackgroundColor:[UIColor lightGrayColor]];
-    
-//    _chatView = [[CSChatView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
-//    [[self view] addSubview:_chatView];
-//    
-    [[self navigationController] setNavigationBarHidden:FALSE animated:TRUE];
 }
 
 - (void) viewDidUnload

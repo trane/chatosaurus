@@ -121,6 +121,11 @@
     return 1;//[_serverViews count];
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [[self navigationController] setNavigationBarHidden:TRUE animated:TRUE];
+}
+
 #pragma mark UITableViewController Methods
 - (UITableViewCell*) tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {

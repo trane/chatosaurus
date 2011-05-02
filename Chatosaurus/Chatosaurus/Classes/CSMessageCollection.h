@@ -11,7 +11,7 @@
 @class CSMessageCollection;
 
 /*!
- * Protocol delegate methods (ChatosaurusAppDelegate should implement
+ * Protocol delegate methods (ChatosaurusAppDelegate should implement)
  */
 @protocol CSMessageCollectionDelegate
 
@@ -20,11 +20,17 @@
 @interface CSMessageCollection : NSObject 
 {
     NSObject<CSMessageCollectionDelegate> *_delegate;
+    
+    NSMutableArray *_organizedMessageCollection;
+    NSMutableArray *_rawMessageCollection;
 }
 
 /*!
  * Getter for this delegate
  */
 @property (nonatomic,assign) NSObject<CSMessageCollectionDelegate> *delegate;
+
+- (NSArray*) messagesForServer:(NSString*)server channel:(NSString*)channel;
+- (NSArray*) messagesSortedByTime;
 
 @end

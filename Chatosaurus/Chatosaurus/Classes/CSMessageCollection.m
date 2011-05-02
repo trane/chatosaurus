@@ -23,17 +23,34 @@
     if (self == nil)
         return nil;
     
+    _organizedMessageCollection = [[NSMutableArray alloc] init];
+    _rawMessageCollection = [[NSMutableArray alloc] init];
+    
     return self;
 }
 
 - (void) dealloc
 {
+    [_organizedMessageCollection release];
+    [_rawMessageCollection release];
     [super dealloc];
 }
 
 #pragma mark -
 #pragma mark Accessors
 @synthesize delegate = _delegate;
+
+- (NSArray*) messagesForServer:(NSString*)server channel:(NSString*)channel
+{
+    //TODO: implement
+    return nil;
+}
+
+- (NSArray*) messagesSortedByTime
+{
+    //TODO: implement
+    return nil;
+}
 
 #pragma mark -
 #pragma mark Methods

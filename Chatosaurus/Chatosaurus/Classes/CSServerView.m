@@ -185,7 +185,9 @@
     
     // Server info button view
     CGRectDivide(serverInfoRect, &serverInfoButtonRect, &serverInfoRect, serverInfoRect.size.height, CGRectMaxXEdge);
-    UIButton *serverInfoButton = [[UIView alloc] initWithFrame:CGRectIntegral(CGRectInset(serverInfoButtonRect, 0, 0))];
+    UIButton *serverInfoButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
+    [serverInfoButton setFrame:serverInfoButtonRect];
+//    UIButton *serverInfoButton = [[UIView alloc] initWithFrame:CGRectIntegral(CGRectInset(serverInfoButtonRect, 0, 0))];
 //    [serverInfoButton setBackgroundColor:[UIColor purpleColor]];
     [serverInfo addSubview:serverInfoButton];
     

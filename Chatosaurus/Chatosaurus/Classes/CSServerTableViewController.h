@@ -11,6 +11,7 @@
 @class CSServerTableViewController;
 
 @protocol CSServerTableViewControllerDelegate
+- (void) pushChannelView;
 @end
 
 @interface CSServerTableViewController : UITableViewController 

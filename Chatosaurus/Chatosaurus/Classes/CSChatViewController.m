@@ -49,6 +49,8 @@
     
     _chatView = [[CSChatView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)];
     [[self view] addSubview:_chatView];
+    
+    [[self navigationController] setNavigationBarHidden:FALSE animated:TRUE];
 }
 
 - (void) viewDidUnload

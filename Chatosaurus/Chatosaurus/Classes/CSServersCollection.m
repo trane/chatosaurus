@@ -37,9 +37,18 @@
 
 #pragma mark -
 #pragma mark Accessors
+@synthesize servers = _servers;
 - (NSArray*) servers
 {
     return [NSArray arrayWithArray:_servers];
+}
+
+@synthesize messageCollection = _messageCollection;
+- (void) setMessageCollection:(CSMessageCollection *)messageCollection
+{    
+    _messageCollection = messageCollection;
+    NSArray *servers = [NSArray arrayWithArray:_servers];
+    [_messageCollection addServers:servers];
 }
 
 #pragma mark -

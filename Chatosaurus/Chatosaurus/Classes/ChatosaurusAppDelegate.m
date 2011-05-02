@@ -21,10 +21,13 @@
     // Read in the plists
     _serversCollection = [[CSServersCollection alloc] init];
     
+    _messageCollection = [[CSMessageCollection alloc] init];
+    [_serversCollection setMessageCollection:_messageCollection];
+    
 //    _serverViewController = [[CSServerViewController alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     _serverTableViewController = [[CSServerTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     [_serverTableViewController setServersCollection:_serversCollection];
-    
+
     _chatViewController = [[CSChatViewController alloc] init];
     
     // Link the chat view and table view controllers

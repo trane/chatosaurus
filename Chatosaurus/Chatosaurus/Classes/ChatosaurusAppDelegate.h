@@ -19,6 +19,9 @@
     // Servers.plist data
     CSServersCollection *_serversCollection;
     
+    // Message Collection
+    CSMessageCollection *_messageCollection;
+    
     // ServerViewController holds all ServerViews
     CSServerViewController *_serverViewController;
     CSServerTableViewController *_serverTableViewController;

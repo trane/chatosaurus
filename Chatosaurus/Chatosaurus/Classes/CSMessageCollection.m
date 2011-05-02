@@ -23,16 +23,13 @@
     if (self == nil)
         return nil;
     
-    _organizedMessageCollection = [[NSMutableArray alloc] init];
-    _rawMessageCollection = [[NSMutableArray alloc] init];
-    
+    _origins = [[NSMutableDictionary alloc] init];
     return self;
 }
 
 - (void) dealloc
 {
-    [_organizedMessageCollection release];
-    [_rawMessageCollection release];
+    [_origins release];
     [super dealloc];
 }
 
@@ -40,19 +37,34 @@
 #pragma mark Accessors
 @synthesize delegate = _delegate;
 
-- (NSArray*) messagesForServer:(NSString*)server channel:(NSString*)channel
+@synthesize origins = _origins;
+- (void) setOrigins:(NSMutableDictionary *)origins
 {
-    //TODO: implement
-    return nil;
+    _origins = origins;
 }
-
-- (NSArray*) messagesSortedByTime
-{
-    //TODO: implement
-    return nil;
-}
-
 #pragma mark -
 #pragma mark Methods
+- (void) addServers:(NSArray *)servers
+{
+    for (int i = 0; i < [servers count]; i++) {
 
+        // Grab the server
+        NSDictionary *dict = [servers objectAtIndex:i];
+
+        // Get the server name
+        NSString *serverName = [dict objectForKey:@"serverName"];
+        
+        // Create the channel dictionaries
+        NSArray *channels = [[NSArray arrayWithArray:[dict objectForKey:@"channels"]] retain];
+        NSMutableDictionary *channelNames = [[[NSMutableDictionary alloc] init] autorelease];
+        for (int j = 0; j < [channels count]; j++) {
+            // Create an empty array to store messages for this channel
+            NSMutableArray *channelMessages = [[[NSMutableArray alloc] init] autorelease];            
+            [channelNames setValue:channelMessages forKey:[[channels objectAtIndex:j] valueForKey:@"name"]];
+        }
+        
+        // Create the Origins Server->Channels dictionary
+        [_origins setValue:channelNames forKey:serverName];
+    }
+}
 @end

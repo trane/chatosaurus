@@ -84,4 +84,9 @@
 {
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [[self navigationController] setNavigationBarHidden:FALSE animated:TRUE];
+}
+
 @end

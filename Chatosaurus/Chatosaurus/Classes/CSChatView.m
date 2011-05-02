@@ -36,6 +36,7 @@
     [_textEntry addTarget:self action:@selector(textEntryDidBeginEditing) forControlEvents:UIControlEventEditingDidBegin];
     [_textEntry addTarget:self action:@selector(textEntryDidEndEditing) forControlEvents:UIControlEventEditingDidEnd];
     [_textEntry setKeyboardType:UIKeyboardTypeAlphabet];
+    [_textEntry setKeyboardAppearance:UIKeyboardAppearanceAlert];
     [_textEntry setReturnKeyType:UIReturnKeyDone];
     [_textEntry setDelegate:(id)self];
     
@@ -51,17 +52,10 @@
                                      frame.origin.y + frame.size.height * (0.9f),
                                      frame.size.width * (0.15f), 
                                      frame.size.height * (0.08f))];
-//    
-//    _sendButton = [[UIButton alloc]
-//                   initWithFrame:CGRectMake(frame.origin.x + frame.size.width * (0.8f), 
-//                                            frame.origin.y + frame.size.height * (0.9f),
-//                                            frame.size.width * (0.15f), 
-//                                            frame.size.height * (0.08f))]; 
+
     [_sendButton setTitle:@"Send" forState:UIControlStateNormal];
-//    [_sendButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    
-//    [_sendButton setOpaque:TRUE];
-//    [_sendButton setBackgroundColor:[UIColor lightGrayColor]];
+    [_sendButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+
     [_sendButton setShowsTouchWhenHighlighted:TRUE];
     [_sendButton addTarget:self action:@selector(sendButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     

@@ -136,9 +136,17 @@
     
     CGRectDivide(divRect, &nameRect, &mainViewRect, nameHeight, CGRectMaxYEdge);
     
-    [_textView setFrame:CGRectIntegral(mainViewRect)];
-    [_textView setBackgroundColor:[UIColor whiteColor]];
-    
+    if (![[_name text] isEqualToString:@"colton.myers@gmail.com"]) {
+        [_textView setFrame:CGRectIntegral(mainViewRect)];
+        [_textView setBackgroundColor:[UIColor whiteColor]];
+        [self addSubview:_textView];
+
+    } else {
+        [_avatarView setFrame:CGRectIntegral(mainViewRect)];
+        [_avatarView setImage:[UIImage imageNamed:@"hotdog.jpg"]];
+        [self addSubview:_avatarView];
+
+    }
     //nameRect = CGRectInset(nameRect, 2.0, 0);
     [_name setFrame:CGRectIntegral(nameRect)];
     [_name setTextColor:[UIColor darkGrayColor]];
@@ -149,7 +157,6 @@
     [_chatButton setBackgroundColor:[UIColor clearColor]];
     [_chatButton addTarget:self action:@selector(channelTouched) forControlEvents:UIControlEventTouchUpInside];
 
-    [self addSubview:_textView];
     [self addSubview:_name];
     [self addSubview:_chatButton];    
 }

@@ -156,7 +156,7 @@
 				</dict>
 				<dict>
 					<key>avatar</key>
-					<string>/path/to/avatar</string>
+					<string>hotdog.jpg</string>
 					<key>name</key>
 					<string>colton.myers@gmail.com</string>
 				</dict>

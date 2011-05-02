@@ -38,6 +38,7 @@
 		F7D6858F1357E1AE003EF72B /* CSChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D6858E1357E1AE003EF72B /* CSChannelView.m */; };
 		F7D685921357E270003EF72B /* CSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D685911357E270003EF72B /* CSMessage.m */; };
 		F7D6859D1357EC3C003EF72B /* Protocols.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D6859C1357EC3C003EF72B /* Protocols.m */; };
+		F7EED47E136F4CDE00814B90 /* hotdog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F7EED47D136F4CDE00814B90 /* hotdog.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 		F7D685911357E270003EF72B /* CSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSMessage.m; path = Classes/CSMessage.m; sourceTree = "<group>"; };
 		F7D6859B1357EC3C003EF72B /* Protocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Protocols.h; path = Classes/Protocols.h; sourceTree = "<group>"; };
 		F7D6859C1357EC3C003EF72B /* Protocols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Protocols.m; path = Classes/Protocols.m; sourceTree = "<group>"; };
+		F7EED47D136F4CDE00814B90 /* hotdog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hotdog.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 		F7D6851B1357DADD003EF72B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F7EED47D136F4CDE00814B90 /* hotdog.jpg */,
 				F795BC65136DEDEF0048B44B /* Menlo.ttc */,
 				F795BC66136DEDEF0048B44B /* Monaco.dfont */,
 				F7D6851C1357DADD003EF72B /* Chatosaurus-Info.plist */,
@@ -339,6 +342,7 @@
 				F7CF810813624C90003A8E09 /* GlobalPreferences.plist in Resources */,
 				F795BC67136DEDEF0048B44B /* Menlo.ttc in Resources */,
 				F795BC68136DEDEF0048B44B /* Monaco.dfont in Resources */,
+				F7EED47E136F4CDE00814B90 /* hotdog.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

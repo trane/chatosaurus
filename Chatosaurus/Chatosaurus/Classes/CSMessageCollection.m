@@ -67,4 +67,9 @@
         [_origins setValue:channelNames forKey:serverName];
     }
 }
+
+- (void) newMessage:(NSString *)message fromChannel:(NSString *)channel server:(NSString *)server
+{
+    //TODO: This
+}
 @end

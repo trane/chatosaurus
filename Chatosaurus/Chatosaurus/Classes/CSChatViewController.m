@@ -40,6 +40,7 @@
 #pragma mark -
 #pragma mark Accessors
 @synthesize delegate = _delegate;
+@synthesize messageCollectionDelegate = _messageCollectionDelegate;
 
 #pragma mark -
 #pragma mark Methods
@@ -48,23 +49,23 @@
 - (void) createChannel:(NSString*)channel fromServer:(NSString*)server
 {
 
-    NSString *identifier = [[NSString alloc] initWithFormat:@"%@,%@",channel,server];
-    
+    //NSString *identifier = [[NSString alloc] initWithFormat:@"%@,%@",channel,server];
     // If view exists, use it -- if not create it and add it to _chatViews
     CSChatView *view = nil;
     if ([_chatViews count] > 0) {
         for (CSChatView *v in _chatViews) {
-            if ([[v identifier] isEqualToString:identifier])
+            if ([[v channel] isEqualToString:channel] && [[v server] isEqualToString:server])
                 view = v;
         }
     }
     if (view == nil) {
         view = [[[CSChatView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)] autorelease];
-        [view setIdentifier:identifier];
+        [view setChannel:channel];
+        [view setServer:server];
         [_chatViews addObject:view];
     }
     
-    NSLog(@"Creating channelview: %@", identifier);
+    NSLog(@"Creating channelview: %@ %@", channel, server);
 
     // Do something like this:
 //    [_chatView removeFromSuperview];
@@ -89,4 +90,11 @@
     [[self navigationController] setNavigationBarHidden:FALSE animated:TRUE];
 }
 
+- (void) newMessage:(NSString *)message fromChannel:(NSString *)channel server:(NSString *)server
+{
+    for (CSChatView *view in _chatViews) {
+        if ([[view channel] isEqualToString:channel] && [[view server] isEqualToString:server])
+            [view newMessage:message];
+    }
+}
 @end

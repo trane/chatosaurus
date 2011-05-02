@@ -73,11 +73,9 @@
 
 #pragma mark -
 #pragma mark Accessors
-@synthesize identifier = _identifier;
-- (void) setIdentifier:(NSString *)identifier
-{
-    _identifier = identifier;
-}
+@synthesize channel = _channel;
+@synthesize server = _server;
+
 #pragma mark -
 #pragma mark Methods
 
@@ -120,6 +118,10 @@
     }
 }
 
+- (void) newMessage:(NSString *)message
+{
+    
+}
 #pragma mark UIView Methods
 - (void) layoutSubviews
 {

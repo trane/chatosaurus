@@ -14,7 +14,7 @@
  * Protocol delegate methods (ChatosaurusAppDelegate should implement
  */
 @protocol CSMessageCollectionDelegate
-
+- (void) newMessage:(NSString*)message fromChannel:(NSString*)channel server:(NSString*)server;
 @end
 
 @interface CSMessageCollection : NSObject 
@@ -38,4 +38,10 @@
  * with incoming messages to that array
  */
 - (void) addServers:(NSArray*)servers;
+
+/**
+ * Communicates new messages to the user
+ */
+- (void) newMessage:(NSString*)message fromChannel:(NSString*)channel server:(NSString*)server;
+
 @end

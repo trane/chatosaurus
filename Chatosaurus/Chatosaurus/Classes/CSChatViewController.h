@@ -7,6 +7,7 @@
 //
 
 #import "CSChatView.h"
+#import "CSMessageCollection.h"
 
 @class CSChatViewController;
 
@@ -14,15 +15,16 @@
 - (void) createChannel:(NSString*)channel fromServer:(NSString*)server;
 @end
 
-@interface CSChatViewController : UIViewController <CSChatViewControllerDelegate>
+@interface CSChatViewController : UIViewController <CSChatViewControllerDelegate, CSMessageCollectionDelegate>
 {
     NSObject<CSChatViewControllerDelegate>* _delegate;
+    NSObject<CSMessageCollectionDelegate> *_messageCollectionDelegate;
     CSChatView* _chatView;
     
     NSMutableArray *_chatViews;
 }
 
 @property (assign) NSObject<CSChatViewControllerDelegate>* delegate;
-
+@property (nonatomic,assign) NSObject<CSMessageCollectionDelegate> *messageCollectionDelegate;
 @end
 

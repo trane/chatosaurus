@@ -12,7 +12,7 @@
 
 #pragma mark -
 #pragma mark Private Interface
-@interface CSServerTableViewController () <UITableViewDataSource, CSServerViewDelegate>
+@interface CSServerTableViewController () <UITableViewDataSource, CSServerViewDelegate, CSMessageCollectionDelegate>
 @end
 
 #pragma mark -
@@ -164,5 +164,12 @@
 {
     
 }
+
+#pragma mark CSMessageCollectionDelegate Methods
+- (void) newMessage:(NSString*)message fromChannel:(NSString*)channel server:(NSString*)server
+{
+    //TODO:This
+}
+
 
 @end

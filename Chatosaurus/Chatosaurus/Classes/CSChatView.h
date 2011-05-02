@@ -11,12 +11,15 @@
     UITextField* _textEntry;
     UITextView* _textView;
     UIButton* _sendButton;
-    NSString *_identifier;
+    NSString *_channel;
+    NSString *_server;
 }
 
 /*!
  * The unique identifier for this chat
  */
-@property (nonatomic,retain) NSString *identifier;
+@property (nonatomic,retain) NSString *channel;
+@property (nonatomic,retain) NSString *server;
+- (void) newMessage:(NSString*)message;
 
 @end

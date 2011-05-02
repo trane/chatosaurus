@@ -63,12 +63,10 @@
     }
     if (view == nil) {
         view = [[[CSChatView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)] autorelease];
+        NSLog(@"Creating channelview: %@ %@", channel, server);
+
         [view setChannel:channel];
         [view setServer:server];
-        [_chatViews addObject:view];
-    }
-    
-    NSLog(@"Creating channelview: %@ %@", channel, server);
         [view setDelegate:_notificationView];
         [_chatViews addObject:view];
     }

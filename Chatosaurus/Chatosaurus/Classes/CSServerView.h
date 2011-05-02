@@ -9,6 +9,7 @@
 
 @protocol CSServerViewDelegate
 - (void) newMessage:(NSString*)message toServer:(NSString*)server channel:(NSString*)channel;
+- (void) touchedChannel:(NSString*)channel fromServer:(NSString*)server;
 @end
 
 @interface CSServerView : UIView <CSChannelViewControllerDelegate>

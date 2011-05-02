@@ -116,10 +116,10 @@
 #pragma mark Methods
 - (void) channelTouched
 {
-    NSLog(@"Touched %@", self);
+    //NSLog(@"Touched %@", self);
     // TODO: Launch chat view
     if (_tapTarget != nil && _tapAction != NULL)
-        [_tapTarget performSelector:_tapAction withObject:_name];
+        [_tapTarget performSelector:_tapAction withObject:self];
 }
 
 #pragma mark UIView Methods

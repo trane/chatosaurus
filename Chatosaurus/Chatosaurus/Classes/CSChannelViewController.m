@@ -85,7 +85,6 @@
 
 - (CSChannelView*) channelGridView:(CSChannelGridView*)gridView viewCellAtRow:(NSInteger)row column:(NSInteger)col
 {
-    //NSArray *temp = [NSArray arrayWithArray:_channelList];
     NSInteger channelNum = _rowCount * col + row;
     if (channelNum >= [_channelList count])
         return nil;
@@ -105,7 +104,7 @@
 
 - (void) channelTapped:(id)sender
 {
-    
+    [_delegate touchedChannel:[sender name]];
 }
 
 @end

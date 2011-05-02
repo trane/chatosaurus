@@ -124,4 +124,8 @@
 {
     
 }
+- (void) touchedChannel:(NSString*)channel fromServer:(NSString*)server
+{
+
+}
 @end

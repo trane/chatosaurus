@@ -11,7 +11,7 @@
 
 #pragma mark -
 #pragma mark Private Interface
-@interface CSServerTableViewController () <UITableViewDataSource>
+@interface CSServerTableViewController () <UITableViewDataSource, CSServerViewDelegate>
 @end
 
 #pragma mark -
@@ -93,6 +93,7 @@
                                                              serverName:[dict objectForKey:@"serverName"]
                                                                  userId:[dict objectForKey:@"userId"]] retain];
         //serverView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        [serverView setDelegate:self];
         [_serverViews addObject:serverView];
         
         // Create the channels array, make sure it is retained.
@@ -126,5 +127,13 @@
     return cell;
 }
 
+#pragma mark CSServerViewControllerDelegate Methods
+- (void) newMessage:(NSString*)message toServer:(NSString*)server channel:(NSString*)channel
+{
+    
+}
+- (void) touchedChannel:(NSString*)channel fromServer:(NSString*)server
+{
 
+}
 @end

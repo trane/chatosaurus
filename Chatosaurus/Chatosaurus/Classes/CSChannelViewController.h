@@ -12,6 +12,7 @@
 @protocol CSChannelViewControllerDelegate
 - (void) newMessage:(NSString*)message toChannel:(NSString*)channel;
 - (void) createChannelsWithArray:(NSArray*)channels;
+- (void) touchedChannel:(NSString*)channel;
 @end
 
 @interface CSChannelViewController : UIViewController

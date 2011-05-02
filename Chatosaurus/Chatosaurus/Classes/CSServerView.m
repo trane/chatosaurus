@@ -7,6 +7,7 @@
 //
 
 #import "CSServerView.h"
+#import "CSChannelViewController.h"
 
 #define CSServerViewMargin 5.0f
 #define CSServerViewRowCount 2
@@ -15,7 +16,7 @@
 
 #pragma mark -
 #pragma mark Private Interface
-@interface CSServerView ()
+@interface CSServerView () <CSChannelViewControllerDelegate>
 @end
 
 #pragma mark -
@@ -65,9 +66,10 @@
 @synthesize channelViewController = _channelViewController;
 @synthesize protocol = _protocol;
 @synthesize channelCount = _channelCount;
+
 - (NSString*) description
 {
-    return [[NSString alloc] initWithFormat:@"%s %s", _serverName, _userId];
+    return [[[NSString alloc] initWithFormat:@"%@ %@", _serverName, _userId]autorelease];
 }
 #pragma mark -
 #pragma mark Methods
@@ -224,6 +226,10 @@
 - (void) newMessage:(NSString *)message toChannel:(NSString *)channel
 {
     
+}
+- (void) touchedChannel:(NSString *)channel
+{
+    [_delegate touchedChannel:(NSString*)channel fromServer:(NSString*)_serverName];
 }
 
 - (void) createChannelsWithArray:(NSArray*)channels

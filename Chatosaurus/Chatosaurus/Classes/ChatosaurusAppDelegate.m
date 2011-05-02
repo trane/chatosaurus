@@ -37,7 +37,6 @@
 
     [_window makeKeyAndVisible];
 
-    NSLog(@"placeholder");
 }
 
 - (void) applicationWillTerminate:(UIApplication*)application

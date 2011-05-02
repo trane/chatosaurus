@@ -8,7 +8,15 @@
 
 @interface CSMessage : NSObject 
 {
-    
+    NSString* _serverKey;
+    NSString* _messageText;
+    NSDate* _timestamp;
 }
+
+- (id) initWithServer:(NSString*)server message:(NSString*)message timestamp:(NSString*)timestamp;
+
+@property (nonatomic,readonly) NSString *serverKey;
+@property (nonatomic,readonly) NSString *message;
+@property (nonatomic,readonly) NSDate *timestamp;
 
 @end

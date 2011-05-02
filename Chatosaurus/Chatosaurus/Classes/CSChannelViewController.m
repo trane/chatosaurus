@@ -51,7 +51,6 @@
 #pragma mark Methods
 - (void) loadChannelList:(NSArray*)channels
 {
-    NSLog(@"loadChannelList %i", [channels count]);
     _channelList = channels;
     [[self view] setNeedsLayout];
 }
@@ -67,7 +66,6 @@
 }
 - (void) viewDidLoad
 {
-    NSLog(@"CSChannelView viewDidLoad");
 }
 
 - (void) viewDidUnload
@@ -109,4 +107,5 @@
 {
     
 }
+
 @end

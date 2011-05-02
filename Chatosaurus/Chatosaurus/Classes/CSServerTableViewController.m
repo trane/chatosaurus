@@ -117,20 +117,14 @@
 {
     NSString *identity = [[_serverViews objectAtIndex:[indexPath section]] serverName];
     
-    
     CSServerTableViewCell *cell = (CSServerTableViewCell *)[tableView dequeueReusableCellWithIdentifier:identity];
     if (cell == nil) {
         cell = [[[CSServerTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identity] autorelease];
         [[cell contentView] setFrame:CGRectMake(0.0, 0.0, 320.0f, 200.0f)];
         [[cell contentView] addSubview:[_serverViews objectAtIndex:[indexPath section]]];
-        NSLog(@"cell row: %i",[indexPath row]);
     }
     return cell;
 }
 
-#pragma mark UITableView Methods
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    CSServerView *serverView = [_serverViews objectAtIndex:[indexPath section]];
-}
+
 @end

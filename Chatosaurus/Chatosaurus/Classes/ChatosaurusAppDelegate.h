@@ -11,7 +11,7 @@
 // All classes that will directly interact with the master app delegate
 @class CSServerViewController, CSGlobalPreferencesView, CSNotificationView, CSChatViewController;
 
-@interface ChatosaurusAppDelegate : NSObject <UIApplicationDelegate, CSMessageCollectionDelegate, CSServerTableViewControllerDelegate> 
+@interface ChatosaurusAppDelegate : NSObject <UIApplicationDelegate, CSServerTableViewControllerDelegate> 
 {
     UIWindow* _window;
     UINavigationController* _navigation;

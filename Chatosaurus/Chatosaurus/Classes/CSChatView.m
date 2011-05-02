@@ -56,6 +56,7 @@
     [_sendButton setOpaque:TRUE];
     [_sendButton setBackgroundColor:[UIColor lightGrayColor]];
     [_sendButton setShowsTouchWhenHighlighted:TRUE];
+    [_sendButton addTarget:self action:@selector(sendButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:_sendButton];
     [self addSubview:_textView];
@@ -100,6 +101,18 @@
 {
     [textField resignFirstResponder];
     return NO;
+}
+
+- (void) sendButtonPressed
+{
+    if([_textEntry isEditing])
+        [_textEntry resignFirstResponder];
+    
+    if([[_textEntry text] length] > 0)
+    {
+        [_textEntry setText:@""];
+        NSLog(@"Send button pressed!\n");
+    }
 }
 
 #pragma mark UIView Methods

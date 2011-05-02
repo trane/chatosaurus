@@ -24,6 +24,7 @@
     self = [super init];
 	if (self == nil)
 		return self;
+    [self setTitle:@"Servers"];
     [[self tableView] setRowHeight:200.0f];
     [[self tableView] setAllowsSelection:FALSE];
     _serverViews = [[NSMutableArray alloc] init];
@@ -35,6 +36,7 @@
     self = [super initWithStyle:style];
     if (self == nil)
         return self;
+    [self setTitle:@"Servers"];
     [[self tableView] setRowHeight:150.0f];
     
     _serverViews = [[NSMutableArray alloc] init];
@@ -72,6 +74,7 @@
 - (void) viewDidLoad
 {
     //[[self view] setBackgroundColor:[UIColor colorWithHue:(float)drand48() saturation:1.0f brightness:1.0f alpha:1.0f]];
+    [[self navigationController] setNavigationBarHidden:TRUE animated:FALSE];
 }
 
 - (void) viewDidUnload
@@ -118,6 +121,11 @@
     return 1;//[_serverViews count];
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [[self navigationController] setNavigationBarHidden:TRUE animated:TRUE];
+}
+
 #pragma mark UITableViewController Methods
 - (UITableViewCell*) tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
@@ -139,8 +147,9 @@
 }
 - (void) touchedChannel:(NSString*)channel fromServer:(NSString*)server
 {
-    [[self navigationController] viewWillDisappear:YES];
+    //[[self navigationController] viewWillDisappear:YES];
     [_chatViewDelegate createChannel:channel fromServer:server];
+    [_delegate pushChannelView];
 }
 
 
